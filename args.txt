@@ -1,0 +1,12 @@
+-expression
+*raspberry
+-uri_start
+http://www.python-forum.org/viewforum.php?f=10&start=
+-uri_end
+''
+-item_start
+25
+-item_end
+27
+-outfile
+~/Desktop/search_results.txt
