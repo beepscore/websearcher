@@ -60,8 +60,8 @@ class ArgReader():
                             to search up to item 30 inclusive enter 30
                             Default 2.'''
                             )
-        parser.add_argument('-outfile', action="store", dest="outfile", default="./search_results.txt",
-                            help='name of output file. Default ./search_results.txt')
+        parser.add_argument('-out_directory', action="store", dest="out_directory", default="~/Desktop/results",
+                            help='name of output file. Default "~/Desktop/results"')
 
         if commandline is not None:
             args = parser.parse_args(commandline)
