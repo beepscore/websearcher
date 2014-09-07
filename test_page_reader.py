@@ -15,9 +15,9 @@ class TestPageReader(unittest.TestCase):
 
     def test_response_status_code(self):
         reader = page_reader.PageReader()
-        response = reader.response("http://www.google.com")
         expected = requests.codes.ok
-        self.assertEqual(expected, response.status_code, '')
+        actual = reader.response_status_code("http://www.google.com")
+        self.assertEqual(expected, actual, '')
 
     def test_response_headers_content_type(self):
         reader = page_reader.PageReader()

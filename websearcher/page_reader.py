@@ -4,24 +4,29 @@ import requests
 
 class PageReader():
     '''
-    Read a web page
+    Requests a url and returns the response.
     '''
 
     def __init__(self):
         pass
 
+    def response_status_code(self, url):
+        '''
+        Request web page at url, return response status code
+        '''
+        response = self.response(url)
+        return response.status_code
+
     def response_text(self, url):
         '''
-        Read web page at url, return response text
+        Request web page at url, return response text
         '''
-
         response = self.response(url)
-        response_text = response.text
-        return response_text
+        return response.text
 
     def response(self, url):
         '''
-        Read web page at url, return response
+        Request web page at url, return response
         '''
         response = None
 
