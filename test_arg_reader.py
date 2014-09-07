@@ -16,7 +16,7 @@ class TestArgReader(unittest.TestCase):
 
     def test_args_default(self):
         reader = arg_reader.ArgReader()
-        args = reader.args()
+        args = reader.args(None)
         self.assertEqual(None, args.expression, '')
         self.assertEqual(None, args.uri_start, '')
         self.assertEqual('', args.uri_end, '')

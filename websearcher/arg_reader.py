@@ -17,9 +17,10 @@ class ArgReader():
     def __init__(self):
         pass
 
-    def args(self):
+    def args(self, commandline=None):
         '''
-        Read arguments from command line or from a file.
+        Read arguments from method argument commandline, command line or a file.
+        Reference http://stackoverflow.com/questions/18325211/argparse-fails-when-called-from-unittest-test
         '''
 
         parser = argparse.ArgumentParser(description='''    For help, use argument -h
@@ -62,11 +63,9 @@ class ArgReader():
         parser.add_argument('-outfile', action="store", dest="outfile", default="./search_results.txt",
                             help='name of output file. Default ./search_results.txt')
 
-        return parser.parse_args()
+        if commandline is not None:
+            args = parser.parse_args(commandline)
+        else:
+            args = parser.parse_args()
 
-    def print_args(self):
-        print(self.args)
-        print(self.args.prog)
-        print(self.args.expression)
-        print(self.args.item_start)
-        print(self.args.item_end)
+        return args
