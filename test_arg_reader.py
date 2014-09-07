@@ -8,14 +8,22 @@ import unittest
 # put tests above websearcher directory
 from websearcher import arg_reader
 
+
 class TestArgReader(unittest.TestCase):
 
     def setUp(self):
         pass
 
-    def test_args(self):
+    def test_args_default(self):
         reader = arg_reader.ArgReader()
-        self.assertEqual(1, 1, '')
+        args = reader.args()
+        self.assertEqual(None, args.expression, '')
+        self.assertEqual(None, args.uri_start, '')
+        self.assertEqual('', args.uri_end, '')
+        self.assertEqual(1, args.item_start, '')
+        self.assertEqual(2, args.item_end, '')
+        self.assertEqual("./search_results.txt", args.outfile, '')
+
 
 if __name__ == "__main__":
     unittest.main()

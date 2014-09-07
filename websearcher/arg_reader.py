@@ -17,7 +17,7 @@ class ArgReader():
     def __init__(self):
         pass
 
-    def args():
+    def args(self):
         '''
         Read arguments from command line or from a file.
         '''
