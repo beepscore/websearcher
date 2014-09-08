@@ -38,13 +38,13 @@ class ArgReader():
         parser.add_argument('-expression', action="store", dest="expression",
                             help='expression to search for, as a regular expression.'
                             )
-        parser.add_argument('-uri_start', action="store", dest="uri_start",
-                            help='''start of uri up to item number.
+        parser.add_argument('-url_start', action="store", dest="url_start",
+                            help='''start of url up to item number.
                             e.g. for url http://www.python-forum.org/viewforum.php?f=10&start=25
                             enter http://www.python-forum.org/viewforum.php?f=10&start='''
                             )
-        parser.add_argument('-uri_end', action="store", dest="uri_end", default="",
-                            help='''end of uri after item number.
+        parser.add_argument('-url_end', action="store", dest="url_end", default="",
+                            help='''end of url after item number.
                             e.g. for url http://www.python-forum.org/viewforum.php?f=10&start=25
                             enter ""'''
                             )
