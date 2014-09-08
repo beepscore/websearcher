@@ -8,5 +8,7 @@ http://www.python-forum.org/viewforum.php?f=10&start=
 25
 -item_end
 27
--outfile
-~/Desktop/search_results.txt
+-out_directory
+../junk
+-out_file
+search_results.txt
