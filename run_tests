@@ -6,4 +6,5 @@
 python3 test_arg_reader.py
 python3 test_page_reader.py
 python3 test_file_writer.py
+python3 test_web_searcher.py
 
