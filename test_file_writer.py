@@ -13,21 +13,43 @@ class TestFileWriter(unittest.TestCase):
     def setUp(self):
         pass
 
+    def test_absolute_dir_path(self):
+        test_dirname = "../junk"
+        actual = file_writer.FileWriter.absolute_dir_path(test_dirname)
+        self.assertEqual('/Users/stevebaker/Documents/projects/pythonProjects/junk',
+                         actual, '')
+
+    def test_absolute_file_path(self):
+        test_dirname = "../junk"
+        test_filename = "foo.html"
+        actual = file_writer.FileWriter.absolute_file_path(test_dirname, test_filename)
+        self.assertEqual('/Users/stevebaker/Documents/projects/pythonProjects/junk/foo.html',
+                         actual, '')
+
+    def test_create_directory(self):
+        test_dirname = "../junk"
+        file_writer.FileWriter.create_directory(test_dirname)
+        self.assertTrue(os.path.isdir(test_dirname), '')
+
     def test_init(self):
-        test_path = "~/Desktop/junk"
+        test_dirname = "../junk"
         test_filename = "foo.html"
         test_content = "junk_text"
-        writer = file_writer.FileWriter(test_path, test_filename, test_content)
-        self.assertEqual(test_path, writer.path, '')
+        writer = file_writer.FileWriter(test_dirname, test_filename, test_content)
+        self.assertEqual(test_dirname, writer.dirname, '')
         self.assertEqual(test_filename, writer.filename, '')
         self.assertEqual(test_content, writer.content, '')
 
-    def test_create_directory(self):
-        # Note Python does not expand ~ in path as on OS X
-        writer = file_writer.FileWriter("../junk", "foo.html", "junk_text")
-        writer.create_directory(writer.path)
-        self.assertTrue(os.path.isdir(writer.path), '')
+    def test_create_file(self):
+        test_dirname = "../junk"
+        test_filename = "foo.html"
+        test_content = "junk_text"
+        writer = file_writer.FileWriter(test_dirname, test_filename, test_content)
 
+        writer.create_file(writer.dirname, writer.filename, writer.content)
+
+        actual = file_writer.FileWriter.absolute_file_path(test_dirname, test_filename)
+        self.assertTrue(os.path.isfile(actual), '')
 
 if __name__ == "__main__":
     unittest.main()
