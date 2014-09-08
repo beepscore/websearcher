@@ -4,7 +4,7 @@ import requests
 
 class PageReader():
     '''
-    Requests a url and returns the response.
+    Requests a url and returns the response or response properties.
     '''
 
     def __init__(self):
