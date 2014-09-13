@@ -34,3 +34,10 @@ class WebSearcher():
 
         writer = file_writer.FileWriter(self.args.out_directory, self.args.out_file, response.text)
         writer.create_file(writer.dirname, writer.filename, writer.content)
+
+    def request_pages_write_responses(self):
+        # range function excludes end, so add 1
+        page_range = range(int(self.args.item_start), int(self.args.item_end) + 1)
+        for index in page_range:
+            url = WebSearcher.filename_from_components(self.args.url_start, index, self.args.url_end)
+            print(url)
