@@ -19,12 +19,12 @@ class TestWebSearcher(unittest.TestCase):
         self.assertEqual(expected, actual)
 
     def test_init(self):
-        searcher = web_searcher.WebSearcher("@../websearcher_args.txt")
+        searcher = web_searcher.WebSearcher("@./test_args.txt")
         self.assertIsNotNone(searcher)
         self.assertIsNotNone(searcher.arg_reader)
 
     def test_request_page_write_response(self):
-        searcher = web_searcher.WebSearcher("@../websearcher_args.txt")
+        searcher = web_searcher.WebSearcher("@./test_args.txt")
         searcher.request_page_write_response("http://www.python-forum.org/viewforum.php?f=10&start=2")
         self.assertIsNotNone(searcher.arg_reader)
 
