@@ -16,6 +16,9 @@ class WebSearcher():
     Creates directory if it doesn't exist.
     '''
 
+    def filename_from_components(filename_start, index, filename_end):
+        return "{0}{1}{2}".format(filename_start, index, filename_end)
+
     def __init__(self, argfile):
         '''
         Don't version control argfile

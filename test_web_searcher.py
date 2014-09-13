@@ -13,6 +13,12 @@ class TestWebSearcher(unittest.TestCase):
     def setUp(self):
         pass
 
+    def test_filename_from_components(self):
+        actual = web_searcher.WebSearcher.filename_from_components("http://www.python-forum.org/viewforum.php?f=10&start=",
+                                                                   23, "/foo.html")
+        expected = "http://www.python-forum.org/viewforum.php?f=10&start=23/foo.html"
+        self.assertEqual(expected, actual)
+
     def test_init(self):
         searcher = web_searcher.WebSearcher("@../websearcher_args.txt")
         self.assertIsNotNone(searcher)
