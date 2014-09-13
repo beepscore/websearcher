@@ -80,3 +80,7 @@ class WebSearcher():
             out_file = WebSearcher.file_name_for_page_number("junk", page_number, ".html")
             self.request_page_write_response(url, out_file)
 
+    def request_pages_search_responses(self):
+        self.request_pages_write_responses()
+        file_names = WebSearcher.search_directory(self.args.expression, self.args.out_directory)
+        return file_names

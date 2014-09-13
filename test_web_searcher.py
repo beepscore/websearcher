@@ -55,6 +55,10 @@ class TestWebSearcher(unittest.TestCase):
         actual = web_searcher.WebSearcher.search_directory("should", searcher.args.out_directory)
         self.assertEqual(["junk3.html"], actual)
 
+    def test_request_pages_search_responses(self):
+        searcher = web_searcher.WebSearcher("@./test_args.txt")
+        actual = searcher.request_pages_search_responses()
+        self.assertEqual(["junk3.html"], actual)
 
 if __name__ == "__main__":
     unittest.main()
