@@ -25,8 +25,14 @@ class TestWebSearcher(unittest.TestCase):
 
     def test_request_page_write_response(self):
         searcher = web_searcher.WebSearcher("@./test_args.txt")
-        searcher.request_page_write_response("http://www.python-forum.org/viewforum.php?f=10&start=2")
+        searcher.request_page_write_response("http://www.python-forum.org/viewforum.php?f=10&start=2",
+                                             "junk2.html")
         self.assertIsNotNone(searcher.arg_reader)
+
+    def test_request_pages_write_responses(self):
+        # searcher = web_searcher.WebSearcher("@../websearcher_args.txt")
+        searcher = web_searcher.WebSearcher("@./test_args.txt")
+        searcher.request_pages_write_responses()
 
 if __name__ == "__main__":
     unittest.main()

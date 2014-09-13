@@ -29,10 +29,10 @@ class WebSearcher():
         self.args = self.arg_reader.args([argfile])
         self.page_reader = page_reader.PageReader()
 
-    def request_page_write_response(self, url):
+    def request_page_write_response(self, url, out_file):
         response = self.page_reader.response(url)
 
-        writer = file_writer.FileWriter(self.args.out_directory, self.args.out_file, response.text)
+        writer = file_writer.FileWriter(self.args.out_directory, out_file, response.text)
         writer.create_file(writer.dirname, writer.filename, writer.content)
 
     def request_pages_write_responses(self):
@@ -40,4 +40,5 @@ class WebSearcher():
         page_range = range(int(self.args.item_start), int(self.args.item_end) + 1)
         for index in page_range:
             url = WebSearcher.filename_from_components(self.args.url_start, index, self.args.url_end)
-            print(url)
+            out_file = WebSearcher.filename_from_components("junk", index, ".html")
+            self.request_page_write_response(url, out_file)
