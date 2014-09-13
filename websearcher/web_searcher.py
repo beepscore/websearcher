@@ -3,6 +3,7 @@
 from websearcher import arg_reader
 from websearcher import page_reader
 from websearcher import file_writer
+import os
 
 
 class WebSearcher():
@@ -30,6 +31,11 @@ class WebSearcher():
         else:
             return "{0}{1}{2}".format(filename_start, page_number, filename_end)
 
+    @staticmethod
+    def search_directory(expression, dir_name):
+        for file_name in os.listdir(dir_name):
+            print(file_name)
+
     def __init__(self, argfile):
         '''
         Don't version control argfile
@@ -53,3 +59,4 @@ class WebSearcher():
             url = WebSearcher.url_for_page_number(self.args.url_start, page_number, self.args.url_end)
             out_file = WebSearcher.file_name_for_page_number("junk", page_number, ".html")
             self.request_page_write_response(url, out_file)
+

@@ -39,5 +39,10 @@ class TestWebSearcher(unittest.TestCase):
         searcher = web_searcher.WebSearcher("@./test_args.txt")
         searcher.request_pages_write_responses()
 
+    def test_search_directory(self):
+        searcher = web_searcher.WebSearcher("@./test_args.txt")
+        actual = web_searcher.WebSearcher.search_directory("foo", searcher.args.out_directory)
+
+
 if __name__ == "__main__":
     unittest.main()
