@@ -26,7 +26,7 @@ class TestWebSearcher(unittest.TestCase):
 
     def test_request_page_write_response(self):
         searcher = web_searcher.WebSearcher("@../websearcher_args.txt")
-        searcher.request_page_write_response("http://www.google.com")
+        searcher.request_page_write_response("http://www.python-forum.org/viewforum.php?f=10&start=2")
         self.assertIsNotNone(searcher.arg_reader)
 
 if __name__ == "__main__":
