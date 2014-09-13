@@ -74,7 +74,6 @@ class WebSearcher():
 
     def request_pages_write_responses(self):
         # range function excludes end, so add 1
-
         page_range = range(int(self.args.item_start), int(self.args.item_end) + 1)
         for page_number in page_range:
             url = WebSearcher.url_for_page_number(self.args.url_start, page_number, self.args.url_end)
