@@ -5,6 +5,7 @@ import unittest
 # tried putting tests in a "test" directory at same level as websearcher
 # relative import didn't work
 from websearcher import web_searcher
+from websearcher import file_writer
 
 
 class TestWebSearcher(unittest.TestCase):
@@ -39,9 +40,15 @@ class TestWebSearcher(unittest.TestCase):
         searcher = web_searcher.WebSearcher("@./test_args.txt")
         searcher.request_pages_write_responses()
 
+    def test_search_file(self):
+        searcher = web_searcher.WebSearcher("@./test_args.txt")
+        actual = web_searcher.WebSearcher.search_file("should", searcher.args.out_directory, "junk2.html")
+        self.assertEqual([], actual)
+
     def test_search_directory(self):
         searcher = web_searcher.WebSearcher("@./test_args.txt")
-        actual = web_searcher.WebSearcher.search_directory("foo", searcher.args.out_directory)
+        actual = web_searcher.WebSearcher.search_directory("should", searcher.args.out_directory)
+        self.assertEqual(["should"], actual)
 
 
 if __name__ == "__main__":

@@ -3,6 +3,7 @@
 from websearcher import arg_reader
 from websearcher import page_reader
 from websearcher import file_writer
+import re
 import os
 
 
@@ -33,8 +34,23 @@ class WebSearcher():
 
     @staticmethod
     def search_directory(expression, dir_name):
+        matches = []
         for file_name in os.listdir(dir_name):
-            print(file_name)
+            matches += WebSearcher.search_file(expression, dir_name, file_name)
+        return matches
+
+    @staticmethod
+    def search_file(expression, dir_name, file_name):
+        if file_name == ".DS_Store":
+            # avoid read error
+            return []
+        else:
+            file_path = file_writer.FileWriter.absolute_file_path(dir_name, file_name)
+            textfile = open(file_path, 'r')
+            text = textfile.read()
+            textfile.close()
+            matches = re.findall(expression, text)
+            return matches
 
     def __init__(self, argfile):
         '''
