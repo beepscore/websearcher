@@ -59,7 +59,7 @@ class TestArgReader(unittest.TestCase):
 
         args = reader.args(["@test_args.txt"])
 
-        self.assertEqual("*raspberry", args.expression)
+        self.assertEqual("shoul*", args.expression)
         self.assertEqual("http://www.python-forum.org/viewforum.php?f=10&start=",
                          args.url_start)
         self.assertEqual("", args.url_end)
