@@ -46,7 +46,8 @@ class ArgReader():
         parser.add_argument('-url_end', action="store", dest="url_end", default="",
                             help='''end of url after item number.
                             e.g. for url http://www.python-forum.org/viewforum.php?f=10&start=25
-                            enter ""'''
+                            just press enter to enter empty line
+                            Default empty string "".'''
                             )
         parser.add_argument('-item_start', action="store", dest="item_start", default=1,
                             help='''start item number.
