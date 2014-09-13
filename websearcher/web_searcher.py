@@ -29,8 +29,8 @@ class WebSearcher():
         self.args = self.arg_reader.args([argfile])
         self.page_reader = page_reader.PageReader()
 
-    def request_page_write_response(self):
-        response = self.page_reader.response(self.args.url_start)
+    def request_page_write_response(self, url):
+        response = self.page_reader.response(url)
 
         writer = file_writer.FileWriter(self.args.out_directory, self.args.out_file, response.text)
         writer.create_file(writer.dirname, writer.filename, writer.content)
