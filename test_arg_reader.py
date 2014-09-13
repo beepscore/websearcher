@@ -19,7 +19,7 @@ class TestArgReader(unittest.TestCase):
         args = reader.args(None)
         self.assertEqual(None, args.expression, '')
         self.assertEqual(None, args.url_start, '')
-        self.assertEqual('', args.url_end, '')
+        self.assertEqual("", args.url_end, '')
         self.assertEqual(1, args.item_start, '')
         self.assertEqual(2, args.item_end, '')
         self.assertEqual("../websearcher_results", args.out_directory, '')
@@ -62,7 +62,7 @@ class TestArgReader(unittest.TestCase):
         self.assertEqual("*raspberry", args.expression)
         self.assertEqual("http://www.python-forum.org/viewforum.php?f=10&start=",
                          args.url_start)
-        self.assertEqual("''", args.url_end)
+        self.assertEqual("", args.url_end)
         self.assertEqual("25", args.item_start)
         self.assertEqual("27", args.item_end)
         self.assertEqual("../websearcher_results", args.out_directory)

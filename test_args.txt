@@ -3,7 +3,7 @@
 -url_start
 http://www.python-forum.org/viewforum.php?f=10&start=
 -url_end
-''
+
 -item_start
 25
 -item_end
