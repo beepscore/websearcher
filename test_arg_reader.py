@@ -63,8 +63,8 @@ class TestArgReader(unittest.TestCase):
         self.assertEqual("http://www.python-forum.org/viewforum.php?f=10&start=",
                          args.url_start)
         self.assertEqual("", args.url_end)
-        self.assertEqual("25", args.item_start)
-        self.assertEqual("27", args.item_end)
+        self.assertEqual("2", args.item_start)
+        self.assertEqual("4", args.item_end)
         self.assertEqual("../websearcher_results", args.out_directory)
         self.assertEqual("websearcher_results_test.html", args.out_file)
 

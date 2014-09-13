@@ -12,10 +12,15 @@ class TestWebSearcher(unittest.TestCase):
     def setUp(self):
         pass
 
-    def test_filename_from_components(self):
-        actual = web_searcher.WebSearcher.filename_from_components("http://www.python-forum.org/viewforum.php?f=10&start=",
-                                                                   23, "/foo.html")
-        expected = "http://www.python-forum.org/viewforum.php?f=10&start=23/foo.html"
+    def test_file_name_for_page_number(self):
+        actual = web_searcher.WebSearcher.file_name_for_page_number("foo", 23, "bar.html")
+        expected = "foo23bar.html"
+        self.assertEqual(expected, actual)
+
+    def test_url_for_page_number2(self):
+        actual = web_searcher.WebSearcher.url_for_page_number("http://www.python-forum.org/viewforum.php?f=10&start=",
+                                                                   2, "/foo.html")
+        expected = "http://www.python-forum.org/viewforum.php?f=10&start=25/foo.html"
         self.assertEqual(expected, actual)
 
     def test_init(self):

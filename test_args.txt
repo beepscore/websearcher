@@ -5,9 +5,9 @@ http://www.python-forum.org/viewforum.php?f=10&start=
 -url_end
 
 -item_start
-25
+2
 -item_end
-27
+4
 -out_directory
 ../websearcher_results
 -out_file

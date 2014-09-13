@@ -17,8 +17,18 @@ class WebSearcher():
     '''
 
     @staticmethod
-    def filename_from_components(filename_start, index, filename_end):
-        return "{0}{1}{2}".format(filename_start, index, filename_end)
+    def url_for_page_number(filename_start, page_number, filename_end):
+        if page_number <= 0:
+            return "{0}{1}".format(filename_start, filename_end)
+        else:
+            return "{0}{1}{2}".format(filename_start, 25 * (page_number - 1), filename_end)
+
+    @staticmethod
+    def file_name_for_page_number(filename_start, page_number, filename_end):
+        if page_number <= 0:
+            return "{0}{1}".format(filename_start, filename_end)
+        else:
+            return "{0}{1}{2}".format(filename_start, page_number, filename_end)
 
     def __init__(self, argfile):
         '''
@@ -37,8 +47,9 @@ class WebSearcher():
 
     def request_pages_write_responses(self):
         # range function excludes end, so add 1
+
         page_range = range(int(self.args.item_start), int(self.args.item_end) + 1)
-        for index in page_range:
-            url = WebSearcher.filename_from_components(self.args.url_start, index, self.args.url_end)
-            out_file = WebSearcher.filename_from_components("junk", index, ".html")
+        for page_number in page_range:
+            url = WebSearcher.url_for_page_number(self.args.url_start, page_number, self.args.url_end)
+            out_file = WebSearcher.file_name_for_page_number("junk", page_number, ".html")
             self.request_page_write_response(url, out_file)
