@@ -40,15 +40,20 @@ class TestWebSearcher(unittest.TestCase):
         searcher = web_searcher.WebSearcher("@./test_args.txt")
         searcher.request_pages_write_responses()
 
-    def test_search_file(self):
+    def test_search_file2(self):
         searcher = web_searcher.WebSearcher("@./test_args.txt")
         actual = web_searcher.WebSearcher.search_file("should", searcher.args.out_directory, "junk2.html")
-        self.assertEqual([], actual)
+        self.assertEqual(None, actual)
+
+    def test_search_file3(self):
+        searcher = web_searcher.WebSearcher("@./test_args.txt")
+        actual = web_searcher.WebSearcher.search_file("should", searcher.args.out_directory, "junk3.html")
+        self.assertEqual("junk3.html", actual)
 
     def test_search_directory(self):
         searcher = web_searcher.WebSearcher("@./test_args.txt")
         actual = web_searcher.WebSearcher.search_directory("should", searcher.args.out_directory)
-        self.assertEqual(["should"], actual)
+        self.assertEqual(["junk3.html"], actual)
 
 
 if __name__ == "__main__":
