@@ -44,3 +44,7 @@ Notice command prompt shows venv is active
     /Users/stevebaker/Documents/projects/pythonProjects/websearcher/venv/bin/python
     (venv) ➜  websearcher git:(master) python --version
     Python 3.5.1
+
+### Deactivate virtual environment
+In shell run deactivate
+    (venv) ➜  websearcher git:(master) ✗ deactivate
