@@ -13,12 +13,14 @@ class TestFileWriter(unittest.TestCase):
     def setUp(self):
         pass
 
+    # This test is not ideal because it depends upon developer machine
     def test_absolute_dir_path(self):
         test_dirname = "../junk"
         actual = file_writer.FileWriter.absolute_dir_path(test_dirname)
         self.assertEqual('/Users/stevebaker/Documents/projects/pythonProjects/junk',
                          actual, '')
 
+    # This test is not ideal because it depends upon developer machine
     def test_absolute_file_path(self):
         test_dirname = "../junk"
         test_filename = "foo.html"
