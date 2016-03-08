@@ -1,0 +1,3 @@
+# can install via pip install requests
+# https://github.com/kennethreitz/requests
+requests>=2.9.1
