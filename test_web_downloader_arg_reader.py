@@ -45,7 +45,7 @@ class TestWebDownloaderArgReader(unittest.TestCase):
         args = reader.args(["@./test_data/web_downloader_args.txt"])
 
         self.assertEqual("http://www.beepscore.com", args.url)
-        self.assertEqual("../websearcher_results", args.out_directory)
+        self.assertEqual("../websearcher_downloaded_files", args.out_directory)
         self.assertEqual("websearcher_results_test.html", args.out_file)
 
 if __name__ == "__main__":
