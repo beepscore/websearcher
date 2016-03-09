@@ -8,7 +8,7 @@ import os
 
 
 class WebSearcher():
-    '''
+    """
     Controller composed of several objects.
     Reads input commands.
     Requests a series of web pages.
@@ -16,7 +16,7 @@ class WebSearcher():
     Searches file for expression.
     Path includes directory name and file name.
     Creates directory if it doesn't exist.
-    '''
+    """
 
     @staticmethod
     def file_name_for_page_number(filename_start, page_number, filename_end):
@@ -27,10 +27,10 @@ class WebSearcher():
 
     @staticmethod
     def search_directory(expression, dir_name):
-        '''
+        """
         In directory search every file for expression
         return file names containing expression
-        '''
+        """
         files_containing_expression = []
         for file_name in os.listdir(dir_name):
             file_name_containing_expression = WebSearcher.search_file(expression, dir_name, file_name)
@@ -55,10 +55,10 @@ class WebSearcher():
                 return file_name
 
     def __init__(self, argfile):
-        '''
+        """
         Don't version control argfile
         Put it outside project directory
-        '''
+        """
         self.arg_reader = arg_reader.ArgReader()
         self.args = self.arg_reader.args([argfile])
         self.page_reader = page_reader.PageReader()

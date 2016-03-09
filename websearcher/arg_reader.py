@@ -10,27 +10,27 @@ from argparse import RawTextHelpFormatter
 
 
 class ArgReader():
-    '''
+    """
     Read arguments from command line or from a file.
-    '''
+    """
 
     def __init__(self):
         pass
 
     def args(self, commandline=None):
-        '''
+        """
         Read arguments from method argument commandline, command line or a file.
         Reference http://stackoverflow.com/questions/18325211/argparse-fails-when-called-from-unittest-test
-        '''
+        """
 
-        parser = argparse.ArgumentParser(description='''    For help, use argument -h
+        parser = argparse.ArgumentParser(description="""    For help, use argument -h
                                          $ ./arg_reader.py -h
                                          To specify an argument, prefix with -
                                          $ ./arg_reader.py -expression an_expression -path a_path
                                          To read arguments from a file, prefix file name with @
                                          $ ./arg_reader.py @args.txt
                                          To specify arguments from command line and from a file
-                                         $ ./arg_reader.py @args.txt -expression foo''',
+                                         $ ./arg_reader.py @args.txt -expression foo""",
                                          fromfile_prefix_chars='@',
                                          formatter_class=RawTextHelpFormatter,
                                          )
@@ -39,8 +39,8 @@ class ArgReader():
                             help='expression to search for, as a regular expression.'
                             )
         parser.add_argument('-url', action="store", dest="url",
-                            help='''url to search
-                            e.g. http://www.beepscore.com'''
+                            help="""url to search
+                            e.g. http://www.beepscore.com"""
                             )
         parser.add_argument('-out_directory', action="store", dest="out_directory", default="../websearcher_results",
                             help='name of output directory. Default "../websearcher_results"')
