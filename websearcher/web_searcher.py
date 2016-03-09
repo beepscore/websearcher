@@ -19,13 +19,6 @@ class WebSearcher():
     '''
 
     @staticmethod
-    def url_for_page_number(filename_start, page_number, filename_end):
-        if page_number <= 0:
-            return "{0}{1}".format(filename_start, filename_end)
-        else:
-            return "{0}{1}{2}".format(filename_start, 25 * (page_number - 1), filename_end)
-
-    @staticmethod
     def file_name_for_page_number(filename_start, page_number, filename_end):
         if page_number <= 0:
             return "{0}{1}".format(filename_start, filename_end)
@@ -34,6 +27,10 @@ class WebSearcher():
 
     @staticmethod
     def search_directory(expression, dir_name):
+        '''
+        In directory search every file for expression
+        return file names containing expression
+        '''
         files_containing_expression = []
         for file_name in os.listdir(dir_name):
             file_name_containing_expression = WebSearcher.search_file(expression, dir_name, file_name)
@@ -72,15 +69,15 @@ class WebSearcher():
         writer = file_writer.FileWriter(self.args.out_directory, out_file, response.text)
         writer.create_file(writer.dirname, writer.filename, writer.content)
 
-    def request_pages_write_responses(self):
-        # range function excludes end, so add 1
-        page_range = range(int(self.args.item_start), int(self.args.item_end) + 1)
-        for page_number in page_range:
-            url = WebSearcher.url_for_page_number(self.args.url_start, page_number, self.args.url_end)
-            out_file = WebSearcher.file_name_for_page_number("junk", page_number, ".html")
-            self.request_page_write_response(url, out_file)
+#   def request_pages_write_responses(self):
+#       # range function excludes end, so add 1
+#       page_range = range(int(self.args.item_start), int(self.args.item_end) + 1)
+#       for page_number in page_range:
+#           url = WebSearcher.url_for_page_number(self.args.url_start, page_number, self.args.url_end)
+#           out_file = WebSearcher.file_name_for_page_number("junk", page_number, ".html")
+#           self.request_page_write_response(url, out_file)
 
-    def request_pages_search_responses(self):
-        self.request_pages_write_responses()
-        file_names = WebSearcher.search_directory(self.args.expression, self.args.out_directory)
-        return file_names
+#   def request_pages_search_responses(self):
+#       self.request_pages_write_responses()
+#       file_names = WebSearcher.search_directory(self.args.expression, self.args.out_directory)
+#       return file_names

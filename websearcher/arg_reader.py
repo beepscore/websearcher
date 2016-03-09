@@ -38,28 +38,9 @@ class ArgReader():
         parser.add_argument('-expression', action="store", dest="expression",
                             help='expression to search for, as a regular expression.'
                             )
-        parser.add_argument('-url_start', action="store", dest="url_start",
-                            help='''start of url up to item number.
-                            e.g. for url http://www.python-forum.org/viewforum.php?f=10&start=25
-                            enter http://www.python-forum.org/viewforum.php?f=10&start='''
-                            )
-        parser.add_argument('-url_end', action="store", dest="url_end", default="",
-                            help='''end of url after item number.
-                            e.g. for url http://www.python-forum.org/viewforum.php?f=10&start=25
-                            just press enter to enter empty line
-                            Default empty string "".'''
-                            )
-        parser.add_argument('-item_start', action="store", dest="item_start", default=1,
-                            help='''start item number.
-                            e.g. for url http://www.python-forum.org/viewforum.php?f=10&start=25
-                            enter 25
-                            Default 1.'''
-                            )
-        parser.add_argument('-item_end', action="store", dest="item_end", default=2,
-                            help='''end item number.
-                            e.g. for url http://www.python-forum.org/viewforum.php?f=10&start=25
-                            to search up to item 30 inclusive enter 30
-                            Default 2.'''
+        parser.add_argument('-url', action="store", dest="url",
+                            help='''url to search
+                            e.g. http://www.beepscore.com'''
                             )
         parser.add_argument('-out_directory', action="store", dest="out_directory", default="../websearcher_results",
                             help='name of output directory. Default "../websearcher_results"')

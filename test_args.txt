@@ -1,13 +1,7 @@
 -expression
-shoul*
--url_start
-http://www.python-forum.org/viewforum.php?f=10&start=
--url_end
-
--item_start
-2
--item_end
-4
+app*
+-url
+http://www.beepscore.com
 -out_directory
 ../websearcher_results
 -out_file
