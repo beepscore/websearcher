@@ -19,11 +19,16 @@ class WebSearcher():
     """
 
     @staticmethod
-    def file_name_for_page_number(filename_start, page_number, filename_end):
-        if page_number <= 0:
-            return "{0}{1}".format(filename_start, filename_end)
-        else:
-            return "{0}{1}{2}".format(filename_start, page_number, filename_end)
+    def filename_from_url(url):
+        """
+        Similar to Django slugify
+        http://stackoverflow.com/questions/295135/turn-a-string-into-a-valid-filename-in-python
+
+        :param url: url to convert
+        :return: a valid filename
+        """
+        filename = "".join(i for i in url if i not in "\/:*?<>|")
+        return filename
 
     @staticmethod
     def search_directory(expression, dir_name):

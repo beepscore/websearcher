@@ -13,9 +13,14 @@ class TestWebSearcher(unittest.TestCase):
     def setUp(self):
         pass
 
-    def test_file_name_for_page_number(self):
-        actual = web_searcher.WebSearcher.file_name_for_page_number("foo", 23, "bar.html")
-        expected = "foo23bar.html"
+    def test_filename_from_url_root(self):
+        actual = web_searcher.WebSearcher.filename_from_url("http://www.beepscore.com")
+        expected = "httpwww.beepscore.com"
+        self.assertEqual(expected, actual)
+
+    def test_filename_from_url_root(self):
+        actual = web_searcher.WebSearcher.filename_from_url("http://beepscore.com/hubcape/")
+        expected = "httpbeepscore.comhubcape"
         self.assertEqual(expected, actual)
 
     def test_init(self):
