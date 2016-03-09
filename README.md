@@ -9,14 +9,19 @@ Storing pages enables searching multiple times without re-downloading.
 
 ## Command line
 In terminal shell, go to a directory outside of project directory.
-Create a file with argument names and values e.g. websearcher_args.txt
 Then
 
     source ./websearcher/venv/bin/activate
 
-TODO write shell script that takes args file, something like
+TODO something like
 
-    ./web_search "./websearcher_args.txt"
+    ./download_files -filenames filenames.txt -out_directory download_directory
+
+This part is similar to Unix/Linux grep command
+Note: Suggest use different values for download_directory and results_directory.
+Otherwise subsequent searches might accidentally search results file.
+
+    ./search_files -expression expression -file_path download_directory -results_directory results_directory
 
 ## Unit tests
 To run tests, open terminal shell and use run_tests. For more info see script.
