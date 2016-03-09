@@ -19,18 +19,6 @@ class WebSearcher():
     """
 
     @staticmethod
-    def filename_from_url(url):
-        """
-        Similar to Django slugify
-        http://stackoverflow.com/questions/295135/turn-a-string-into-a-valid-filename-in-python
-
-        :param url: url to convert
-        :return: a valid filename
-        """
-        filename = "".join(i for i in url if i not in "\/:*?<>|")
-        return filename
-
-    @staticmethod
     def search_directory(expression, dir_name):
         """
         In directory search every file for expression
@@ -78,7 +66,7 @@ class WebSearcher():
         writer.create_file(writer.dirname, writer.filename, writer.content)
 
     def request_url_write_to_file(self, url):
-        out_file = WebSearcher.filename_from_url(url)
+        out_file = file_writer.FileWriter.filename_from_url(url)
         response = self.page_reader.response(url)
         writer = file_writer.FileWriter(self.args.out_directory, out_file, response.text)
         writer.create_file(writer.dirname, writer.filename, writer.content)

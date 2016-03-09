@@ -13,16 +13,6 @@ class TestWebSearcher(unittest.TestCase):
     def setUp(self):
         pass
 
-    def test_filename_from_url_root(self):
-        actual = web_searcher.WebSearcher.filename_from_url("http://www.beepscore.com")
-        expected = "httpwww.beepscore.com"
-        self.assertEqual(expected, actual)
-
-    def test_filename_from_url(self):
-        actual = web_searcher.WebSearcher.filename_from_url("http://beepscore.com/hubcape/")
-        expected = "httpbeepscore.comhubcape"
-        self.assertEqual(expected, actual)
-
     def test_init(self):
         searcher = web_searcher.WebSearcher("@./test_args.txt")
         self.assertIsNotNone(searcher)
