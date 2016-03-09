@@ -51,3 +51,4 @@ class WebSearcher:
         """
         self.arg_reader = web_searcher_arg_reader.WebSearcherArgReader()
         self.args = self.arg_reader.args([argfile])
+        self.expression = self.args.expression
