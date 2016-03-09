@@ -18,7 +18,7 @@ class TestWebSearcher(unittest.TestCase):
         self.assertIsNotNone(searcher)
         self.assertIsNotNone(searcher.arg_reader)
 
-    def test_request_page_write_response(self):
+    def test_request_url_write_to_out_file(self):
         searcher = web_searcher.WebSearcher("@./test_args.txt")
         searcher.request_url_write_to_out_file("http://www.beepscore.com", "junk2.html")
         self.assertIsNotNone(searcher.arg_reader)
