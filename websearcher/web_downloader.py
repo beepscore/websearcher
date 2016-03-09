@@ -7,13 +7,11 @@ import re
 import os
 
 
-class WebDownloader():
+class WebDownloader:
     """
     Controller composed of several objects.
     Reads input commands.
-    Requests a series of web pages.
-    Writes response to a file.
-    Searches file for expression.
+    Requests a list of web pages and writes each one to a file.
     Path includes directory name and file name.
     Creates directory if it doesn't exist.
     """

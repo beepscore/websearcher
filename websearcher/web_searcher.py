@@ -7,15 +7,11 @@ import re
 import os
 
 
-class WebSearcher():
+class WebSearcher:
     """
     Controller composed of several objects.
     Reads input commands.
-    Requests a series of web pages.
-    Writes response to a file.
-    Searches file for expression.
-    Path includes directory name and file name.
-    Creates directory if it doesn't exist.
+    Searches files for expression.
     """
 
     @staticmethod
