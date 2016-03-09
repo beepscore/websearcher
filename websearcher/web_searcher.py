@@ -77,6 +77,12 @@ class WebSearcher():
         writer = file_writer.FileWriter(self.args.out_directory, out_file, response.text)
         writer.create_file(writer.dirname, writer.filename, writer.content)
 
+    def request_url_write_to_file(self, url):
+        out_file = WebSearcher.filename_from_url(url)
+        response = self.page_reader.response(url)
+        writer = file_writer.FileWriter(self.args.out_directory, out_file, response.text)
+        writer.create_file(writer.dirname, writer.filename, writer.content)
+
 #   def request_pages_write_responses(self):
 #       # range function excludes end, so add 1
 #       page_range = range(int(self.args.item_start), int(self.args.item_end) + 1)
