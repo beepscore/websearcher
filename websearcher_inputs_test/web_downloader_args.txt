@@ -1,4 +1,4 @@
 -urls_file
-./test_args/urls.txt
+./websearcher_inputs_test/urls.txt
 -out_directory
 ../websearcher_downloaded_files

@@ -38,9 +38,9 @@ class TestWebDownloaderArgReader(unittest.TestCase):
         reader = web_downloader_arg_reader.WebDownloaderArgReader()
 
         # use fromfile_prefix_chars @ to read args from file
-        args = reader.args(["@./test_args/web_downloader_args.txt"])
+        args = reader.args(["@./websearcher_inputs_test/web_downloader_args.txt"])
 
-        self.assertEqual("./test_args/urls.txt", args.urls_file)
+        self.assertEqual("./websearcher_inputs_test/urls.txt", args.urls_file)
         self.assertEqual("../websearcher_downloaded_files", args.out_directory)
 
 if __name__ == "__main__":

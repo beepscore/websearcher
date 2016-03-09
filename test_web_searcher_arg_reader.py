@@ -41,7 +41,7 @@ class TestWebSearcherArgReader(unittest.TestCase):
     def test_args_from_argument_file(self):
         reader = web_searcher_arg_reader.WebSearcherArgReader()
         # use fromfile_prefix_chars @ to read args from file
-        args = reader.args(["@./test_args/web_searcher_args.txt"])
+        args = reader.args(["@./websearcher_inputs_test/web_searcher_args.txt"])
 
         out_file = "../websearcher_results/websearcher_results.txt"
         self.assertEqual("app*", args.expression)

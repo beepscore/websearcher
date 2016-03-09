@@ -13,7 +13,7 @@ class TestWebSearcher(unittest.TestCase):
         pass
 
     def test_init(self):
-        searcher = web_searcher.WebSearcher("@./test_args/web_searcher_args.txt")
+        searcher = web_searcher.WebSearcher("@./websearcher_inputs_test/web_searcher_args.txt")
         self.assertIsNotNone(searcher)
         self.assertIsNotNone(searcher.arg_reader)
         self.assertEqual("app*", searcher.expression, '')
