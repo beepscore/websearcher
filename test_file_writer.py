@@ -13,7 +13,6 @@ class TestFileWriter(unittest.TestCase):
     def setUp(self):
         pass
 
-
     def test_filename_from_url_root(self):
         actual = file_writer.FileWriter.filename_from_url("http://www.beepscore.com")
         expected = "httpwww.beepscore.com"
