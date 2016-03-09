@@ -13,22 +13,22 @@ class TestWebSearcher(unittest.TestCase):
         pass
 
     def test_init(self):
-        searcher = web_searcher.WebSearcher("@./test_data/test_args.txt")
+        searcher = web_searcher.WebSearcher("@./test_data/web_searcher_args.txt")
         self.assertIsNotNone(searcher)
         self.assertIsNotNone(searcher.arg_reader)
 
     def test_search_file_returns_none(self):
-        searcher = web_searcher.WebSearcher("@./test_data/test_args.txt")
+        searcher = web_searcher.WebSearcher("@./test_data/web_searcher_args.txt")
         actual = web_searcher.WebSearcher.search_file("not there", searcher.args.out_directory, "junk2.html")
         self.assertEqual(None, actual)
 
     def test_search_file_returns_file_name(self):
-        searcher = web_searcher.WebSearcher("@./test_data/test_args.txt")
+        searcher = web_searcher.WebSearcher("@./test_data/web_searcher_args.txt")
         actual = web_searcher.WebSearcher.search_file("apps", searcher.args.out_directory, "junk2.html")
         self.assertEqual("junk2.html", actual)
 
     def test_search_directory(self):
-        searcher = web_searcher.WebSearcher("@./test_data/test_args.txt")
+        searcher = web_searcher.WebSearcher("@./test_data/web_searcher_args.txt")
         actual = web_searcher.WebSearcher.search_directory("apps", searcher.args.out_directory)
         self.assertEqual(["junk2.html"], actual)
 

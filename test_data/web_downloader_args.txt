@@ -1,0 +1,6 @@
+-url
+http://www.beepscore.com
+-out_directory
+../websearcher_results
+-out_file
+websearcher_results_test.html

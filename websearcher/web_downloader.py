@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-from websearcher import arg_reader
+from websearcher import web_downloader_arg_reader
 from websearcher import page_reader
 from websearcher import file_writer
 
@@ -21,7 +21,7 @@ class WebDownloader:
         :param argfile: file with arguments. Don't version control argfile. Put it outside project directory.
         :return: None
         """
-        self.arg_reader = arg_reader.ArgReader()
+        self.arg_reader = web_downloader_arg_reader.WebDownloaderArgReader()
         self.args = self.arg_reader.args([argfile])
         self.page_reader = page_reader.PageReader()
 

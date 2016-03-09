@@ -9,7 +9,7 @@ import argparse
 from argparse import RawTextHelpFormatter
 
 
-class ArgReader:
+class WebDownloaderArgReader:
     """
     Read arguments from command line or from a file.
     """
@@ -24,20 +24,17 @@ class ArgReader:
         """
 
         parser = argparse.ArgumentParser(description="""    For help, use argument -h
-                                         $ ./arg_reader.py -h
+                                         $ ./web_downloader_arg_reader.py -h
                                          To specify an argument, prefix with -
-                                         $ ./arg_reader.py -expression an_expression -path a_path
+                                         $ ./web_downloader_arg_reader.py -path a_path
                                          To read arguments from a file, prefix file name with @
-                                         $ ./arg_reader.py @args.txt
+                                         $ ./web_downloader_arg_reader.py @args.txt
                                          To specify arguments from command line and from a file
-                                         $ ./arg_reader.py @args.txt -expression foo""",
+                                         $ ./web_downloader_arg_reader.py @args.txt -expression foo""",
                                          fromfile_prefix_chars='@',
                                          formatter_class=RawTextHelpFormatter,
                                          )
 
-        parser.add_argument('-expression', action="store", dest="expression",
-                            help='expression to search for, as a regular expression.'
-                            )
         parser.add_argument('-url', action="store", dest="url",
                             help="""url to search
                             e.g. http://www.beepscore.com"""
