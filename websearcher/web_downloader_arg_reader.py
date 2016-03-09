@@ -30,7 +30,7 @@ class WebDownloaderArgReader:
                                          To read arguments from a file, prefix file name with @
                                          $ ./web_downloader_arg_reader.py @args.txt
                                          To specify arguments from command line and from a file
-                                         $ ./web_downloader_arg_reader.py @args.txt -expression foo""",
+                                         $ ./web_downloader_arg_reader.py @args.txt -out_directory my_dir""",
                                          fromfile_prefix_chars='@',
                                          formatter_class=RawTextHelpFormatter,
                                          )
