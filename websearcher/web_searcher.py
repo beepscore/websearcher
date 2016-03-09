@@ -61,9 +61,12 @@ class WebSearcher():
 
     def __init__(self, argfile):
         """
-        Don't version control argfile
-        Put it outside project directory
+        Initialize the class.
+
+        :param argfile: file with arguments. Don't version control argfile. Put it outside project directory.
+        :return: None
         """
+
         self.arg_reader = arg_reader.ArgReader()
         self.args = self.arg_reader.args([argfile])
         self.page_reader = page_reader.PageReader()
