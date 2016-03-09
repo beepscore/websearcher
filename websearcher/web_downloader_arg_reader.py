@@ -35,10 +35,8 @@ class WebDownloaderArgReader:
                                          formatter_class=RawTextHelpFormatter,
                                          )
 
-        parser.add_argument('-url', action="store", dest="url",
-                            help="""url to search
-                            e.g. http://www.beepscore.com"""
-                            )
+        parser.add_argument('-urls_file', action="store", dest="urls_file", default="../websearcher_inputs/urls.txt",
+                            help='file with list of urls to download, one url per line. Defalult "../websearcher_inputs/urls.txt"')
         parser.add_argument('-out_directory', action="store", dest="out_directory", default="../websearcher_results",
                             help='name of output directory. Default "../websearcher_results"')
 

@@ -1,4 +1,4 @@
--url
-http://www.beepscore.com
+-urls_file
+./test_args/urls.txt
 -out_directory
 ../websearcher_downloaded_files
