@@ -1,16 +1,31 @@
 # web_searcher
 
 # Purpose
-Download a sequence of web pages and store them locally.
+Download a list of web pages and store them locally.
 Then search them for a regular expression.
 Storing pages enables searching multiple times without re-downloading.
 
 # Results
-To run tests, use script run_tests. For more info see script.
+
+## Command line
+In terminal shell, go to a directory outside of project directory.
+Create a file with argument names and values e.g. websearcher_args.txt
+Then
+
+    source ./websearcher/venv/bin/activate
+
+TODO write shell script that takes args file, something like
+
+    ./web_search "./websearcher_args.txt"
+
+## Unit tests
+To run tests, open terminal shell and use run_tests. For more info see script.
 
     $ ./run_tests
 
-## virtual environment venv
+---
+
+## Appendix virtual environment venv
 
 The project uses a virtual environment.  
 https://docs.python.org/3/library/venv.html
