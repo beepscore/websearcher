@@ -19,7 +19,7 @@ class TestWebSearcherArgReader(unittest.TestCase):
         args = reader.args(None)
         self.assertEqual(None, args.expression, '')
         self.assertEqual(None, args.url, '')
-        self.assertEqual("../websearcher_results/results.txt", args.out_file, '')
+        self.assertEqual("../websearcher_results/websearcher_results.txt", args.out_file, '')
 
     def test_args_from_argument(self):
         reader = web_searcher_arg_reader.WebSearcherArgReader()
