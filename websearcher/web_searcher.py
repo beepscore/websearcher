@@ -73,7 +73,8 @@ class WebSearcher():
 
     def request_url_write_to_file(self, url):
         """
-        Request url, write response to file name based on filename_from_url
+        Request url, write response to file name based on filename_from_url.
+
         :param url: url to request
         :return: None
         """
