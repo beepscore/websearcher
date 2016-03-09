@@ -59,7 +59,7 @@ class WebSearcher():
         self.args = self.arg_reader.args([argfile])
         self.page_reader = page_reader.PageReader()
 
-    def request_page_write_response(self, url, out_file):
+    def request_url_write_to_out_file(self, url, out_file):
         response = self.page_reader.response(url)
 
         writer = file_writer.FileWriter(self.args.out_directory, out_file, response.text)
@@ -67,7 +67,7 @@ class WebSearcher():
 
     def request_url_write_to_file(self, url):
         out_file = file_writer.FileWriter.filename_from_url(url)
-        self.request_page_write_response(url, out_file)
+        self.request_url_write_to_out_file(url, out_file)
 
     def request_urls_write_to_files(self, urls):
         for url in urls:
