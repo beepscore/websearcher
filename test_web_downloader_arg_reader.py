@@ -19,24 +19,20 @@ class TestWebDownloaderArgReader(unittest.TestCase):
         args = reader.args(None)
         self.assertEqual(None, args.url, '')
         self.assertEqual("../websearcher_results", args.out_directory, '')
-        self.assertEqual("results.txt", args.out_file, '')
 
     def test_args_from_argument(self):
         reader = web_downloader_arg_reader.WebDownloaderArgReader()
 
         test_url = "bar"
         test_out_directory = "../pages"
-        test_out_file = "junk.txt"
 
         test_commandline = ["-url", test_url,
                             "-out_directory", test_out_directory,
-                            "-out_file", test_out_file
                             ]
         args = reader.args(test_commandline)
 
         self.assertEqual(test_url, args.url, '')
         self.assertEqual(test_out_directory, args.out_directory, '')
-        self.assertEqual(test_out_file, args.out_file, '')
 
     def test_args_from_argument_file(self):
         reader = web_downloader_arg_reader.WebDownloaderArgReader()
@@ -46,7 +42,6 @@ class TestWebDownloaderArgReader(unittest.TestCase):
 
         self.assertEqual("http://www.beepscore.com", args.url)
         self.assertEqual("../websearcher_downloaded_files", args.out_directory)
-        self.assertEqual("websearcher_results_test.html", args.out_file)
 
 if __name__ == "__main__":
     unittest.main()

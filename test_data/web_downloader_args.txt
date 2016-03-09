@@ -2,5 +2,3 @@
 http://www.beepscore.com
 -out_directory
 ../websearcher_downloaded_files
--out_file
-websearcher_results_test.html
