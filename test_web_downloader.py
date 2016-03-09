@@ -19,7 +19,8 @@ class TestWebDownloader(unittest.TestCase):
 
     def test_request_url_write_to_out_file(self):
         downloader = web_downloader.WebDownloader("@./test_args/web_downloader_args.txt")
-        downloader.request_url_write_to_out_file("http://www.beepscore.com", "junk2.html")
+        downloader.request_url_write_to_out_file("http://beepscore.com/hubcape/",
+                                                 "httpbeepscore.comhubcape")
         self.assertIsNotNone(downloader.arg_reader)
 
 if __name__ == "__main__":
