@@ -9,7 +9,7 @@ import argparse
 from argparse import RawTextHelpFormatter
 
 
-class ArgReader():
+class ArgReader:
     """
     Read arguments from command line or from a file.
     """

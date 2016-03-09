@@ -2,7 +2,8 @@
 
 import requests
 
-class PageReader():
+
+class PageReader:
     """
     Requests a url and returns the response or response properties.
     """

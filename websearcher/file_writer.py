@@ -3,7 +3,7 @@
 import os
 
 
-class FileWriter():
+class FileWriter:
     """
     Writes file to path.
     Path includes directory name and file name.
