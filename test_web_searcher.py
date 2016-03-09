@@ -18,16 +18,6 @@ class TestWebSearcher(unittest.TestCase):
         self.assertIsNotNone(searcher)
         self.assertIsNotNone(searcher.arg_reader)
 
-    def test_request_url_write_to_out_file(self):
-        searcher = web_searcher.WebSearcher("@./test_data/test_args.txt")
-        searcher.request_url_write_to_out_file("http://www.beepscore.com", "junk2.html")
-        self.assertIsNotNone(searcher.arg_reader)
-
-#   def test_request_pages_write_responses(self):
-#       # searcher = web_searcher.WebSearcher("@../websearcher_args.txt")
-#       searcher = web_searcher.WebSearcher("@./test_args.txt")
-#       searcher.request_pages_write_responses()
-
     def test_search_file_returns_none(self):
         searcher = web_searcher.WebSearcher("@./test_data/test_args.txt")
         actual = web_searcher.WebSearcher.search_file("not there", searcher.args.out_directory, "junk2.html")
@@ -42,11 +32,6 @@ class TestWebSearcher(unittest.TestCase):
         searcher = web_searcher.WebSearcher("@./test_data/test_args.txt")
         actual = web_searcher.WebSearcher.search_directory("apps", searcher.args.out_directory)
         self.assertEqual(["junk2.html"], actual)
-
-#   def test_request_pages_search_responses(self):
-#       searcher = web_searcher.WebSearcher("@./test_args.txt")
-#       actual = searcher.request_pages_search_responses()
-#       self.assertEqual(["junk3.html"], actual)
 
 if __name__ == "__main__":
     unittest.main()
