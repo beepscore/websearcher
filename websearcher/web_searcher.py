@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 from websearcher import arg_reader
-from websearcher import page_reader
 from websearcher import file_writer
 import re
 import os
@@ -52,4 +51,3 @@ class WebSearcher:
         """
         self.arg_reader = arg_reader.ArgReader()
         self.args = self.arg_reader.args([argfile])
-        self.page_reader = page_reader.PageReader()
