@@ -45,7 +45,8 @@ class TestArgReader(unittest.TestCase):
     def test_args_from_argument_file(self):
         reader = arg_reader.ArgReader()
 
-        args = reader.args(["@test_args.txt"])
+        # use fromfile_prefix_chars @ to read args from file
+        args = reader.args(["@./test_data/test_args.txt"])
 
         self.assertEqual("app*", args.expression)
         self.assertEqual("http://www.beepscore.com", args.url)
