@@ -28,8 +28,6 @@ class PageReader():
         """
         Request web page at url, return response
         """
-        response = None
-
         # http://docs.python-requests.org/en/latest/user/quickstart/#make-a-request
         response = requests.get(url)
         # response = requests.post(url=url, data=body, headers={'Connection':'close'})
