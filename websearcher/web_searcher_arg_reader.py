@@ -42,10 +42,8 @@ class WebSearcherArgReader:
                             help="""url to search
                             e.g. http://www.beepscore.com"""
                             )
-        parser.add_argument('-out_directory', action="store", dest="out_directory", default="../websearcher_results",
-                            help='name of output directory. Default "../websearcher_results"')
-        parser.add_argument('-out_file', action="store", dest="out_file", default="results.txt",
-                            help='name of output file. Default "results.txt"'
+        parser.add_argument('-out_file', action="store", dest="out_file", default="../websearcher_results/results.txt",
+                            help='name of output file. Default "../websearcher_results/results.txt"'
                             )
 
         if commandline is not None:
