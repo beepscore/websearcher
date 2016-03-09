@@ -38,7 +38,7 @@ class TestWebDownloaderArgReader(unittest.TestCase):
         reader = web_downloader_arg_reader.WebDownloaderArgReader()
 
         # use fromfile_prefix_chars @ to read args from file
-        args = reader.args(["@./test_data/web_downloader_args.txt"])
+        args = reader.args(["@./test_args/web_downloader_args.txt"])
 
         self.assertEqual("http://www.beepscore.com", args.url)
         self.assertEqual("../websearcher_downloaded_files", args.out_directory)
