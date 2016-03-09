@@ -12,14 +12,14 @@ class PageReader():
 
     def response_status_code(self, url):
         """
-        Request web page at url, return response status code
+        Requests web page at url, return response status code.
         """
         response = self.response(url)
         return response.status_code
 
     def response_text(self, url):
         """
-        Request web page at url, return response text
+        Requests web page at url, return response text.
         """
         response = self.response(url)
         return response.text
