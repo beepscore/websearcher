@@ -27,7 +27,7 @@ class WebSearcher():
         files_containing_expression = []
         for file_name in os.listdir(dir_name):
             file_name_containing_expression = WebSearcher.search_file(expression, dir_name, file_name)
-            if file_name_containing_expression != None:
+            if file_name_containing_expression is not None:
                 files_containing_expression.append(file_name_containing_expression)
         return files_containing_expression
 
