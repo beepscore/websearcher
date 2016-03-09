@@ -73,7 +73,7 @@ class WebSearcher():
         for url in urls:
             self.request_url_write_to_file(url)
 
-#   def request_pages_search_responses(self):
-#       self.request_pages_write_responses()
-#       file_names = WebSearcher.search_directory(self.args.expression, self.args.out_directory)
-#       return file_names
+    def request_urls_write_to_files_search_responses(self, urls):
+        self.request_urls_write_to_files(urls)
+        file_names = WebSearcher.search_directory(self.args.expression, self.args.out_directory)
+        return file_names
