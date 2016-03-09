@@ -5,7 +5,6 @@ import unittest
 # tried putting tests in a "test" directory at same level as websearcher
 # relative import didn't work
 from websearcher import web_searcher
-from websearcher import file_writer
 
 
 class TestWebSearcher(unittest.TestCase):

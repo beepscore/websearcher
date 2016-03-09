@@ -3,8 +3,6 @@
 from websearcher import arg_reader
 from websearcher import page_reader
 from websearcher import file_writer
-import re
-import os
 
 
 class WebDownloader:
