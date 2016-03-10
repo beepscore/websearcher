@@ -41,10 +41,16 @@ class TestWebSearcher(unittest.TestCase):
                                                       "httpwww.beepscore.comhubcape")
         self.assertEqual(None, actual)
 
-    def test_search_directory(self):
+    def test_search_directory_Apps(self):
         actual = web_searcher.WebSearcher.search_directory("Apps",
                                                            "./websearcher_data/downloads")
         self.assertEqual(["httpwww.beepscore.comhubcape"], actual)
+
+    def test_search_directory_Python(self):
+        actual = web_searcher.WebSearcher.search_directory("Python",
+                                                           "./websearcher_data/downloads")
+        self.assertEqual(['httppython.org',
+                          'httpsen.wikipedia.orgwikiPython_%28programming_language%29'], actual)
 
 if __name__ == "__main__":
     unittest.main()
