@@ -3,4 +3,4 @@ app*
 -url
 http://www.beepscore.com
 -out_file
-../websearcher_results/websearcher_results.txt
+../websearcher_data/results/websearcher_results.txt

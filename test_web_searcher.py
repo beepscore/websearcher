@@ -13,37 +13,37 @@ class TestWebSearcher(unittest.TestCase):
         pass
 
     def test_init(self):
-        searcher = web_searcher.WebSearcher("@./websearcher_inputs_test/web_searcher_args.txt")
+        searcher = web_searcher.WebSearcher("@./websearcher_data/inputs/web_searcher_args.txt")
         self.assertIsNotNone(searcher)
         self.assertIsNotNone(searcher.arg_reader)
         self.assertEqual("app*", searcher.expression, '')
 
     def test_search_file_returns_none(self):
         actual = web_searcher.WebSearcher.search_file("not there",
-                                                      "./test_websearcher_downloaded_files",
+                                                      "./websearcher_data/downloads",
                                                       "httpbeepscore.comhubcape")
         self.assertEqual(None, actual)
 
     def test_search_file_returns_file_name(self):
         actual = web_searcher.WebSearcher.search_file("Apps",
-                                                      "./test_websearcher_downloaded_files",
+                                                      "./websearcher_data/downloads",
                                                       "httpbeepscore.comhubcape")
         self.assertEqual("httpbeepscore.comhubcape", actual)
 
     def test_search_file_is_case_sensitive(self):
         actual = web_searcher.WebSearcher.search_file("Apps",
-                                                      "./test_websearcher_downloaded_files",
+                                                      "./websearcher_data/downloads",
                                                       "httpbeepscore.comhubcape")
         self.assertEqual("httpbeepscore.comhubcape", actual)
 
         actual = web_searcher.WebSearcher.search_file("apps",
-                                                      "./test_websearcher_downloaded_files",
+                                                      "./websearcher_data/downloads",
                                                       "httpbeepscore.comhubcape")
         self.assertEqual(None, actual)
 
     def test_search_directory(self):
         actual = web_searcher.WebSearcher.search_directory("Apps",
-                                                           "./test_websearcher_downloaded_files")
+                                                           "./websearcher_data/downloads")
         self.assertEqual(["httpbeepscore.comhubcape"], actual)
 
 if __name__ == "__main__":

@@ -19,14 +19,14 @@ class TestWebSearcherArgReader(unittest.TestCase):
         args = reader.args(None)
         self.assertEqual(None, args.expression, '')
         self.assertEqual(None, args.url, '')
-        self.assertEqual("../websearcher_results/websearcher_results.txt", args.out_file, '')
+        self.assertEqual("../websearcher_data/results/websearcher_results.txt", args.out_file, '')
 
     def test_args_from_argument(self):
         reader = web_searcher_arg_reader.WebSearcherArgReader()
 
         test_expression = "foo"
         test_url = "bar"
-        out_file = "../websearcher_results/websearcher_results.txt"
+        out_file = "../websearcher_data/results/websearcher_results.txt"
 
         test_commandline = ["-expression", test_expression,
                             "-url", test_url,
@@ -41,9 +41,9 @@ class TestWebSearcherArgReader(unittest.TestCase):
     def test_args_from_argument_file(self):
         reader = web_searcher_arg_reader.WebSearcherArgReader()
         # use fromfile_prefix_chars @ to read args from file
-        args = reader.args(["@./websearcher_inputs_test/web_searcher_args.txt"])
+        args = reader.args(["@./websearcher_data/inputs/web_searcher_args.txt"])
 
-        out_file = "../websearcher_results/websearcher_results.txt"
+        out_file = "../websearcher_data/results/websearcher_results.txt"
         self.assertEqual("app*", args.expression)
         self.assertEqual("http://www.beepscore.com", args.url)
         self.assertEqual(out_file, args.out_file)

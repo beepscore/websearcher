@@ -30,15 +30,15 @@ class WebDownloaderArgReader:
                                          To read arguments from a file, prefix file name with @
                                          $ ./web_downloader_arg_reader.py @args.txt
                                          To specify arguments from command line and from a file
-                                         $ ./web_downloader_arg_reader.py @args.txt -out_directory my_dir""",
+                                         $ ./web_downloader_arg_reader.py @args.txt -out_directory '../websearcher_data/downloads'""",
                                          fromfile_prefix_chars='@',
                                          formatter_class=RawTextHelpFormatter,
                                          )
 
-        parser.add_argument('-urls_file', action="store", dest="urls_file", default="../websearcher_inputs/urls.txt",
-                            help='file with list of urls to download, one url per line. Defalult "../websearcher_inputs/urls.txt"')
-        parser.add_argument('-out_directory', action="store", dest="out_directory", default="../websearcher_results",
-                            help='name of output directory. Default "../websearcher_results"')
+        parser.add_argument('-urls_file', action="store", dest="urls_file", default="../websearcher_data/inputs/urls.txt",
+                            help='file with list of urls to download, one url per line. Defalult "../websearcher_data/inputs/urls.txt"')
+        parser.add_argument('-out_directory', action="store", dest="out_directory", default="../websearcher_data/downloads",
+                            help='name of output directory. Default "../websearcher_data/downloads"')
 
         if commandline is not None:
             args = parser.parse_args(commandline)

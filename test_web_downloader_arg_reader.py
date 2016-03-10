@@ -17,31 +17,31 @@ class TestWebDownloaderArgReader(unittest.TestCase):
     def test_args_default(self):
         reader = web_downloader_arg_reader.WebDownloaderArgReader()
         args = reader.args(None)
-        self.assertEqual("../websearcher_inputs/urls.txt", args.urls_file, '')
-        self.assertEqual("../websearcher_results", args.out_directory, '')
+        self.assertEqual("../websearcher_data/inputs/urls.txt", args.urls_file, '')
+        self.assertEqual("../websearcher_data/downloads", args.out_directory, '')
 
     def test_args_from_argument(self):
         reader = web_downloader_arg_reader.WebDownloaderArgReader()
 
         urls_file = "my_urls.txt"
-        test_out_directory = "../pages"
+        out_directory = "../downloaded_pages"
 
         test_commandline = ["-urls_file", urls_file,
-                            "-out_directory", test_out_directory,
+                            "-out_directory", out_directory,
                             ]
         args = reader.args(test_commandline)
 
         self.assertEqual(urls_file, args.urls_file, '')
-        self.assertEqual(test_out_directory, args.out_directory, '')
+        self.assertEqual(out_directory, args.out_directory, '')
 
     def test_args_from_argument_file(self):
         reader = web_downloader_arg_reader.WebDownloaderArgReader()
 
         # use fromfile_prefix_chars @ to read args from file
-        args = reader.args(["@./websearcher_inputs_test/web_downloader_args.txt"])
+        args = reader.args(["@./websearcher_data/inputs/web_downloader_args.txt"])
 
-        self.assertEqual("./websearcher_inputs_test/urls.txt", args.urls_file)
-        self.assertEqual("../websearcher_downloaded_files", args.out_directory)
+        self.assertEqual("./websearcher_data/inputs/urls.txt", args.urls_file)
+        self.assertEqual("./websearcher_data/downloads", args.out_directory)
 
 if __name__ == "__main__":
     unittest.main()

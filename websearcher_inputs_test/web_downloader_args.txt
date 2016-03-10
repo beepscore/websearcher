@@ -1,4 +1,0 @@
--urls_file
-./websearcher_inputs_test/urls.txt
--out_directory
-../websearcher_downloaded_files

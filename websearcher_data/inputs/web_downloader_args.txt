@@ -1,0 +1,4 @@
+-urls_file
+./websearcher_data/inputs/urls.txt
+-out_directory
+./websearcher_data/downloads
