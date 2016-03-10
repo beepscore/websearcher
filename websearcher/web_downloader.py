@@ -57,7 +57,7 @@ class WebDownloader:
         out_file = file_writer.FileWriter.filename_from_url(url)
         self.request_url_write_to_out_file(url, out_file)
 
-    def request_urls_write_to_files(self, urls):
+    def request_urls_write_to_files(self):
+        urls = self.urls_from_urls_file(self.urls_file)
         for url in urls:
             self.request_url_write_to_file(url)
-

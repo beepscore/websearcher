@@ -21,30 +21,30 @@ class TestWebSearcher(unittest.TestCase):
     def test_search_file_returns_none(self):
         actual = web_searcher.WebSearcher.search_file("not there",
                                                       "./websearcher_data/downloads",
-                                                      "httpbeepscore.comhubcape")
+                                                      "httpwww.beepscore.comhubcape")
         self.assertEqual(None, actual)
 
     def test_search_file_returns_file_name(self):
         actual = web_searcher.WebSearcher.search_file("Apps",
                                                       "./websearcher_data/downloads",
-                                                      "httpbeepscore.comhubcape")
-        self.assertEqual("httpbeepscore.comhubcape", actual)
+                                                      "httpwww.beepscore.comhubcape")
+        self.assertEqual("httpwww.beepscore.comhubcape", actual)
 
     def test_search_file_is_case_sensitive(self):
         actual = web_searcher.WebSearcher.search_file("Apps",
                                                       "./websearcher_data/downloads",
-                                                      "httpbeepscore.comhubcape")
-        self.assertEqual("httpbeepscore.comhubcape", actual)
+                                                      "httpwww.beepscore.comhubcape")
+        self.assertEqual("httpwww.beepscore.comhubcape", actual)
 
         actual = web_searcher.WebSearcher.search_file("apps",
                                                       "./websearcher_data/downloads",
-                                                      "httpbeepscore.comhubcape")
+                                                      "httpwww.beepscore.comhubcape")
         self.assertEqual(None, actual)
 
     def test_search_directory(self):
         actual = web_searcher.WebSearcher.search_directory("Apps",
                                                            "./websearcher_data/downloads")
-        self.assertEqual(["httpbeepscore.comhubcape"], actual)
+        self.assertEqual(["httpwww.beepscore.comhubcape"], actual)
 
 if __name__ == "__main__":
     unittest.main()
