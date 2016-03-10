@@ -23,7 +23,16 @@ class WebDownloader:
         """
         self.arg_reader = web_downloader_arg_reader.WebDownloaderArgReader()
         self.args = self.arg_reader.args([argfile])
+        self.urls_file = self.args.urls_file
         self.page_reader = page_reader.PageReader()
+
+    def urls_from_urls_file(self, urls_file):
+        # http://stackoverflow.com/questions/3277503/python-read-file-line-by-line-into-array#3277516
+        textfile = open(urls_file, 'r')
+        # remove newline at end of line
+        urls_list = [line.rstrip('\n') for line in textfile]
+        textfile.close()
+        return urls_list
 
     def request_url_write_to_out_file(self, url, out_file):
         """
