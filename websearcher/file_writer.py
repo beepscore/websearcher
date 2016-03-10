@@ -55,12 +55,13 @@ class FileWriter:
         filename = "".join(i for i in url if i not in "\/:*?<>|")
         return filename
 
-    def create_file(self, dirname, filename, content):
+    @staticmethod
+    def create_file(dirname, filename, content):
         """
         Creates file at path and writes content
         """
         abs_file_path = FileWriter.absolute_file_path(dirname, filename)
-        self.create_directory(dirname)
+        FileWriter.create_directory(dirname)
         # https://docs.python.org/3.3/tutorial/inputoutput.html
         f = open(abs_file_path, 'w')
         f.write(content)

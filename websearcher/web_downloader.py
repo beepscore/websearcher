@@ -44,8 +44,7 @@ class WebDownloader:
         """
         response = self.page_reader.response(url)
 
-        writer = file_writer.FileWriter(self.args.out_directory, out_file, response.text)
-        writer.create_file(writer.dirname, writer.filename, writer.content)
+        file_writer.FileWriter.create_file(self.args.out_directory, out_file, response.text)
 
     def request_url_write_to_file(self, url):
         """
