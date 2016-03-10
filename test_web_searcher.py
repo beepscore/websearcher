@@ -52,5 +52,13 @@ class TestWebSearcher(unittest.TestCase):
         self.assertEqual(['httppython.org',
                           'httpsen.wikipedia.orgwikiPython_%28programming_language%29'], actual)
 
+    def test_search_directory_data(self):
+        actual = web_searcher.WebSearcher.search_directory("dat*",
+                                                           "./websearcher_data/downloads")
+        self.assertEqual(['httppython.org',
+                          'httpsen.wikipedia.orgwikiPython_%28programming_language%29',
+                          'httpswww.google.com#q=python',
+                          'httpwww.beepscore.comhubcape'], actual)
+
 if __name__ == "__main__":
     unittest.main()
