@@ -38,9 +38,8 @@ class WebSearcherArgReader:
         parser.add_argument('-expression', action="store", dest="expression",
                             help='expression to search for, as a regular expression.'
                             )
-        parser.add_argument('-url', action="store", dest="url",
-                            help="""url to search
-                            e.g. http://www.beepscore.com"""
+        parser.add_argument('-search_directory', action="store", dest="search_directory", default="../websearcher_data/downloads",
+                            help='directory to search. Default "../websearcher_data/downloads"'
                             )
         parser.add_argument('-out_file', action="store", dest="out_file", default="../websearcher_data/results/websearcher_results.txt",
                             help='name of output file. Default "../websearcher_data/results/websearcher_results.txt"'

@@ -1,6 +1,6 @@
 -expression
 app*
--url
-http://www.beepscore.com
+-search_directory
+./websearcher_data/downloads
 -out_file
-../websearcher_data/results/websearcher_results.txt
+./websearcher_data/results/websearcher_results.txt
