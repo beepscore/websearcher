@@ -2,5 +2,7 @@
 app*
 -search_directory
 ./websearcher_data/downloads
+-out_dir
+./websearcher_data/results
 -out_file
-./websearcher_data/results/websearcher_results.txt
+websearcher_results.txt

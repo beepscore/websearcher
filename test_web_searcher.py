@@ -60,5 +60,11 @@ class TestWebSearcher(unittest.TestCase):
                           'httpswww.google.com#q=python',
                           'httpwww.beepscore.comhubcape'], actual)
 
+    def test_search_directory_write_results_data(self):
+        web_searcher.WebSearcher.search_directory_write_results("dat*",
+                                                                "./websearcher_data/downloads",
+                                                                "./websearcher_data/results",
+                                                                "websearcher_results.txt")
+
 if __name__ == "__main__":
     unittest.main()

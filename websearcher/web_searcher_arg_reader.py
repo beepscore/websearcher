@@ -41,8 +41,11 @@ class WebSearcherArgReader:
         parser.add_argument('-search_directory', action="store", dest="search_directory", default="../websearcher_data/downloads",
                             help='directory to search. Default "../websearcher_data/downloads"'
                             )
-        parser.add_argument('-out_file', action="store", dest="out_file", default="../websearcher_data/results/websearcher_results.txt",
-                            help='name of output file. Default "../websearcher_data/results/websearcher_results.txt"'
+        parser.add_argument('-out_dir', action="store", dest="out_dir", default="../websearcher_data/results",
+                            help='name of output directory. Default "../websearcher_data/results"'
+                            )
+        parser.add_argument('-out_file', action="store", dest="out_file", default="websearcher_results.txt",
+                            help='name of output file. Default "websearcher_results.txt"'
                             )
 
         if commandline is not None:
