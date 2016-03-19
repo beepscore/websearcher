@@ -7,11 +7,6 @@ Storing pages enables searching multiple times without re-downloading.
 
 # Results
 
-## Unit tests
-To run tests, open terminal shell and use run_tests. For more info see script.
-
-    $ ./run_tests
-
 ## Command line usage
 
 In terminal shell, go to a directory outside of project directory.
@@ -20,7 +15,13 @@ In terminal shell, go to a directory outside of project directory.
 
     source ./websearcher/venv/bin/activate
 
-### Download files and write to directory
+## Unit tests
+To run tests, open terminal shell.  
+cd to project directory and run tests using command below. For more info see script.
+
+    $ ./bin/run_tests
+
+## Download files and write to directory
 
 TODO something like
 
