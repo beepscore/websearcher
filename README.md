@@ -1,25 +1,48 @@
-# web_searcher
+# websearcher
 
 # Purpose
 Download a list of web pages and store them locally.
 Then search them for a regular expression.
 Storing pages enables searching multiple times without re-downloading.
 
+# References
+
+## searcher Python 3
+https://github.com/beepscore/searcher
+
 # Results
 
-## Command line usage
-
+## To use from command line
 In terminal shell, go to a directory outside of project directory.
 
 ### Activate virtual environment
 
     source ./websearcher/venv/bin/activate
 
+### cd to project root directory
+
+    cd websearcher
+
 ## Unit tests
 To run tests, open terminal shell.  
-cd to project directory and run tests using command below. For more info see script.
+cd to project directory. Run tests via python command or bash script.
+
+### Bash script
+Runs all test modules.  
+Works on OS X. On Windows may work with Cygwin, I don't know.
 
     $ ./bin/run_tests
+
+### python command
+This command lists and tests all modules except web_downloader_arg_reader and web_searcher_arg_reader.
+
+    python -m unittest tests.test_page_reader tests.test_file_writer tests.test_web_downloader tests.test_web_searcher
+
+#### arg_reader tests
+Attempting to run test_web_downloader_arg_reader and test_web_searcher_arg_reader has problem with arguments for unittest and for argparse.  
+e.g. python -m unittest discover says "unrecognized arguments: discover" and wants the argparse arguments.  
+TODO: Consider alternative solutions.  
+http://stackoverflow.com/questions/35270177/passing-arguments-for-argparse-with-unittest-discover
 
 ## Download files and write to directory
 
