@@ -30,10 +30,14 @@ In terminal shell, go to a directory outside of project directory.
 ### Search files and write search results to file
 Search is similar to Unix/Linux grep command
 
+#### specify argument values
 Note: Suggest use different values for download_directory and results file directory.
 
 Otherwise subsequent searches might accidentally search a results file.
 
+    python ./websearcher/search_web.py -expression "ython" -search_directory "./websearcher_data/downloads" -out_dir "./websearcher_data/results" -out_file "websearcher_results.txt"
+
+#### default argument values
     python ./websearcher/search_web.py
 
 ## Unit tests
