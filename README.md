@@ -23,6 +23,10 @@ In terminal shell, go to a directory outside of project directory.
 
     cd websearcher
 
+### download web pages
+
+    python ./websearcher/download_web.py
+
 ## Unit tests
 To run tests, open terminal shell.  
 cd to project directory. Run tests via python command or bash script.
@@ -43,14 +47,6 @@ Attempting to run test_web_downloader_arg_reader and test_web_searcher_arg_reade
 e.g. python -m unittest discover says "unrecognized arguments: discover" and wants the argparse arguments.  
 TODO: Consider alternative solutions.  
 http://stackoverflow.com/questions/35270177/passing-arguments-for-argparse-with-unittest-discover
-
-## Download files and write to directory
-
-TODO something like
-
-    downloader = web_downloader.WebDownloader("@./websearcher_data/inputs/web_downloader_args.txt")
-
-    downloader.request_urls_write_to_files()
 
 ### Search files and write search results to file
 Search is similar to Unix/Linux grep command
