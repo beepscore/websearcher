@@ -26,7 +26,7 @@ class WebDownloaderArgReader:
         parser = argparse.ArgumentParser(description="""    For help, use argument -h
                                          $ ./web_downloader_arg_reader.py -h
                                          To specify an argument, prefix with -
-                                         $ ./web_downloader_arg_reader.py -path a_path
+                                         $ ./web_downloader_arg_reader.py -expression a_regular_expression
                                          To read arguments from a file, prefix file name with @
                                          $ ./web_downloader_arg_reader.py @args.txt
                                          To specify arguments from command line and from a file

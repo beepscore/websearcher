@@ -24,13 +24,13 @@ class WebSearcherArgReader:
         """
 
         parser = argparse.ArgumentParser(description="""    For help, use argument -h
-                                         $ ./arg_reader.py -h
+                                         $ ./web_searcher_arg_reader.py -h
                                          To specify an argument, prefix with -
-                                         $ ./arg_reader.py -expression an_expression -path a_path
+                                         $ ./web_searcher_arg_reader.py -expression an_expression
                                          To read arguments from a file, prefix file name with @
-                                         $ ./arg_reader.py @args.txt
+                                         $ ./web_searcher_arg_reader.py @args.txt
                                          To specify arguments from command line and from a file
-                                         $ ./arg_reader.py @args.txt -expression foo""",
+                                         $ ./web_searcher_arg_reader.py @args.txt -expression foo""",
                                          fromfile_prefix_chars='@',
                                          formatter_class=RawTextHelpFormatter,
                                          )
