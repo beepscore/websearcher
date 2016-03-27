@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-from websearcher import web_searcher_arg_reader
 from websearcher import file_writer
 import re
 import os
@@ -49,15 +48,3 @@ class WebSearcher:
             else:
                 return file_name
 
-    def __init__(self, argfile):
-        """
-        Initialize the class.
-
-        :param argfile: file with arguments. Don't version control argfile. Put it outside project directory.
-        :return: None
-        """
-        self.arg_reader = web_searcher_arg_reader.WebSearcherArgReader()
-        self.args = self.arg_reader.args([argfile])
-        self.expression = self.args.expression
-        self.out_dir = self.args.out_dir
-        self.out_file = self.args.out_file
