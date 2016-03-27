@@ -17,9 +17,9 @@ class TestWebSearcherArgReader(unittest.TestCase):
     def test_args_default(self):
         reader = web_searcher_arg_reader.WebSearcherArgReader()
         args = reader.args(None)
-        self.assertEqual(None, args.expression, '')
-        self.assertEqual("../websearcher_data/downloads", args.search_directory, '')
-        self.assertEqual("../websearcher_data/results", args.out_dir, '')
+        self.assertEqual("foo", args.expression, '')
+        self.assertEqual("./websearcher_data/downloads", args.search_directory, '')
+        self.assertEqual("./websearcher_data/results", args.out_dir, '')
         self.assertEqual("websearcher_results.txt", args.out_file, '')
 
     def test_args_from_argument(self):

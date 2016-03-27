@@ -27,6 +27,15 @@ In terminal shell, go to a directory outside of project directory.
 
     python ./websearcher/download_web.py
 
+### Search files and write search results to file
+Search is similar to Unix/Linux grep command
+
+Note: Suggest use different values for download_directory and results file directory.
+
+Otherwise subsequent searches might accidentally search a results file.
+
+    python ./websearcher/search_web.py
+
 ## Unit tests
 To run tests, open terminal shell.  
 cd to project directory. Run tests via python command or bash script.
@@ -47,20 +56,6 @@ Attempting to run test_web_downloader_arg_reader and test_web_searcher_arg_reade
 e.g. python -m unittest discover says "unrecognized arguments: discover" and wants the argparse arguments.  
 TODO: Consider alternative solutions.  
 http://stackoverflow.com/questions/35270177/passing-arguments-for-argparse-with-unittest-discover
-
-### Search files and write search results to file
-Search is similar to Unix/Linux grep command
-
-Note: Suggest use different values for download_directory and results file directory.
-
-Otherwise subsequent searches might accidentally search a results file.
-
-TODO something like
-
-    web_searcher.WebSearcher.search_directory_write_results("dat*",
-    "./websearcher_data/downloads",
-    "./websearcher_data/results",
-    "websearcher_results.txt")
 
 ---
 
