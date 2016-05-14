@@ -16,8 +16,8 @@ class TestPageReader(unittest.TestCase):
     def test_response_status_code(self):
         reader = page_reader.PageReader()
         expected = requests.codes.ok
-        actual = reader.response_status_code("http://www.google.com")
-        self.assertEqual(expected, actual, '')
+        response = reader.response("http://www.google.com")
+        self.assertEqual(expected, response.status_code, '')
 
     def test_response_headers_content_type(self):
         reader = page_reader.PageReader()
@@ -26,9 +26,9 @@ class TestPageReader(unittest.TestCase):
 
     def test_response_text(self):
         reader = page_reader.PageReader()
-        response_text = reader.response_text("http://www.google.com")
+        response = reader.response("http://www.google.com")
         expected = "<!doctype html><html itemscope"
-        self.assertEqual(expected, response_text[:30], '')
+        self.assertEqual(expected, response.text[:30], '')
 
 
 if __name__ == "__main__":
