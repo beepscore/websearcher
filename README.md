@@ -76,6 +76,7 @@ https://github.com/kennethreitz/requests
 
 ### Install virtual environment in directory named "venv"
 
+    $ cd <project root directory>
     $ pyvenv venv
 
 ### Before activating virtual environment
