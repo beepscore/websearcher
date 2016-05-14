@@ -16,6 +16,7 @@ https://github.com/beepscore/searcher
 In terminal shell, go to a directory outside of project directory.
 
 ### Activate virtual environment
+Supply path to websearcher, e.g.
 
     source ./websearcher/venv/bin/activate
 
