@@ -30,6 +30,11 @@ class TestPageReader(unittest.TestCase):
         expected = "<!doctype html><html itemscope"
         self.assertEqual(expected, response.text[:30], '')
 
+    def test_response_text_astma(self):
+        reader = page_reader.PageReader()
+        actual = reader.spell_from_url("https://www.google.com/#q=astma")
+        expected = "foo"
+        self.assertEqual(expected, actual, '')
 
 if __name__ == "__main__":
     unittest.main()

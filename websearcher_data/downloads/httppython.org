@@ -586,6 +586,10 @@ Hi, Python.</span></code></pre></div>
                                 
                                 
                                 <li>
+<time datetime="2016-05-17T22:57:00.000001+00:00"><span class="say-no-more">2016-</span>05-17</time>
+ <a href="http://feedproxy.google.com/~r/PythonInsider/~3/cxjZlK_6b9Y/python-360-alpha-1-preview-release-is.html">Python 3.6.0a1&nbsp;has been&nbsp;released.&nbsp;&nbsp;3.6.0a1 is the first of four planned alpha ...</a></li>
+                                
+                                <li>
 <time datetime="2015-12-07T05:51:00+00:00"><span class="say-no-more">2015-</span>12-07</time>
  <a href="http://feedproxy.google.com/~r/PythonInsider/~3/F9ApGB7BGB4/python-351-and-python-344rc1-are-now.html">Python 3.5.1 and Python 3.4.4rc1 are now available for download. ...</a></li>
                                 
@@ -600,10 +604,6 @@ Hi, Python.</span></code></pre></div>
                                 <li>
 <time datetime="2015-09-13T14:28:00.000006+00:00"><span class="say-no-more">2015-</span>09-13</time>
  <a href="http://feedproxy.google.com/~r/PythonInsider/~3/a6zwstMbRrg/python-350-has-been-released.html">Python 3.5.0 is now&nbsp;available for download. Python 3.5.0 is the ...</a></li>
-                                
-                                <li>
-<time datetime="2015-09-09T13:43:00.000002+00:00"><span class="say-no-more">2015-</span>09-09</time>
- <a href="http://feedproxy.google.com/~r/PythonInsider/~3/D-XkdrMEtE0/python-350-release-candidate-4-released.html">Python 3.5.0rc4 is now&nbsp;available for download. This is a last-minute ...</a></li>
                                 
                             </ul>
                         </div><!-- end .shrubbery -->
@@ -622,32 +622,32 @@ Hi, Python.</span></code></pre></div>
                                 
                                 
                                 <li>
-<time datetime="2016-05-14T12:00:00+00:00"><span class="say-no-more">2016-</span>05-14</time>
- <a href="/events/python-user-group/421/">Cape Town Python User Group (CTPUG) Meeting</a></li>
+<time datetime="2016-06-03T00:00:00+00:00"><span class="say-no-more">2016-</span>06-03</time>
+ <a href="/events/python-events/371/">PyConTW 2016 in Taiwan</a></li>
                                 
                                 
                                 
                                 <li>
-<time datetime="2016-05-16T00:00:00+00:00"><span class="say-no-more">2016-</span>05-16</time>
- <a href="/events/python-events/375/">OSCON 2016</a></li>
+<time datetime="2016-06-22T00:00:00+00:00"><span class="say-no-more">2016-</span>06-22</time>
+ <a href="/events/python-events/376/">GeoPython 2016</a></li>
                                 
                                 
                                 
                                 <li>
-<time datetime="2016-05-16T00:00:00+00:00"><span class="say-no-more">2016-</span>05-16</time>
- <a href="/events/python-events/413/">SciPy Latin America 2016</a></li>
+<time datetime="2016-06-23T00:00:00+00:00"><span class="say-no-more">2016-</span>06-23</time>
+ <a href="/events/python-events/395/">PyCon Singapore 2016</a></li>
                                 
                                 
                                 
                                 <li>
-<time datetime="2016-05-19T17:30:00+00:00"><span class="say-no-more">2016-</span>05-19</time>
- <a href="/events/python-user-group/422/">The London Python Meetup &quot;A python a day... fixes your neural network problem&quot;</a></li>
+<time datetime="2016-07-06T16:00:00+00:00"><span class="say-no-more">2016-</span>07-06</time>
+ <a href="/events/python-user-group/403/">Python Meeting Düsseldorf</a></li>
                                 
                                 
                                 
                                 <li>
-<time datetime="2016-05-20T00:00:00+00:00"><span class="say-no-more">2016-</span>05-20</time>
- <a href="/events/python-events/396/">PyData Berlin 2016</a></li>
+<time datetime="2016-07-16T00:00:00+00:00"><span class="say-no-more">2016-</span>07-16</time>
+ <a href="/events/python-events/426/">PyGotham 2016</a></li>
                                 
                                 
                             </ul>

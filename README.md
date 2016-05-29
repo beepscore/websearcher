@@ -109,3 +109,18 @@ Notice command prompt shows venv is active
 ### Deactivate virtual environment
 In shell run deactivate
     (venv) ➜  websearcher git:(master) ✗ deactivate
+
+## Appendix upgrade pip
+With virtualenv active
+
+    pip install --upgrade pip
+
+    Successfully uninstalled pip-8.1.0
+    Successfully installed pip-8.1.2
+
+Installed to project venv
+
+## Appendix install beautifulsoup
+With virtualenv active
+
+    pip install beautifulsoup4

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import requests
-
+from bs4 import BeautifulSoup
 
 class PageReader:
     """
@@ -23,3 +23,26 @@ class PageReader:
         response.connection.close()
 
         return response
+
+    def class_name_from_html(self, html_doc, class_name):
+        """
+        Parse html for class_name
+        """
+        # http://stackoverflow.com/questions/17154427/how-to-getelementsbyclassname-by-using-python-xml-dom-minidom
+        # https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+        soup = BeautifulSoup(html_doc, 'html.parser')
+        # use class_ not Python keyword class
+        # http://stackoverflow.com/questions/11331071/get-class-name-and-contents-using-beautiful-soup
+        # https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class
+        result = soup.findAll("a", class_=class_name)
+        return result
+
+    def spell_from_url(self, url):
+        """
+        Request web page at url, return links whose class matches "spell"
+        """
+        #html = response("https://www.google.com/#q=astma")
+        response = self.response(url)
+        html_doc = response.text
+        return self.class_name_from_html(html_doc, "spell")
+
