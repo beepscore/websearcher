@@ -50,7 +50,15 @@ class PageReader:
         """
         Request web page at url, return links whose class matches "spell"
         """
-        response = self.response(url)
-        html_doc = response.text
-        return self.class_name_from_html(html_doc, "spell")
+        #response = self.response(url)
+        # html_doc = response.text
+        # return self.class_name_from_html(html_doc, "spell")
+
+        browser = webdriver.Firefox()
+        browser.get(url)
+        try:
+            elem = browser.find_element_by_class_name("spell")
+            print('Found <%s> element with that class name' % (elem.tag_name))
+        except:
+            print("Didn't find element")
 
