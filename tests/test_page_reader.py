@@ -32,22 +32,13 @@ class TestPageReader(unittest.TestCase):
 
     def test_response_text_astma(self):
         reader = page_reader.PageReader()
-        # google returns mix of html and javascript
-        # could use google api instead (free use is limited, then pay)
-        # could try something like dryscrape
-        # https://github.com/niklasb/dryscrape
-        # https://pypi.python.org/pypi/dryscrape/1.0
-        # https://dryscrape.readthedocs.io/en/latest/
-        # http://stackoverflow.com/questions/8049520/web-scraping-javascript-page-with-python
 
-##################
-        # http://stackoverflow.com/questions/11804497/python-3-web-scraping-and-javascript-oh-my?rq=1
-##################
-
+        # google
         actual = reader.spell_from_url("https://www.google.com/#q=astma")
-        # for now, use duckduckgo instead
-        # actual = reader.spell_from_url("https://duckduckgo.com/?q=astma&t=ffnt&ia=about")
+
+        # duckduckgo
         # actual = reader.spell_from_url("https://duckduckgo.com/?q=astma")
+
         expected = "foo"
         self.assertEqual(expected, actual, '')
 

@@ -1,18 +1,66 @@
 # websearcher
 
 # Purpose
+
+## Download web page containing HTML, then search
 Download a list of web pages and store them locally.
 Then search them for a regular expression.
 Storing pages enables searching multiple times without re-downloading.
+
+## Download web page containing HTML and Javascript
+Many web requests return a combination of HTML and Javascript.
+For example, a google search.
+
+        https://www.google.com/#q=astma
+
+### TODO:
+Use selenium webdriver to load the page.
+Wait until it runs the javascript and gets more html.
+Then parse and search the page e.g. with Beautiful Soup.
 
 # References
 
 ## searcher Python 3
 https://github.com/beepscore/searcher
 
+## Download web page containing HTML and Javascript
+http://stackoverflow.com/questions/8049520/web-scraping-javascript-page-with-python
+
+http://stackoverflow.com/questions/11804497/python-3-web-scraping-and-javascript-oh-my?rq=1
+
+### selenium webdriver
+
+### Possible alternative approaches to selenium webdriver
+
+#### dryscape
+https://github.com/niklasb/dryscrape
+
+https://pypi.python.org/pypi/dryscrape/1.0
+
+https://dryscrape.readthedocs.io/en/latest/
+
+
+#### Google spell checker api
+free use is limited, then pay
+
+https://code.google.com/archive/p/google-api-spelling-java/
+
+#### didyoumean
+Python project to download from Google.
+I think this may have been designed assuming response is html only, not sure.
+
+https://github.com/bkvirendra/didyoumean
+
+## Beautiful Soup
+https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+
+https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class
+
+http://stackoverflow.com/questions/11331071/get-class-name-and-contents-using-beautiful-soup
+
 # Results
 
-## To use from command line
+## To use project from command line
 In terminal shell, go to a directory outside of project directory.
 
 ### Activate virtual environment
@@ -61,6 +109,25 @@ Attempting to run test_web_downloader_arg_reader and test_web_searcher_arg_reade
 e.g. python -m unittest discover says "unrecognized arguments: discover" and wants the argparse arguments.  
 TODO: Consider alternative solutions.  
 http://stackoverflow.com/questions/35270177/passing-arguments-for-argparse-with-unittest-discover
+
+---
+
+## Download web page containing HTML and Javascript
+Many web requests return a combination of HTML and Javascript.
+For example, a google search.
+
+        https://www.google.com/#q=astma
+
+In these cases, we can use a webbrowser to run the javascript and get more html.
+alternatively use Google spell checker api
+https://code.google.com/archive/p/google-api-spelling-java/
+
+https://github.com/bkvirendra/didyoumean
+
+http://stackoverflow.com/questions/11331071/get-class-name-and-contents-using-beautiful-soup
+https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class
+
+use class_ not Python keyword class
 
 ---
 

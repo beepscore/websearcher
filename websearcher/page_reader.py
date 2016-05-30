@@ -28,20 +28,12 @@ class PageReader:
         """
         Parse html for class_name
         """
-        # http://stackoverflow.com/questions/17154427/how-to-getelementsbyclassname-by-using-python-xml-dom-minidom
-        # https://www.crummy.com/software/BeautifulSoup/bs4/doc/
         soup = BeautifulSoup(html_doc, 'html.parser')
 
-        # for Google, need to evaluate json then parse html for class
-        # use class_ not Python keyword class
-        # alternatively use Google spell checker api
-        # https://code.google.com/archive/p/google-api-spelling-java/
-
-        # https://github.com/bkvirendra/didyoumean
-
-        # http://stackoverflow.com/questions/11331071/get-class-name-and-contents-using-beautiful-soup
-        # https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class
         result = soup.prettify()
+
+        # http://stackoverflow.com/questions/17154427/how-to-getelementsbyclassname-by-using-python-xml-dom-minidom
+        # Use class_ not Python keyword class
         # result = soup.find_all("a", class_=class_name)
         # result = soup.find_all(class_=class_name)
         # result = soup.find('a', attrs={'class' : 'spell'})
@@ -49,7 +41,6 @@ class PageReader:
         # for duckduckgo
         # need to look in javascript "data", "Heading" to find astma changed to Asthma
         #result = soup.find_all("a", class_=class_name)
-
 
         print(result)
         return result
