@@ -31,17 +31,33 @@ class PageReader:
         # http://stackoverflow.com/questions/17154427/how-to-getelementsbyclassname-by-using-python-xml-dom-minidom
         # https://www.crummy.com/software/BeautifulSoup/bs4/doc/
         soup = BeautifulSoup(html_doc, 'html.parser')
+
+        # for Google, need to evaluate json then parse html for class
         # use class_ not Python keyword class
+        # alternatively use Google spell checker api
+        # https://code.google.com/archive/p/google-api-spelling-java/
+
+        # https://github.com/bkvirendra/didyoumean
+
         # http://stackoverflow.com/questions/11331071/get-class-name-and-contents-using-beautiful-soup
         # https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class
-        result = soup.findAll("a", class_=class_name)
+        result = soup.prettify()
+        # result = soup.find_all("a", class_=class_name)
+        # result = soup.find_all(class_=class_name)
+        # result = soup.find('a', attrs={'class' : 'spell'})
+
+        # for duckduckgo
+        # need to look in javascript "data", "Heading" to find astma changed to Asthma
+        #result = soup.find_all("a", class_=class_name)
+
+
+        print(result)
         return result
 
     def spell_from_url(self, url):
         """
         Request web page at url, return links whose class matches "spell"
         """
-        #html = response("https://www.google.com/#q=astma")
         response = self.response(url)
         html_doc = response.text
         return self.class_name_from_html(html_doc, "spell")
