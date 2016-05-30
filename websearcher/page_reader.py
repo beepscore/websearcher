@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import requests
+from selenium import webdriver
 from bs4 import BeautifulSoup
 
 class PageReader:
