@@ -2,6 +2,10 @@
 
 import requests
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 from bs4 import BeautifulSoup
 
 class PageReader:
@@ -56,9 +60,24 @@ class PageReader:
 
         browser = webdriver.Firefox()
         browser.get(url)
+
+            # http://stackoverflow.com/questions/31064528/webdriver-how-to-find-elements-when-class-name-contains-space
         try:
-            elem = browser.find_element_by_class_name("spell")
-            print('Found <%s> element with that class name' % (elem.tag_name))
-        except:
-            print("Didn't find element")
+            taw_elem = WebDriverWait(browser, 20).until(EC.presence_of_element_located((By.ID, "taw")))
+            # print('taw_elem ' % (taw_elem))
+            spell_elems = browser.find_elements_by_class_name("spell")
+            print("len(spell_elems) == {0}".format(len(spell_elems)))
+
+            try:
+                #spell_elem = browser.find_element_by_class_name("spell")
+                print("Found element with class name spell, tag_name {0}".format(spell_elem.tag_name))
+                print("spell_elem.tag_name == {0}".format(spell_elem.tag_name))
+            except:
+                #print("Didn't find element")
+                pass
+
+        finally:
+            browser.quit()
+            spell_elem = spell_elems[1]
+            return spell_elem
 
