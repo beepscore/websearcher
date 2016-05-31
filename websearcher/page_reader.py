@@ -55,6 +55,7 @@ class PageReader:
 
         spell_elems = sp_cnt_card_section.find_elements_by_class_name("spell")
         spell_elem = None
+        # probably there is a more succint way to do this!
         for elem in spell_elems:
             if elem.tag_name == "a":
                 spell_elem = elem
@@ -64,6 +65,7 @@ class PageReader:
         browser.quit()
 
         soup = BeautifulSoup(spell_link_text, 'html.parser')
+        # e.g. asthma
         return soup.i.contents[0]
 
 """
