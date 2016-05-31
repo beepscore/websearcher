@@ -29,27 +29,6 @@ class PageReader:
 
         return response
 
-    def class_name_from_html(self, html_doc, class_name):
-        """
-        Parse html for class_name
-        """
-        soup = BeautifulSoup(html_doc, 'html.parser')
-
-        result = soup.prettify()
-
-        # http://stackoverflow.com/questions/17154427/how-to-getelementsbyclassname-by-using-python-xml-dom-minidom
-        # Use class_ not Python keyword class
-        # result = soup.find_all("a", class_=class_name)
-        # result = soup.find_all(class_=class_name)
-        # result = soup.find('a', attrs={'class' : 'spell'})
-
-        # for duckduckgo
-        # need to look in javascript "data", "Heading" to find astma changed to Asthma
-        #result = soup.find_all("a", class_=class_name)
-
-        print(result)
-        return result
-
     def spell_from_url(self, url):
         """
         Request web page at url, return links whose class matches "spell"
