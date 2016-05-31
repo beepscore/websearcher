@@ -33,13 +33,13 @@ class TestPageReader(unittest.TestCase):
     def test_response_text_astma(self):
         reader = page_reader.PageReader()
 
-        # google
-        actual = reader.spell_from_url("https://www.google.com/#q=astma")
-
         # duckduckgo
         # actual = reader.spell_from_url("https://duckduckgo.com/?q=astma")
 
-        expected = "foo"
+        # google
+        actual = reader.spell_from_url("https://www.google.com/#q=astma")
+
+        expected = "asthma"
         self.assertEqual(expected, actual, '')
 
 if __name__ == "__main__":
