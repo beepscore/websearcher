@@ -102,8 +102,17 @@ class SpellingSuggester:
         input_file = open(in_file_full_path, 'r')
         results = []
         for line in input_file.readlines():
+            print("line " + line)
             search_string = line.split(",")[0]
-            print("search_string: " + search_string)
-            results.append(search_string + "," + self.suggested_spelling(search_string))
+
+            count = ""
+            if line != None and len(line.split(",")) > 1:
+                count = line.split(",")[1]
+
+            print("searching " + search_string)
+            search_result = self.suggested_spelling(search_string)
+            search_result_line = search_string + "," + count + "," + search_result
+            print("search_result_line " + search_result_line)
+            results.append(search_result_line)
         input_file.close()
         return results
