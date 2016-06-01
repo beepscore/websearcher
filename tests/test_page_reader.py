@@ -30,6 +30,7 @@ class TestPageReader(unittest.TestCase):
         expected = "<!doctype html><html itemscope"
         self.assertEqual(expected, response.text[:30], '')
 
+    # Apparently Python unittest runs tests in alphabetical order
     def test_suggested_spelling_astma(self):
         reader = page_reader.PageReader()
         self.assertEqual("asthma", reader.suggested_spelling("astma"), '')
@@ -37,6 +38,12 @@ class TestPageReader(unittest.TestCase):
     def test_suggested_spelling_asthma(self):
         reader = page_reader.PageReader()
         self.assertEqual("", reader.suggested_spelling("asthma"), '')
+
+    def test_suggested_spellings(self):
+        reader = page_reader.PageReader()
+        actual = reader.suggested_spellings(["astma", "asthma", "bercitis"])
+        expected = ["asthma", "", "bursitis"]
+        self.assertEqual(expected, actual, '')
 
 if __name__ == "__main__":
     unittest.main()

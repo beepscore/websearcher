@@ -83,3 +83,9 @@ class PageReader:
 
         finally:
             browser.quit()
+
+    def suggested_spellings(self, search_strings):
+        results = []
+        for search_string in search_strings:
+            results.append(self.suggested_spelling(search_string))
+        return results
