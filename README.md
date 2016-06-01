@@ -13,7 +13,6 @@ For example, a google search.
 
         https://www.google.com/#q=astma
 
-### TODO:
 Use selenium webdriver to load the page.
 Wait until it runs the javascript and gets more html.
 Then parse and search the page e.g. with Beautiful Soup.
@@ -89,14 +88,14 @@ Otherwise subsequent searches might accidentally search a results file.
 #### to use default argument values
     python ./websearcher/search_web.py
 
-### suggested spellings
+### get suggested spellings
 For development use oovwords_fake.csv
 Don't commit actual input file.
 
-    python ./websearcher/suggested_spellings.py -in_dir "./websearcher_data/inputs" -in_file "oovwords_fake.csv" -out_dir "./websearcher_data/results" -out_file "suggested_spelling_results.csv"
+    python ./websearcher/get_suggested_spellings.py -in_dir "./websearcher_data/inputs" -in_file "oovwords_fake.csv" -out_dir "./websearcher_data/results" -out_file "suggested_spelling_results.csv"
 
 #### to use default argument values
-    python ./websearcher/suggested_spellings.py
+    python ./websearcher/get_suggested_spellings.py
 
 ## Unit tests
 To run tests, open terminal shell.  
@@ -128,10 +127,6 @@ For example, a google search.
         https://www.google.com/#q=astma
 
 In these cases, we can use a webbrowser to run the javascript and get more html.
-alternatively use Google spell checker api
-https://code.google.com/archive/p/google-api-spelling-java/
-
-https://github.com/bkvirendra/didyoumean
 
 http://stackoverflow.com/questions/11331071/get-class-name-and-contents-using-beautiful-soup
 https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class
