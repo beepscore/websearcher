@@ -30,17 +30,9 @@ class TestPageReader(unittest.TestCase):
         expected = "<!doctype html><html itemscope"
         self.assertEqual(expected, response.text[:30], '')
 
-    def test_response_text_astma(self):
+    def test_suggested_spelling_astma(self):
         reader = page_reader.PageReader()
-
-        # duckduckgo
-        # actual = reader.spell_from_url("https://duckduckgo.com/?q=astma")
-
-        # google
-        actual = reader.spell_from_url("https://www.google.com/#q=astma")
-
-        expected = "asthma"
-        self.assertEqual(expected, actual, '')
+        self.assertEqual("asthma", reader.suggested_spelling("astma"), '')
 
 if __name__ == "__main__":
     unittest.main()

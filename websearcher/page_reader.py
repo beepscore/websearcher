@@ -28,11 +28,21 @@ class PageReader:
 
         return response
 
-    def spell_from_url(self, url):
+    def suggested_spelling(self, search_string):
         """
-        Request web page at url, return links whose class matches "spell"
+        Use browser to search for a term and return suggested spelling
         """
         browser = webdriver.Firefox()
+
+        # duckduckgo
+        # base_url = "https://www.duckduckgo.com"
+        # query_prefix = "/?q="
+
+        # google
+        base_url = "https://www.google.com"
+        query_prefix = "/#q="
+
+        url = base_url + query_prefix + search_string
         browser.get(url)
 
         # http://stackoverflow.com/questions/37422832/waiting-for-a-page-to-load-in-selenium-firefox-w-python?lq=1
