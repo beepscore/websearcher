@@ -86,8 +86,17 @@ Otherwise subsequent searches might accidentally search a results file.
 
     python ./websearcher/search_web.py -expression "ython" -search_directory "./websearcher_data/downloads" -out_dir "./websearcher_data/results" -out_file "websearcher_results.txt"
 
-#### default argument values
+#### to use default argument values
     python ./websearcher/search_web.py
+
+### suggested spellings
+For development use oovwords_fake.csv
+Don't commit actual input file.
+
+    python ./websearcher/suggested_spellings.py -in_dir "./websearcher_data/inputs" -in_file "oovwords_fake.csv" -out_dir "./websearcher_data/results" -out_file "suggested_spelling_results.csv"
+
+#### to use default argument values
+    python ./websearcher/suggested_spellings.py
 
 ## Unit tests
 To run tests, open terminal shell.  
@@ -128,6 +137,14 @@ http://stackoverflow.com/questions/11331071/get-class-name-and-contents-using-be
 https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class
 
 use class_ not Python keyword class
+
+## oovlist.csv
+File from Windows had line endings that show as ^M in vim.
+Changed to Unix line endings.
+http://stackoverflow.com/questions/811193/how-to-convert-the-m-linebreak-to-normal-linebreak-in-a-file-opened-in-vim
+at vim command line type as below, including ^V and ^M
+
+    :%s/<Ctrl-V><Ctrl-M>/\r/g
 
 ---
 
@@ -191,3 +208,4 @@ Installed to project venv
 With virtualenv active
 
     pip install beautifulsoup4
+
