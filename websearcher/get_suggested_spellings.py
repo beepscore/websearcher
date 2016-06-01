@@ -12,9 +12,9 @@ if __name__ == '__main__':
     Search words in input file. Use command line arguments.
     """
 
-    python ./websearcher/suggested_spellings.py -search_terms "./websearcher_data/inputs/oovwords_fake.txt" -out_dir "./websearcher_data/results" -out_file "suggested_spelling_results.csv"
-
-    reader = page_reader.PageReader("@./websearcher_data/inputs/page_reader_args.txt")
-    actual = reader.suggested_spellings(["astma", "asthma", "bercitis"])
+    reader = page_reader.PageReader()
+    # TODO
+    #reader = page_reader.PageReader("@./websearcher_data/inputs/suggested_spelling_args.txt")
+    actual = reader.suggested_spellings_from_file()
     expected = ["asthma", "", "bursitis"]
     self.assertEqual(expected, actual, '')
