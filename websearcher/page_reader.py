@@ -85,6 +85,10 @@ class PageReader:
             browser.quit()
 
     def suggested_spellings(self, search_strings):
+        """
+        Use browser to search for strings and return suggested spellings
+        return empty string if browser doesn't suggest a spelling
+        """
         results = []
         for search_string in search_strings:
             results.append(self.suggested_spelling(search_string))
