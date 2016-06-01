@@ -12,11 +12,12 @@ python --version
 # test_arg_reader thought discover was an argument for it.
 # if using -m then don't append extension .py
 # http://stackoverflow.com/questions/11536764/attempted-relative-import-in-non-package-even-with-init-py
-python3 -m tests.test_web_downloader_arg_reader
-python3 -m tests.test_web_searcher_arg_reader
-python3 -m tests.test_suggested_spellings_arg_reader
 python3 -m tests.test_page_reader
 python3 -m tests.test_file_writer
+python3 -m tests.test_web_downloader_arg_reader
 python3 -m tests.test_web_downloader
+python3 -m tests.test_web_searcher_arg_reader
 python3 -m tests.test_web_searcher
+python3 -m tests.test_suggested_spellings_arg_reader
+python3 -m tests.test_spelling_suggester
 
