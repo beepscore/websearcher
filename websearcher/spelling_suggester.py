@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import requests
+from websearcher import spelling_suggester_arg_reader
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 
@@ -8,11 +8,22 @@ from bs4 import BeautifulSoup
 
 class SpellingSuggester:
     """
-    Requests a url and returns the response or response properties.
+    Use browser to search for strings and return suggested spellings
     """
 
-    def __init__(self):
-        pass
+    def __init__(self, argfile):
+        """
+        Initialize the class.
+
+        :param argfile: file with arguments. Don't version control argfile. Put it outside project directory.
+        :return: None
+        """
+        self.arg_reader = spelling_suggester_arg_reader.SpellingSuggesterArgReader()
+        self.args = self.arg_reader.args([argfile])
+        self.in_dir = self.args.in_dir
+        self.in_file = self.args.in_file
+        self.out_dir = self.args.out_dir
+        self.out_file = self.args.out_file
 
     def suggested_spelling(self, search_string):
         """

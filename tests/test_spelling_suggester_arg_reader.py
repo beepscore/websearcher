@@ -6,16 +6,16 @@ import unittest
 # relative import didn't work
 # from ..websearcher import arg_reader
 # put tests above websearcher directory
-from websearcher import suggested_spellings_arg_reader
+from websearcher import spelling_suggester_arg_reader
 
 
-class TestSuggestedSpellingsArgReader(unittest.TestCase):
+class TestSpellingSuggesterArgReader(unittest.TestCase):
 
     def setUp(self):
         pass
 
     def test_args_default(self):
-        reader = suggested_spellings_arg_reader.SuggestedSpellingsArgReader()
+        reader = spelling_suggester_arg_reader.SpellingSuggesterArgReader()
         args = reader.args(None)
         self.assertEqual("./websearcher_data/inputs", args.in_dir, '')
         self.assertEqual("oovwords.csv", args.in_file, '')
@@ -23,7 +23,7 @@ class TestSuggestedSpellingsArgReader(unittest.TestCase):
         self.assertEqual("suggested_spellings_results.csv", args.out_file, '')
 
     def test_args_from_argument(self):
-        reader = suggested_spellings_arg_reader.SuggestedSpellingsArgReader()
+        reader = spelling_suggester_arg_reader.SpellingSuggesterArgReader()
 
         in_dir = "../some_in_directory"
         in_file = "some_input.csv"
@@ -39,9 +39,9 @@ class TestSuggestedSpellingsArgReader(unittest.TestCase):
         self.assertEqual(out_file, args.out_file, '')
 
     def test_args_from_argument_file(self):
-        reader = suggested_spellings_arg_reader.SuggestedSpellingsArgReader()
+        reader = spelling_suggester_arg_reader.SpellingSuggesterArgReader()
         # use fromfile_prefix_chars @ to read args from file
-        args = reader.args(["@./websearcher_data/inputs/suggested_spellings_args.txt"])
+        args = reader.args(["@./websearcher_data/inputs/spelling_suggester_args.txt"])
 
         self.assertEqual("./websearcher_data/inputs", args.in_dir)
         self.assertEqual("oovwords.csv", args.in_file)

@@ -14,15 +14,15 @@ class TestSpellingSuggester(unittest.TestCase):
 
     # Apparently Python unittest runs tests in alphabetical order
     def test_suggested_spelling_astma(self):
-        suggester = spelling_suggester.SpellingSuggester()
+        suggester = spelling_suggester.SpellingSuggester("@./websearcher_data/inputs/spelling_suggester_args.txt")
         self.assertEqual("asthma", suggester.suggested_spelling("astma"), '')
 
     def test_suggested_spelling_asthma(self):
-        suggester = spelling_suggester.SpellingSuggester()
+        suggester = spelling_suggester.SpellingSuggester("@./websearcher_data/inputs/spelling_suggester_args.txt")
         self.assertEqual("", suggester.suggested_spelling("asthma"), '')
 
     def test_suggested_spellings(self):
-        suggester = spelling_suggester.SpellingSuggester()
+        suggester = spelling_suggester.SpellingSuggester("@./websearcher_data/inputs/spelling_suggester_args.txt")
         actual = suggester.suggested_spellings(["astma", "asthma", "bercitis"])
         expected = ["asthma", "", "bursitis"]
         self.assertEqual(expected, actual, '')

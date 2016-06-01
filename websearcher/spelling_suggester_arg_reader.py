@@ -9,7 +9,7 @@ import argparse
 from argparse import RawTextHelpFormatter
 
 
-class SuggestedSpellingsArgReader:
+class SpellingSuggesterArgReader:
     """
     Read arguments from command line or from a file.
     """
