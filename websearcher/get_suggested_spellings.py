@@ -15,5 +15,4 @@ if __name__ == '__main__':
     suggester = spelling_suggester.SpellingSuggester("@./websearcher_data/inputs/spelling_suggester_args.txt")
     # TODO
     actual = suggester.suggested_spellings_from_file()
-    expected = ["asthma", "", "bursitis"]
-    self.assertEqual(expected, actual, '')
+    print("actual " + '\n'.join(actual))

@@ -100,11 +100,10 @@ class SpellingSuggester:
         """
         in_file_full_path = os.path.join(self.in_dir, self.in_file)
         input_file = open(in_file_full_path, 'r')
-        input_string = input_file.read()
-        input_file.close()
         results = []
-        for line in input_file_string:
+        for line in input_file.readlines():
             search_string = line.split(",")[0]
             print("search_string: " + search_string)
             # results.append(self.suggested_spelling(search_string))
+        input_file.close()
         return results
