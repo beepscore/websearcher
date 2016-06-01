@@ -1,7 +1,7 @@
 -in_dir
 ./websearcher_data/inputs
 -in_file
-oovwords.csv
+oovwords_fake.csv
 -out_dir
 ./websearcher_data/results
 -out_file
