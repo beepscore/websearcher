@@ -31,6 +31,7 @@ class PageReader:
     def suggested_spelling(self, search_string):
         """
         Use browser to search for a term and return suggested spelling
+        return empty string if browser doesn't suggest a spelling
         """
         browser = webdriver.Firefox()
 
@@ -45,55 +46,41 @@ class PageReader:
         url = base_url + query_prefix + search_string
         browser.get(url)
 
-        # http://stackoverflow.com/questions/37422832/waiting-for-a-page-to-load-in-selenium-firefox-w-python?lq=1
-        # http://stackoverflow.com/questions/5868439/wait-for-page-load-in-selenium
-        WebDriverWait(browser, 10).until(lambda d: d.find_element_by_class_name("spell").is_displayed())
-
-        # example google search html
-        # <p class="sp_cnt card-section">
-        # <span class="spell">Showing results for</span>
-        # <a class="spell" href="/search?/search?biw=1280&bih=423&q=tuberculosis&spell=1&sa=X&ved=0ahUKEwjMyeG30oPNAhVMz2MKHRw5D10QvwUIGSgA">
-        # <b>
-        # <i>tuberculosis</i>
-        # </b>
-        # </a>
-
-        # use find_element_by_css_selector to match compound class (2 classes)
-        # http://stackoverflow.com/questions/17808521/how-to-avoid-compound-class-name-error-in-page-object
-        sp_cnt_card_section = browser.find_element_by_css_selector(".sp_cnt.card-section")
-
-        spell_elems = sp_cnt_card_section.find_elements_by_class_name("spell")
-        spell_elem = None
-        # probably there is a more succint way to do this!
-        for elem in spell_elems:
-            if elem.tag_name == "a":
-                spell_elem = elem
-
-        # e.g. <b><i>asthma</i></b>
-        spell_link_text = spell_elem.get_attribute('innerHTML')
-        browser.quit()
-
-        soup = BeautifulSoup(spell_link_text, 'html.parser')
-        # e.g. asthma
-        return soup.i.contents[0]
-
-"""
         try:
-            # taw_elem = WebDriverWait(browser, 20).until(EC.presence_of_element_located((By.ID, "taw")))
-            # spell_elems = browser.find_elements_by_class_name("spell")
-            # print("len(spell_elems) == {0}".format(len(spell_elems)))
+            # http://stackoverflow.com/questions/37422832/waiting-for-a-page-to-load-in-selenium-firefox-w-python?lq=1
+            # http://stackoverflow.com/questions/5868439/wait-for-page-load-in-selenium
+            WebDriverWait(browser, 6).until(lambda d: d.find_element_by_class_name("spell").is_displayed())
 
-            try:
-                #spell_elem = browser.find_element_by_class_name("spell")
-                print("Found element with class name spell, tag_name {0}".format(spell_elem.tag_name))
-                print("spell_elem.tag_name == {0}".format(spell_elem.tag_name))
-            except:
-                #print("Didn't find element")
-                pass
+            # example google search html
+            # <p class="sp_cnt card-section">
+            # <span class="spell">Showing results for</span>
+            # <a class="spell" href="/search?/search?biw=1280&bih=423&q=tuberculosis&spell=1&sa=X&ved=0ahUKEwjMyeG30oPNAhVMz2MKHRw5D10QvwUIGSgA">
+            # <b>
+            # <i>tuberculosis</i>
+            # </b>
+            # </a>
+
+            # use find_element_by_css_selector to match compound class (2 classes)
+            # http://stackoverflow.com/questions/17808521/how-to-avoid-compound-class-name-error-in-page-object
+            sp_cnt_card_section = browser.find_element_by_css_selector(".sp_cnt.card-section")
+
+            spell_elems = sp_cnt_card_section.find_elements_by_class_name("spell")
+            spell_elem = None
+            # probably there is a more succint way to do this!
+            for elem in spell_elems:
+                if elem.tag_name == "a":
+                    spell_elem = elem
+
+            # e.g. <b><i>asthma</i></b>
+            spell_link_text = spell_elem.get_attribute('innerHTML')
+
+            soup = BeautifulSoup(spell_link_text, 'html.parser')
+            # e.g. asthma
+            return soup.i.contents[0]
+
+        except:
+            #print("Didn't find element")
+            return ""
 
         finally:
             browser.quit()
-            spell_elem = spell_elems[1]
-            return spell_elem
-"""
-

@@ -34,5 +34,9 @@ class TestPageReader(unittest.TestCase):
         reader = page_reader.PageReader()
         self.assertEqual("asthma", reader.suggested_spelling("astma"), '')
 
+    def test_suggested_spelling_asthma(self):
+        reader = page_reader.PageReader()
+        self.assertEqual("", reader.suggested_spelling("asthma"), '')
+
 if __name__ == "__main__":
     unittest.main()
