@@ -104,6 +104,6 @@ class SpellingSuggester:
         for line in input_file.readlines():
             search_string = line.split(",")[0]
             print("search_string: " + search_string)
-            # results.append(self.suggested_spelling(search_string))
+            results.append(search_string + "," + self.suggested_spelling(search_string))
         input_file.close()
         return results
