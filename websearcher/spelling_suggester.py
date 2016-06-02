@@ -99,20 +99,26 @@ class SpellingSuggester:
         return empty string if browser doesn't suggest a spelling
         """
         in_file_full_path = os.path.join(self.in_dir, self.in_file)
-        input_file = open(in_file_full_path, 'r')
-        results = []
-        for line in input_file.readlines():
-            print("line " + line)
-            search_string = line.split(",")[0]
 
-            count = ""
-            if line != None and len(line.split(",")) > 1:
-                count = line.split(",")[1]
+        # Use "with" to attempt to avoid ResourceWarning about unclosed file.
+        # "with" automatically closes file at end of block, even if exception was raised
+        # http://stackoverflow.com/questions/6159900/correct-way-to-write-line-to-file-in-python#6159912
+        # https://www.python.org/dev/peps/pep-0343/
+        # Unfortunately warning is still present. May be coming from somewhere else.
+        with open(in_file_full_path, 'r') as input_file:
+            results = []
+            for line in input_file.readlines():
+                print("line " + line)
+                search_string = line.split(",")[0]
 
-            print("searching " + search_string)
-            search_result = self.suggested_spelling(search_string)
-            search_result_line = search_string + "," + count + "," + search_result
-            print("search_result_line " + search_result_line)
-            results.append(search_result_line)
-        input_file.close()
+                count = ""
+                if line != None and len(line.split(",")) > 1:
+                    count = line.split(",")[1]
+
+                print("searching " + search_string)
+                search_result = self.suggested_spelling(search_string)
+                search_result_line = search_string + "," + count + "," + search_result
+                print("search_result_line " + search_result_line)
+                results.append(search_result_line)
+
         return results
