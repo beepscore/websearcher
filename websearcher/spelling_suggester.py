@@ -49,7 +49,8 @@ class SpellingSuggester:
             # http://stackoverflow.com/questions/5868439/wait-for-page-load-in-selenium
             WebDriverWait(browser, 6).until(lambda d: d.find_element_by_class_name("spell").is_displayed())
 
-            # example google search html
+            # example search tuburculosis
+            # google returns Showing results for
             # <p class="sp_cnt card-section">
             # <span class="spell">Showing results for</span>
             # <a class="spell" href="/search?/search?biw=1280&bih=423&q=tuberculosis&spell=1&sa=X&ved=0ahUKEwjMyeG30oPNAhVMz2MKHRw5D10QvwUIGSgA">
