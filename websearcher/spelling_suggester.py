@@ -47,7 +47,8 @@ class SpellingSuggester:
         try:
             # http://stackoverflow.com/questions/37422832/waiting-for-a-page-to-load-in-selenium-firefox-w-python?lq=1
             # http://stackoverflow.com/questions/5868439/wait-for-page-load-in-selenium
-            WebDriverWait(browser, 6).until(lambda d: d.find_element_by_class_name("spell").is_displayed())
+            WebDriverWait(browser, 10).until(lambda d: d.find_element_by_id("taw").is_displayed())
+            taw = browser.find_element_by_id("taw")
 
             # example search tuburculosis
             # google returns Showing results for
@@ -61,7 +62,7 @@ class SpellingSuggester:
 
             # use find_element_by_css_selector to match compound class (2 classes)
             # http://stackoverflow.com/questions/17808521/how-to-avoid-compound-class-name-error-in-page-object
-            sp_cnt_card_section = browser.find_element_by_css_selector(".sp_cnt.card-section")
+            sp_cnt_card_section = taw.find_element_by_css_selector(".sp_cnt.card-section")
 
             spell_elems = sp_cnt_card_section.find_elements_by_class_name("spell")
             spell_elem = None
