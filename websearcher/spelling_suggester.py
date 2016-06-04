@@ -47,7 +47,7 @@ class SpellingSuggester:
         try:
             # http://stackoverflow.com/questions/37422832/waiting-for-a-page-to-load-in-selenium-firefox-w-python?lq=1
             # http://stackoverflow.com/questions/5868439/wait-for-page-load-in-selenium
-            WebDriverWait(browser, 10).until(lambda d: d.find_element_by_id("taw").is_displayed())
+            WebDriverWait(browser, 6).until(lambda d: d.find_element_by_id("taw").is_displayed())
             taw = browser.find_element_by_id("taw")
 
             # example search tuburculosis
