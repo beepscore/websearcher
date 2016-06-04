@@ -89,10 +89,10 @@ Otherwise subsequent searches might accidentally search a results file.
     python ./websearcher/search_web.py
 
 ### get suggested spellings
-For development use oovwords_fake.csv
 Don't commit actual input file.
+In .gitignore ignored oovwords.csv
 
-    python ./websearcher/get_suggested_spellings.py -in_dir "./websearcher_data/inputs" -in_file "oovwords_fake.csv" -out_dir "./websearcher_data/results" -out_file "suggested_spelling_results.csv"
+    python ./websearcher/get_suggested_spellings.py -in_dir "./websearcher_data/inputs" -in_file "oovwords.csv" -out_dir "./websearcher_data/results" -out_file "suggested_spelling_results.csv"
 
 #### to use default argument values
     python ./websearcher/get_suggested_spellings.py
