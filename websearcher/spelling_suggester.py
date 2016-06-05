@@ -35,28 +35,9 @@ class SpellingSuggester:
 
         taw_soup = BeautifulSoup(taw_html, 'html.parser')
 
-        # https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class
-        sp_cnt_card_section_list = taw_soup.select("p.sp_cnt.card-section")
-
-        if len(sp_cnt_card_section_list) > 0:
-            sp_cnt_card_section = sp_cnt_card_section_list[0]
-
-            # print(sp_cnt_card_section.prettify())
-            # example search tuburculosis
-            # google returns Showing results for
-            # <p class="sp_cnt card-section">
-            # <span class="spell">Showing results for</span>
-            # <a class="spell" href="/search?/search?biw=1280&bih=423&q=tuberculosis&spell=1&sa=X&ved=0ahUKEwjMyeG30oPNAhVMz2MKHRw5D10QvwUIGSgA">
-            # <b>
-            # <i>tuberculosis</i>
-            # </b>
-            # </a>
-
-            # e.g. <b><i>asthma</i></b>
-            spell_elem = sp_cnt_card_section.select("a.spell")[0]
-
-            # e.g. asthma
-            return spell_elem.i.contents[0]
+        spelling_showing_results_for = self.spelling_from_taw_showing_results_for(taw_soup)
+        if spelling_showing_results_for != None:
+            return spelling_showing_results_for
 
         else:
             return ""
@@ -94,6 +75,38 @@ class SpellingSuggester:
 
         finally:
             browser.quit()
+
+
+    def spelling_from_taw_showing_results_for(self, taw_soup):
+        """
+        Parse google search look for section "Showing results for"
+        Example: search tuburculosis
+        <p class="sp_cnt card-section">
+        <span class="spell">Showing results for</span>
+        <a class="spell" href="/search?/search?biw=1280&bih=423&q=tuberculosis&spell=1&sa=X&ved=0ahUKEwjMyeG30oPNAhVMz2MKHRw5D10QvwUIGSgA">
+        <b>
+        <i>tuberculosis</i>
+        </b>
+        </a>
+
+        parameter taw_soup is beautiful soup object
+        return string if found, else return None
+        """
+
+        # https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class
+        sp_cnt_card_section_list = taw_soup.select("p.sp_cnt.card-section")
+
+        if len(sp_cnt_card_section_list) == 0:
+            return None
+        else:
+            sp_cnt_card_section = sp_cnt_card_section_list[0]
+            # print(sp_cnt_card_section.prettify())
+
+            # e.g. <b><i>tuberculosis</i></b>
+            spell_elem = sp_cnt_card_section.select("a.spell")[0]
+
+            # e.g. tuberculosis
+            return spell_elem.i.contents[0]
 
     def suggested_spellings(self, search_strings):
         """
