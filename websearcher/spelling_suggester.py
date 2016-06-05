@@ -35,7 +35,7 @@ class SpellingSuggester:
 
         taw_soup = BeautifulSoup(taw_html, 'html.parser')
 
-        spelling_showing_results_for = self.spelling_from_taw_showing_results_for(taw_soup)
+        spelling_showing_results_for = self.spelling_showing_results_for(taw_soup)
         if spelling_showing_results_for != None:
             return spelling_showing_results_for
 
@@ -77,7 +77,7 @@ class SpellingSuggester:
             browser.quit()
 
 
-    def spelling_from_taw_showing_results_for(self, taw_soup):
+    def spelling_showing_results_for(self, taw_soup):
         """
         Parse google search look for section "Showing results for"
         Example: search tuburculosis
