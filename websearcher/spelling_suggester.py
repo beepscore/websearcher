@@ -31,6 +31,42 @@ class SpellingSuggester:
         Use browser to search for a term and return suggested spelling
         return empty string if browser doesn't suggest a spelling
         """
+        taw_html = self.taw_html(search_string)
+
+        taw_soup = BeautifulSoup(taw_html, 'html.parser')
+
+        # https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class
+        sp_cnt_card_section_list = taw_soup.select("p.sp_cnt.card-section")
+
+        if len(sp_cnt_card_section_list) > 0:
+            sp_cnt_card_section = sp_cnt_card_section_list[0]
+
+            # print(sp_cnt_card_section.prettify())
+            # example search tuburculosis
+            # google returns Showing results for
+            # <p class="sp_cnt card-section">
+            # <span class="spell">Showing results for</span>
+            # <a class="spell" href="/search?/search?biw=1280&bih=423&q=tuberculosis&spell=1&sa=X&ved=0ahUKEwjMyeG30oPNAhVMz2MKHRw5D10QvwUIGSgA">
+            # <b>
+            # <i>tuberculosis</i>
+            # </b>
+            # </a>
+
+            # e.g. <b><i>asthma</i></b>
+            spell_elem = sp_cnt_card_section.select("a.spell")[0]
+
+            # e.g. asthma
+            return spell_elem.i.contents[0]
+
+        else:
+            return ""
+
+    def taw_html(self, search_string):
+        """
+        Use browser to search for a term
+        wait for javascript to run and return html for id taw
+        return empty string if browser doesn't suggest a spelling
+        """
         browser = webdriver.Firefox()
 
         # duckduckgo
@@ -49,34 +85,8 @@ class SpellingSuggester:
             # http://stackoverflow.com/questions/5868439/wait-for-page-load-in-selenium
             WebDriverWait(browser, 6).until(lambda d: d.find_element_by_id("taw").is_displayed())
             taw = browser.find_element_by_id("taw")
-
-            # example search tuburculosis
-            # google returns Showing results for
-            # <p class="sp_cnt card-section">
-            # <span class="spell">Showing results for</span>
-            # <a class="spell" href="/search?/search?biw=1280&bih=423&q=tuberculosis&spell=1&sa=X&ved=0ahUKEwjMyeG30oPNAhVMz2MKHRw5D10QvwUIGSgA">
-            # <b>
-            # <i>tuberculosis</i>
-            # </b>
-            # </a>
-
-            # use find_element_by_css_selector to match compound class (2 classes)
-            # http://stackoverflow.com/questions/17808521/how-to-avoid-compound-class-name-error-in-page-object
-            sp_cnt_card_section = taw.find_element_by_css_selector(".sp_cnt.card-section")
-
-            spell_elems = sp_cnt_card_section.find_elements_by_class_name("spell")
-            spell_elem = None
-            # probably there is a more succint way to do this!
-            for elem in spell_elems:
-                if elem.tag_name == "a":
-                    spell_elem = elem
-
-            # e.g. <b><i>asthma</i></b>
-            spell_link_text = spell_elem.get_attribute('innerHTML')
-
-            soup = BeautifulSoup(spell_link_text, 'html.parser')
-            # e.g. asthma
-            return soup.i.contents[0]
+            taw_html = taw.get_attribute('outerHTML')
+            return taw_html
 
         except:
             #print("Didn't find element")
