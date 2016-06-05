@@ -23,8 +23,8 @@ class TestSpellingSuggester(unittest.TestCase):
 
     def test_suggested_spellings(self):
         suggester = spelling_suggester.SpellingSuggester("@./websearcher_data/inputs/spelling_suggester_args.txt")
-        actual = suggester.suggested_spellings(["astma", "asthma", "bercitis"])
-        expected = ["asthma", "", "bursitis"]
+        actual = suggester.suggested_spellings(["astma", "asthma", "bercitis", "mildmuscle"])
+        expected = ["asthma", "", "bursitis", "mild muscle"]
         self.assertEqual(expected, actual, '')
 
 if __name__ == "__main__":
