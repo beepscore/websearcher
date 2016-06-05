@@ -39,8 +39,11 @@ class SpellingSuggester:
         if spelling_showing_results_for != None:
             return spelling_showing_results_for
 
-        else:
-            return ""
+        spelling_did_you_mean = self.spelling_did_you_mean(taw_soup)
+        if spelling_did_you_mean != None:
+            return spelling_did_you_mean
+
+        return ""
 
     def taw_html(self, search_string):
         """
@@ -76,7 +79,6 @@ class SpellingSuggester:
         finally:
             browser.quit()
 
-
     def spelling_showing_results_for(self, taw_soup):
         """
         Parse google search look for section "Showing results for"
@@ -106,6 +108,37 @@ class SpellingSuggester:
             spell_elem = sp_cnt_card_section.select("a.spell")[0]
 
             # e.g. tuberculosis
+            return spell_elem.i.contents[0]
+
+    def spelling_did_you_mean(self, taw_soup):
+        """
+        Parse google search look for section "Did you mean"
+        Example: search mildmuscle
+
+        <p class="ssp card-section">
+        <span class="spell _uwb">Did you mean:</span>
+        <a class="spell" href="/search?biw=1191&amp;bih=210&amp;q=mild+muscle&amp;spell=1&amp;sa=X&amp;ved=0ahUKEwjXnPHU7Y7NAhUI0GMKHXERDJQQBQgZKAA">
+        <b>
+        <i>mild muscle</i></b>
+        </a>
+
+        parameter taw_soup is beautiful soup object
+        return string if found, else return None
+        """
+
+        # https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class
+        ssp_card_section_list = taw_soup.select("p.ssp.card-section")
+
+        if len(ssp_card_section_list) == 0:
+            return None
+        else:
+            ssp_card_section = ssp_card_section_list[0]
+            # print(ssp_card_section.prettify())
+
+            # e.g. <b><i>mildmuscle</i></b>
+            spell_elem = ssp_card_section.select("a.spell")[0]
+
+            # e.g. mild muscle
             return spell_elem.i.contents[0]
 
     def suggested_spellings(self, search_strings):
