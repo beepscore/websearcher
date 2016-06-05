@@ -29,6 +29,7 @@ class SpellingSuggester:
     def suggested_spelling(self, search_string):
         """
         Use browser to search for a term and return suggested spelling
+        Handles pages that show "Showing results for" or "Did you mean:"
         return empty string if browser doesn't suggest a spelling
         """
         taw_html = self.taw_html(search_string)
@@ -112,7 +113,7 @@ class SpellingSuggester:
 
     def spelling_did_you_mean(self, taw_soup):
         """
-        Parse google search look for section "Did you mean"
+        Parse google search look for section "Did you mean:"
         Example: search mildmuscle
 
         <p class="ssp card-section">
