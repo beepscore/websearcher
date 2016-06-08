@@ -29,6 +29,27 @@ class SpellingSuggester:
     def suggested_spelling(self, search_string):
         """
         Use browser to search for a term and return suggested spelling
+        Handles pages that show "Showing results for" or "Did you mean:"
+        return empty string if browser doesn't suggest a spelling
+        """
+        taw_html = self.taw_html(search_string)
+
+        taw_soup = BeautifulSoup(taw_html, 'html.parser')
+
+        spelling_showing_results_for = self.spelling_showing_results_for(taw_soup)
+        if spelling_showing_results_for != None:
+            return spelling_showing_results_for
+
+        spelling_did_you_mean = self.spelling_did_you_mean(taw_soup)
+        if spelling_did_you_mean != None:
+            return spelling_did_you_mean
+
+        return ""
+
+    def taw_html(self, search_string):
+        """
+        Use browser to search for a term
+        wait for javascript to run and return html for id taw
         return empty string if browser doesn't suggest a spelling
         """
         browser = webdriver.Firefox()
@@ -47,34 +68,10 @@ class SpellingSuggester:
         try:
             # http://stackoverflow.com/questions/37422832/waiting-for-a-page-to-load-in-selenium-firefox-w-python?lq=1
             # http://stackoverflow.com/questions/5868439/wait-for-page-load-in-selenium
-            WebDriverWait(browser, 6).until(lambda d: d.find_element_by_class_name("spell").is_displayed())
-
-            # example google search html
-            # <p class="sp_cnt card-section">
-            # <span class="spell">Showing results for</span>
-            # <a class="spell" href="/search?/search?biw=1280&bih=423&q=tuberculosis&spell=1&sa=X&ved=0ahUKEwjMyeG30oPNAhVMz2MKHRw5D10QvwUIGSgA">
-            # <b>
-            # <i>tuberculosis</i>
-            # </b>
-            # </a>
-
-            # use find_element_by_css_selector to match compound class (2 classes)
-            # http://stackoverflow.com/questions/17808521/how-to-avoid-compound-class-name-error-in-page-object
-            sp_cnt_card_section = browser.find_element_by_css_selector(".sp_cnt.card-section")
-
-            spell_elems = sp_cnt_card_section.find_elements_by_class_name("spell")
-            spell_elem = None
-            # probably there is a more succint way to do this!
-            for elem in spell_elems:
-                if elem.tag_name == "a":
-                    spell_elem = elem
-
-            # e.g. <b><i>asthma</i></b>
-            spell_link_text = spell_elem.get_attribute('innerHTML')
-
-            soup = BeautifulSoup(spell_link_text, 'html.parser')
-            # e.g. asthma
-            return soup.i.contents[0]
+            WebDriverWait(browser, 6).until(lambda d: d.find_element_by_id("taw").is_displayed())
+            taw = browser.find_element_by_id("taw")
+            taw_html = taw.get_attribute('outerHTML')
+            return taw_html
 
         except:
             #print("Didn't find element")
@@ -82,6 +79,68 @@ class SpellingSuggester:
 
         finally:
             browser.quit()
+
+    def spelling_showing_results_for(self, taw_soup):
+        """
+        Parse google search look for section "Showing results for"
+        Example: search tuburculosis
+        <p class="sp_cnt card-section">
+        <span class="spell">Showing results for</span>
+        <a class="spell" href="/search?/search?biw=1280&bih=423&q=tuberculosis&spell=1&sa=X&ved=0ahUKEwjMyeG30oPNAhVMz2MKHRw5D10QvwUIGSgA">
+        <b>
+        <i>tuberculosis</i>
+        </b>
+        </a>
+
+        parameter taw_soup is beautiful soup object
+        return string if found, else return None
+        """
+
+        # https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class
+        sp_cnt_card_section_list = taw_soup.select("p.sp_cnt.card-section")
+
+        if len(sp_cnt_card_section_list) == 0:
+            return None
+        else:
+            sp_cnt_card_section = sp_cnt_card_section_list[0]
+            # print(sp_cnt_card_section.prettify())
+
+            # e.g. <b><i>tuberculosis</i></b>
+            spell_elem = sp_cnt_card_section.select("a.spell")[0]
+
+            # e.g. tuberculosis
+            return spell_elem.i.contents[0]
+
+    def spelling_did_you_mean(self, taw_soup):
+        """
+        Parse google search look for section "Did you mean:"
+        Example: search mildmuscle
+
+        <p class="ssp card-section">
+        <span class="spell _uwb">Did you mean:</span>
+        <a class="spell" href="/search?biw=1191&amp;bih=210&amp;q=mild+muscle&amp;spell=1&amp;sa=X&amp;ved=0ahUKEwjXnPHU7Y7NAhUI0GMKHXERDJQQBQgZKAA">
+        <b>
+        <i>mild muscle</i></b>
+        </a>
+
+        parameter taw_soup is beautiful soup object
+        return string if found, else return None
+        """
+
+        # https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class
+        ssp_card_section_list = taw_soup.select("p.ssp.card-section")
+
+        if len(ssp_card_section_list) == 0:
+            return None
+        else:
+            ssp_card_section = ssp_card_section_list[0]
+            # print(ssp_card_section.prettify())
+
+            # e.g. <b><i>mildmuscle</i></b>
+            spell_elem = ssp_card_section.select("a.spell")[0]
+
+            # e.g. mild muscle
+            return spell_elem.i.contents[0]
 
     def suggested_spellings(self, search_strings):
         """

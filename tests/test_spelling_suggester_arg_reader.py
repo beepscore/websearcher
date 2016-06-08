@@ -44,7 +44,7 @@ class TestSpellingSuggesterArgReader(unittest.TestCase):
         args = reader.args(["@./websearcher_data/inputs/spelling_suggester_args.txt"])
 
         self.assertEqual("./websearcher_data/inputs", args.in_dir)
-        self.assertEqual("oovwords_fake.csv", args.in_file)
+        self.assertEqual("oovwords.csv", args.in_file)
         self.assertEqual("./websearcher_data/results", args.out_dir)
         self.assertEqual("suggested_spellings_results.csv", args.out_file)
 

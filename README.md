@@ -89,10 +89,10 @@ Otherwise subsequent searches might accidentally search a results file.
     python ./websearcher/search_web.py
 
 ### get suggested spellings
-For development use oovwords_fake.csv
 Don't commit actual input file.
+In .gitignore ignored oovwords.csv
 
-    python ./websearcher/get_suggested_spellings.py -in_dir "./websearcher_data/inputs" -in_file "oovwords_fake.csv" -out_dir "./websearcher_data/results" -out_file "suggested_spelling_results.csv"
+    python ./websearcher/get_suggested_spellings.py -in_dir "./websearcher_data/inputs" -in_file "oovwords.csv" -out_dir "./websearcher_data/results" -out_file "suggested_spelling_results.csv"
 
 #### to use default argument values
     python ./websearcher/get_suggested_spellings.py
@@ -174,7 +174,7 @@ On my machine, to use python3 must specify python3
 
 ### Activate virtual environment
 
-    ➜  websearcher git:(master) source venv/bin/activate
+    ➜  websearcher git:(master) source ./venv/bin/activate
 
 ### Now active python is in venv and is version 3.5.1
 
@@ -184,6 +184,7 @@ Notice command prompt shows venv is active
     /Users/stevebaker/Documents/projects/pythonProjects/websearcher/venv/bin/python
     (venv) ➜  websearcher git:(master) python --version
     Python 3.5.1
+
 
 ### Deactivate virtual environment
 In shell run deactivate
@@ -199,8 +200,17 @@ With virtualenv active
 
 Installed to project venv
 
-## Appendix install beautifulsoup
+## Appendix pip install dependencies
 With virtualenv active
 
+    pip install requests
     pip install beautifulsoup4
+    pip install selenium
 
+## Appendix clone app from github to another machine
+After cloning app from github, activating venv did still showed system python.
+Fixed as follows:
+
+    delete ./venv
+    Re-run pyvenv venv
+    pip re-install packages.
