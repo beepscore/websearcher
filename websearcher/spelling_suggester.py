@@ -82,7 +82,11 @@ class SpellingSuggester:
 
     def spelling_showing_results_for(self, taw_soup):
         """
-        Parse google search look for section "Showing results for"
+        Parse google search look for section "Showing results for" or "including results for"
+
+        Example: search benaz
+        google returns "including results for" with "a" tag and no class
+
         Example: search tuburculosis
         <p class="sp_cnt card-section">
         <span class="spell">Showing results for</span>
@@ -106,7 +110,7 @@ class SpellingSuggester:
             # print(sp_cnt_card_section.prettify())
 
             # e.g. <b><i>tuberculosis</i></b>
-            spell_elem = sp_cnt_card_section.select("a.spell")[0]
+            spell_elem = sp_cnt_card_section.select("a")[0]
 
             # e.g. tuberculosis
             return spell_elem.i.contents[0]
@@ -114,7 +118,9 @@ class SpellingSuggester:
     def spelling_did_you_mean(self, taw_soup):
         """
         Parse google search look for section "Did you mean:"
+
         Example: search mildmuscle
+        google returns "did you mean" with "a" tag and class spell
 
         <p class="ssp card-section">
         <span class="spell _uwb">Did you mean:</span>
