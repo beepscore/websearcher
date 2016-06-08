@@ -622,12 +622,6 @@ Hi, Python.</span></code></pre></div>
                                 
                                 
                                 <li>
-<time datetime="2016-06-03T00:00:00+00:00"><span class="say-no-more">2016-</span>06-03</time>
- <a href="/events/python-events/371/">PyConTW 2016 in Taiwan</a></li>
-                                
-                                
-                                
-                                <li>
 <time datetime="2016-06-22T00:00:00+00:00"><span class="say-no-more">2016-</span>06-22</time>
  <a href="/events/python-events/376/">GeoPython 2016</a></li>
                                 
@@ -648,6 +642,12 @@ Hi, Python.</span></code></pre></div>
                                 <li>
 <time datetime="2016-07-16T00:00:00+00:00"><span class="say-no-more">2016-</span>07-16</time>
  <a href="/events/python-events/426/">PyGotham 2016</a></li>
+                                
+                                
+                                
+                                <li>
+<time datetime="2016-07-17T00:00:00+00:00"><span class="say-no-more">2016-</span>07-17</time>
+ <a href="/events/python-events/370/">EuroPython 2016</a></li>
                                 
                                 
                             </ul>
