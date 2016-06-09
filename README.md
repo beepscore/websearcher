@@ -124,7 +124,7 @@ http://stackoverflow.com/questions/35270177/passing-arguments-for-argparse-with-
 Many web requests return a combination of HTML and Javascript.
 For example, a google search.
 
-        https://www.google.com/#q=astma
+        https://www.google.com/#q=javascwipt
 
 In these cases, we can use a webbrowser to run the javascript and get more html.
 
