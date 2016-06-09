@@ -87,12 +87,12 @@ class SpellingSuggester:
         Example: search benaz
         google returns "including results for" with "a" tag and no class
 
-        Example: search tuburculosis
+        Example: search javascwipt
         <p class="sp_cnt card-section">
         <span class="spell">Showing results for</span>
-        <a class="spell" href="/search?/search?biw=1280&bih=423&q=tuberculosis&spell=1&sa=X&ved=0ahUKEwjMyeG30oPNAhVMz2MKHRw5D10QvwUIGSgA">
+        <a class="spell" href="/search?/search?biw=1280&bih=423&q=javascwipt&spell=1&sa=X&ved=0ahUKEwjMyeG30oPNAhVMz2MKHRw5D10QvwUIGSgA">
         <b>
-        <i>tuberculosis</i>
+        <i>javascript</i>
         </b>
         </a>
 
@@ -109,24 +109,24 @@ class SpellingSuggester:
             sp_cnt_card_section = sp_cnt_card_section_list[0]
             # print(sp_cnt_card_section.prettify())
 
-            # e.g. <b><i>tuberculosis</i></b>
+            # e.g. <b><i>javascwipt</i></b>
             spell_elem = sp_cnt_card_section.select("a")[0]
 
-            # e.g. tuberculosis
+            # e.g. javascript
             return spell_elem.i.contents[0]
 
     def spelling_did_you_mean(self, taw_soup):
         """
         Parse google search look for section "Did you mean:"
 
-        Example: search mildmuscle
+        Example: search javascwipt
         google returns "did you mean" with "a" tag and class spell
 
         <p class="ssp card-section">
         <span class="spell _uwb">Did you mean:</span>
-        <a class="spell" href="/search?biw=1191&amp;bih=210&amp;q=mild+muscle&amp;spell=1&amp;sa=X&amp;ved=0ahUKEwjXnPHU7Y7NAhUI0GMKHXERDJQQBQgZKAA">
+        <a class="spell" href="/search?biw=1191&amp;bih=210&amp;q=javascwipt&amp;spell=1&amp;sa=X&amp;ved=0ahUKEwjXnPHU7Y7NAhUI0GMKHXERDJQQBQgZKAA">
         <b>
-        <i>mild muscle</i></b>
+        <i>javascript</i></b>
         </a>
 
         parameter taw_soup is beautiful soup object
@@ -142,10 +142,10 @@ class SpellingSuggester:
             ssp_card_section = ssp_card_section_list[0]
             # print(ssp_card_section.prettify())
 
-            # e.g. <b><i>mildmuscle</i></b>
+            # e.g. <b><i>javascwipt</i></b>
             spell_elem = ssp_card_section.select("a.spell")[0]
 
-            # e.g. mild muscle
+            # e.g. javascript
             return spell_elem.i.contents[0]
 
     def suggested_spellings(self, search_strings):
