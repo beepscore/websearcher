@@ -37,11 +37,11 @@ class SpellingSuggester:
         taw_soup = BeautifulSoup(taw_html, 'html.parser')
 
         spelling_showing_results_for = self.spelling_showing_results_for(taw_soup)
-        if spelling_showing_results_for != None:
+        if spelling_showing_results_for is not None:
             return spelling_showing_results_for
 
         spelling_did_you_mean = self.spelling_did_you_mean(taw_soup)
-        if spelling_did_you_mean != None:
+        if spelling_did_you_mean is not None:
             return spelling_did_you_mean
 
         return ""
@@ -179,7 +179,7 @@ class SpellingSuggester:
                 search_string = line.split(",")[0]
 
                 count = ""
-                if line != None and len(line.split(",")) > 1:
+                if line is not None and len(line.split(",")) > 1:
                     count = line.split(",")[1]
 
                 print("searching " + search_string)
