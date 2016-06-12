@@ -14,3 +14,9 @@ if __name__ == '__main__':
     misspelled_words_reader = csv.reader(misspelled_words)
     misspelled_words_list = list(misspelled_words_reader)
     print(misspelled_words_list)
+
+    # http://stackoverflow.com/questions/1747817/create-a-dictionary-with-list-comprehension-in-python#1747827
+    correct_words = {key: value for (key, value) in misspelled_words_list}
+
+    print('******************')
+    print(correct_words)
