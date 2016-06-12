@@ -13,10 +13,24 @@ if __name__ == '__main__':
 
     misspelled_words_reader = csv.reader(misspelled_words)
     misspelled_words_list = list(misspelled_words_reader)
-    print(misspelled_words_list)
 
-    # http://stackoverflow.com/questions/1747817/create-a-dictionary-with-list-comprehension-in-python#1747827
-    correct_words = {key: value for (key, value) in misspelled_words_list}
+    regex_dictionary = {}
 
-    print('******************')
-    print(correct_words)
+    # python list comprehension
+    for (misspelled_word, correct_word) in misspelled_words_list:
+        # print(misspelled_word, correct_word)
+
+        # {'aggravated': 'agrravated|agervated', }
+        # if key in dict
+        if correct_word in regex_dictionary:
+            # append to value regex
+            # {'aggravated': '(aggrabatd|aggravatred)'}
+            pass
+        else:
+            # add key/value pair
+            # {'aggravated': 'aggrabatd', 'aggressively': 'aggresivley' }
+            regex_dictionary[correct_word] = misspelled_word
+
+    print(regex_dictionary)
+
+
