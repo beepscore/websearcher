@@ -21,11 +21,25 @@ if __name__ == '__main__':
         # print(misspelled_word, correct_word)
 
         # {'aggravated': 'agrravated|agervated', }
-        # if key in dict
+        # key is correct_word
         if correct_word in regex_dictionary:
             # append to value regex
             # {'aggravated': '(aggrabatd|aggravatred)'}
-            regex_dictionary[correct_word] = regex_dictionary[correct_word] + "|" + misspelled_word
+
+            regex = regex_dictionary[correct_word]
+
+            first_letter_of_regex = regex[0]
+            last_letter_of_regex = regex[-1]
+
+            if first_letter_of_regex == '(':
+                # remove first letter
+                regex = regex[1:]
+
+            if last_letter_of_regex  == ')':
+                # remove last letter
+                regex = regex[:-1]
+
+            regex_dictionary[correct_word] = '(' + regex + "|" + misspelled_word + ')'
 
         else:
             # add key/value pair
