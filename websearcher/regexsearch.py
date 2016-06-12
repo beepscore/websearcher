@@ -25,7 +25,8 @@ if __name__ == '__main__':
         if correct_word in regex_dictionary:
             # append to value regex
             # {'aggravated': '(aggrabatd|aggravatred)'}
-            pass
+            regex_dictionary[correct_word] = regex_dictionary[correct_word] + "|" + misspelled_word
+
         else:
             # add key/value pair
             # {'aggravated': 'aggrabatd', 'aggressively': 'aggresivley' }
