@@ -122,3 +122,4 @@ oovwords.csv
 # ignore output file
 suggested_spellings_results.csv
 regexwordstest.csv
+regex_results.csv
