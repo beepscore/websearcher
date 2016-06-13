@@ -99,6 +99,9 @@ In .gitignore ignored oovwords.csv
 #### to use default argument values
     python ./websearcher/get_suggested_spellings.py
 
+## to concatenate regexes
+    python3 ./websearcher/concatenate_regex.py
+
 ## Unit tests
 To run tests, open terminal shell.  
 cd to project directory. Run tests via python command or bash script.
