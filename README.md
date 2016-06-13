@@ -11,7 +11,7 @@ Storing pages enables searching multiple times without re-downloading.
 Many web requests return a combination of HTML and Javascript.
 For example, a google search.
 
-        https://www.google.com/#q=astma
+        https://www.google.com/#q=pyethon
 
 Use selenium webdriver to load the page.
 Wait until it runs the javascript and gets more html.
@@ -24,6 +24,8 @@ https://github.com/beepscore/searcher
 
 ## Download web page containing HTML and Javascript
 http://stackoverflow.com/questions/8049520/web-scraping-javascript-page-with-python
+
+http://blog.databigbang.com/web-scraping-ajax-and-javascript-sites/
 
 http://stackoverflow.com/questions/11804497/python-3-web-scraping-and-javascript-oh-my?rq=1
 
@@ -124,7 +126,7 @@ http://stackoverflow.com/questions/35270177/passing-arguments-for-argparse-with-
 Many web requests return a combination of HTML and Javascript.
 For example, a google search.
 
-        https://www.google.com/#q=astma
+        https://www.google.com/#q=javascwipt
 
 In these cases, we can use a webbrowser to run the javascript and get more html.
 
