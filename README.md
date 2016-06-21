@@ -64,10 +64,14 @@ http://stackoverflow.com/questions/11331071/get-class-name-and-contents-using-be
 ## To use project from command line
 In terminal shell, go to a directory outside of project directory.
 
-### Activate virtual environment
+### Use virtualenv to activate the desired virtual environment
+#### on macOS
 Supply path to websearcher, e.g.
 
     source ./websearcher/venv/bin/activate
+
+#### on Windows
+    venv\Scripts\activate
 
 ### cd to project root directory
 
