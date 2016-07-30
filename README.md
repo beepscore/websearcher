@@ -61,14 +61,8 @@ http://stackoverflow.com/questions/11331071/get-class-name-and-contents-using-be
 
 # Results
 
-## created virtual environment
-### macos
-    pyvenv venv
-    
-### windows
-    python -m venv venv
-
 ## activate the project's virtual environment
+For more info about venv see Appendix.
 
 ### In terminal shell, cd to project root directory
 
@@ -170,8 +164,13 @@ https://github.com/kennethreitz/requests
 
 ### Install virtual environment in directory named "venv"
 
+#### macos
+    
     $ cd <project root directory>
     $ pyvenv venv
+
+#### windows
+    python -m venv venv
 
 ### Before activating virtual environment
 
@@ -234,3 +233,9 @@ Fixed as follows:
     delete ./venv
     Re-run pyvenv venv
     pip re-install packages.
+
+## Appendix Use requirements.txt
+In requirements.txt list dependencies, update version numbers. Then run
+
+    pip install -r requirements.txt --upgrade
+
