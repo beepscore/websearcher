@@ -61,7 +61,14 @@ http://stackoverflow.com/questions/11331071/get-class-name-and-contents-using-be
 
 # Results
 
-## Use virtualenv to activate the desired virtual environment
+## created virtual environment
+### macos
+    pyvenv venv
+    
+### windows
+    python -m venv venv
+
+## activate the project's virtual environment
 
 ### In terminal shell, cd to project root directory
 
