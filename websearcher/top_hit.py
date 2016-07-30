@@ -7,6 +7,7 @@ import os
 
 from bs4 import BeautifulSoup
 
+
 class TopHit:
     """
     Use browser to search for strings and return top hit
