@@ -14,6 +14,3 @@ if __name__ == '__main__':
 
     top_hit = top_hit.TopHit()
     actual = top_hit.top_hit('semitendinosus')
-    print("results")
-    print(actual)
-    print('\n'.join(actual))
