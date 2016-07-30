@@ -76,9 +76,6 @@ class TopHit:
         return string if found, else return None
         """
 
-        # https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class
-        #sp_cnt_card_section_list = taw_soup.select("p.sp_cnt.card-section")
-
         if len(st_soup) == 0:
             return None
         else:
