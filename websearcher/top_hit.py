@@ -32,13 +32,9 @@ class TopHit:
         return empty string if browser doesn't suggest a spelling
         """
         st_html = self.st_html(search_string)
-
-        st_soup = BeautifulSoup(st_html, 'html.parser')
-
-        if len(st_soup) == 0:
-            return ""
-        else:
-            return str(st_soup)
+        
+        st_parsed = self.st_parsed(st_html)
+        return st_parsed
 
     def st_html(self, search_string):
         """
@@ -69,6 +65,16 @@ class TopHit:
 
         finally:
             browser.quit()
+
+    def st_parsed(self, st_html):
+        """
+        strip tags from st_html and return a string
+        """
+        st_soup = BeautifulSoup(st_html, 'html.parser')
+        # strip tags like <em>
+        text = st_soup.get_text()
+        text_no_ellipsis = text.replace('...', '')
+        return text_no_ellipsis
 
     def top_hits_from_file(self):
         """
