@@ -44,7 +44,7 @@ class TopHit:
     def st_html(self, search_string):
         """
         Use browser to search for a term
-        wait for javascript to run and return html for id taw
+        wait for javascript to run and return html for class "st"
         return empty string if browser doesn't suggest a spelling
         """
         browser = webdriver.Firefox()
@@ -61,7 +61,7 @@ class TopHit:
             # http://stackoverflow.com/questions/5868439/wait-for-page-load-in-selenium
             WebDriverWait(browser, 6).until(lambda d: d.find_element_by_class_name("st").is_displayed())
             st = browser.find_element_by_class_name("st")
-            st_html = st.get_attribute('outerHTML')
+            st_html = st.get_attribute('innerHTML')
             return st_html
 
         except:
