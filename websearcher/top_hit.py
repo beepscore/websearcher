@@ -5,8 +5,6 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 import os
 
-from bs4 import BeautifulSoup
-
 
 class TopHit:
     """
@@ -29,20 +27,6 @@ class TopHit:
     def top_hit(self, search_string):
         """
         Use browser to search for a term and return top hit
-        return empty string if browser doesn't suggest a spelling
-        """
-        st_html = self.st_html(search_string)
-
-        st_soup = BeautifulSoup(st_html, 'html.parser')
-
-        if len(st_soup) == 0:
-            return ""
-        else:
-            return str(st_soup)
-
-    def st_html(self, search_string):
-        """
-        Use browser to search for a term
         wait for javascript to run and return html for class "st"
         return empty string if browser doesn't suggest a spelling
         """
