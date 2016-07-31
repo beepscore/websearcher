@@ -35,11 +35,10 @@ class TopHit:
 
         st_soup = BeautifulSoup(st_html, 'html.parser')
 
-        top_hit_for = self.top_hit_for(st_soup)
-        if top_hit_for is not None:
-            return top_hit_for
-
-        return ""
+        if len(st_soup) == 0:
+            return ""
+        else:
+            return str(st_soup)
 
     def st_html(self, search_string):
         """
@@ -70,21 +69,6 @@ class TopHit:
 
         finally:
             browser.quit()
-
-    def top_hit_for(self, st_soup):
-        """
-        Parse google search look for class "st"
-
-        Example: search benaz
-
-        parameter st_soup is beautiful soup object
-        return string if found, else return None
-        """
-
-        if len(st_soup) == 0:
-            return None
-        else:
-            return str(st_soup)
 
     def top_hits_from_file(self):
         """
