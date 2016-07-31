@@ -123,3 +123,5 @@ oovwords.csv
 suggested_spellings_results.csv
 regexwordstest.csv
 regex_results.csv
+top_hit_words.csv
+top_hit_words_with_description.csv

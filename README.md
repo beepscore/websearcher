@@ -61,21 +61,25 @@ http://stackoverflow.com/questions/11331071/get-class-name-and-contents-using-be
 
 # Results
 
-## To use project from command line
-In terminal shell, go to a directory outside of project directory.
+## activate the project's virtual environment
+For more info about venv see Appendix.
 
-### Activate virtual environment
+### In terminal shell, cd to project root directory
+
+    cd websearcher
+
+### on macOS
 Supply path to websearcher, e.g.
 
     source ./websearcher/venv/bin/activate
 
-### cd to project root directory
+### on Windows
+    venv\Scripts\activate
 
-    cd websearcher
 
-### download web pages
+## Download web pages
 
-    python ./websearcher/download_web.py
+    python3 ./websearcher/download_web.py
 
 ### Search files and write search results to file
 Search is similar to Unix/Linux grep command
@@ -90,16 +94,16 @@ Otherwise subsequent searches might accidentally search a results file.
 #### to use default argument values
     python ./websearcher/search_web.py
 
-### get suggested spellings
+## Get suggested spellings
 Don't commit actual input file.
 In .gitignore ignored oovwords.csv
 
-    python ./websearcher/get_suggested_spellings.py -in_dir "./websearcher_data/inputs" -in_file "oovwords.csv" -out_dir "./websearcher_data/results" -out_file "suggested_spelling_results.csv"
+    python3 ./websearcher/get_suggested_spellings.py -in_dir "./websearcher_data/inputs" -in_file "oovwords.csv" -out_dir "./websearcher_data/results" -out_file "suggested_spelling_results.csv"
 
-#### to use default argument values
-    python ./websearcher/get_suggested_spellings.py
+### to use default argument values
+    python3 ./websearcher/get_suggested_spellings.py
 
-## to concatenate regexes
+## Concatenate regexes
     python3 ./websearcher/concatenate_regex.py
 
 ## Unit tests
@@ -131,7 +135,7 @@ For example, a google search.
 
         https://www.google.com/#q=javascwipt
 
-In these cases, we can use a webbrowser to run the javascript and get more html.
+In these cases, we can use a web browser to run the javascript and get more html.
 
 http://stackoverflow.com/questions/11331071/get-class-name-and-contents-using-beautiful-soup
 https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class
@@ -160,8 +164,13 @@ https://github.com/kennethreitz/requests
 
 ### Install virtual environment in directory named "venv"
 
+#### macos
+    
     $ cd <project root directory>
     $ pyvenv venv
+
+#### windows
+    python -m venv venv
 
 ### Before activating virtual environment
 
@@ -212,6 +221,11 @@ With virtualenv active
     pip install beautifulsoup4
     pip install selenium
 
+### update to latest selenium
+    pip3 install --upgrade selenium
+
+Then manually edited requirements.txt
+
 ## Appendix clone app from github to another machine
 After cloning app from github, activating venv did still showed system python.
 Fixed as follows:
@@ -219,3 +233,9 @@ Fixed as follows:
     delete ./venv
     Re-run pyvenv venv
     pip re-install packages.
+
+## Appendix Use requirements.txt
+In requirements.txt list dependencies, update version numbers. Then run
+
+    pip install -r requirements.txt --upgrade
+
