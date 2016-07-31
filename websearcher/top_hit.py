@@ -85,7 +85,7 @@ class TopHit:
         if len(st_soup) == 0:
             return None
         else:
-            return st_soup
+            return str(st_soup)
 
     def top_hits_from_file(self):
         """
