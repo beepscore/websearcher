@@ -111,9 +111,7 @@ class TopHit:
 
                 print("searching...")
                 search_result = self.top_hit(search_string)
-                print("output: ")
-                csv_writer.writerow([search_string, count, search_result])
-                search_result_line = search_string + "," + count + "," + search_result
-                print(search_result_line)
+                print("result: " + search_result)
                 print()
+                csv_writer.writerow([search_string, count, search_result])
                 line_number += 1
