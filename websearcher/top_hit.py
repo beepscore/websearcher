@@ -4,6 +4,7 @@ from websearcher import top_hit_arg_reader
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 import os
+import csv
 
 from bs4 import BeautifulSoup
 
@@ -32,7 +33,7 @@ class TopHit:
         return empty string if browser doesn't suggest a spelling
         """
         st_html = self.st_html(search_string)
-        
+
         st_parsed = self.st_parsed(st_html)
         return st_parsed
 
@@ -90,7 +91,11 @@ class TopHit:
         # https://www.python.org/dev/peps/pep-0343/
         # Unfortunately warning is still present. May be coming from somewhere else.
 
-        with open(in_file_full_path, 'r') as input_file, open(out_file_full_path, 'w') as output_file:
+        with open(in_file_full_path, 'r') as input_file, open(out_file_full_path, 'w', newline='') as output_file:
+
+            # use csv.writer to escape commas within result string
+            csv_writer = csv.writer(output_file, delimiter=' ',
+                                    quotechar='|', quoting=csv.QUOTE_MINIMAL)
             line_number = 1
             for line in input_file.readlines():
                 print('input line number: ' + str(line_number) + ' line :' + line)
@@ -102,9 +107,9 @@ class TopHit:
 
                 print("searching...")
                 search_result = self.top_hit(search_string)
-                search_result_line = search_string + "," + count + "," + search_result
                 print("output: ")
+                csv_writer.writerow([search_string, count, search_result])
+                search_result_line = search_string + "," + count + "," + search_result
                 print(search_result_line)
                 print()
-                output_file.write(search_result_line + '\n')
                 line_number += 1
