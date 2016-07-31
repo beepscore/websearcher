@@ -116,4 +116,3 @@ class TopHit:
                 print("output line " + search_result_line)
                 output_file.write(search_result_line + '\n')
                 line_number += 1
-
