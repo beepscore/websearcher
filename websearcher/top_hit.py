@@ -26,7 +26,6 @@ class TopHit:
         self.out_dir = self.args.out_dir
         self.out_file = self.args.out_file
 
-
     def top_hit(self, search_string):
         """
         Use browser to search for a term and return top hit
@@ -117,5 +116,4 @@ class TopHit:
                 print("output line " + search_result_line)
                 output_file.write(search_result_line + '\n')
                 line_number += 1
-
 
