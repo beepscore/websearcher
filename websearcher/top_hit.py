@@ -4,6 +4,7 @@ from websearcher import top_hit_arg_reader
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 import os
+import csv
 
 from bs4 import BeautifulSoup
 
@@ -33,18 +34,13 @@ class TopHit:
         """
         st_html = self.st_html(search_string)
 
-        st_soup = BeautifulSoup(st_html, 'html.parser')
-
-        top_hit_for = self.top_hit_for(st_soup)
-        if top_hit_for is not None:
-            return top_hit_for
-
-        return ""
+        st_parsed = self.st_parsed(st_html)
+        return st_parsed
 
     def st_html(self, search_string):
         """
         Use browser to search for a term
-        wait for javascript to run and return html for id taw
+        wait for javascript to run and return html for class "st"
         return empty string if browser doesn't suggest a spelling
         """
         browser = webdriver.Firefox()
@@ -61,7 +57,7 @@ class TopHit:
             # http://stackoverflow.com/questions/5868439/wait-for-page-load-in-selenium
             WebDriverWait(browser, 6).until(lambda d: d.find_element_by_class_name("st").is_displayed())
             st = browser.find_element_by_class_name("st")
-            st_html = st.get_attribute('outerHTML')
+            st_html = st.get_attribute('innerHTML')
             return st_html
 
         except:
@@ -71,20 +67,15 @@ class TopHit:
         finally:
             browser.quit()
 
-    def top_hit_for(self, st_soup):
+    def st_parsed(self, st_html):
         """
-        Parse google search look for class "st"
-
-        Example: search benaz
-
-        parameter st_soup is beautiful soup object
-        return string if found, else return None
+        strip tags from st_html and return a string
         """
-
-        if len(st_soup) == 0:
-            return None
-        else:
-            return str(st_soup)
+        st_soup = BeautifulSoup(st_html, 'html.parser')
+        # strip tags like <em>
+        text = st_soup.get_text()
+        text_no_ellipsis = text.replace('...', '')
+        return text_no_ellipsis
 
     def top_hits_from_file(self):
         """
@@ -100,19 +91,27 @@ class TopHit:
         # https://www.python.org/dev/peps/pep-0343/
         # Unfortunately warning is still present. May be coming from somewhere else.
 
-        with open(in_file_full_path, 'r') as input_file, open(out_file_full_path, 'w') as output_file:
+        with open(in_file_full_path, 'r') as input_file, open(out_file_full_path, 'w', newline='') as output_file:
+
+            # use csv.writer to escape commas within result string
+            # https://docs.python.org/3.5/library/csv.html
+            # format excel style. Leaves inner quotes ".
+            # csv_writer = csv.writer(output_file, dialect='excel')
+            # format unix style. Leaves inner quotes ".
+            csv_writer = csv.writer(output_file, dialect='unix')
+
             line_number = 1
             for line in input_file.readlines():
-                print('input line ' + str(line_number) + ' ' + line)
+                print('input line number: ' + str(line_number) + ' line: ' + line)
                 search_string = line.split(",")[0]
 
                 count = ""
                 if line is not None and len(line.split(",")) > 1:
                     count = line.split(",")[1]
 
-                print("searching " + search_string)
+                print("searching...")
                 search_result = self.top_hit(search_string)
-                search_result_line = search_string + "," + count + "," + search_result
-                print("output line " + search_result_line)
-                output_file.write(search_result_line + '\n')
+                print("result: " + search_result)
+                print()
+                csv_writer.writerow([search_string, count, search_result])
                 line_number += 1
