@@ -9,8 +9,12 @@ from websearcher import top_hit
 if __name__ == '__main__':
 
     """
-    Search word
+    Search words in input file. Use command line arguments.
     """
 
-    top_hit = top_hit.TopHit()
-    actual = top_hit.top_hit('semitendinosus')
+    top_hit = top_hit.TopHit("@./websearcher_data/inputs/top_hit_args.txt")
+
+    actual = top_hit.top_hits_from_file()
+    print("results")
+    print('\n'.join(actual))
+

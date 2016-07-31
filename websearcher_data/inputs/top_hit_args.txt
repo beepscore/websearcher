@@ -1,0 +1,8 @@
+-in_dir
+./websearcher_data/inputs
+-in_file
+top_hit_words.csv
+-out_dir
+./websearcher_data/results
+-out_file
+top_hit_words_with_description.csv
