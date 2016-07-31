@@ -94,11 +94,15 @@ class TopHit:
         with open(in_file_full_path, 'r') as input_file, open(out_file_full_path, 'w', newline='') as output_file:
 
             # use csv.writer to escape commas within result string
-            csv_writer = csv.writer(output_file, delimiter=' ',
-                                    quotechar='|', quoting=csv.QUOTE_MINIMAL)
+            # https://docs.python.org/3.5/library/csv.html
+            # format excel style. Leaves inner quotes ".
+            # csv_writer = csv.writer(output_file, dialect='excel')
+            # format unix style. Leaves inner quotes ".
+            csv_writer = csv.writer(output_file, dialect='unix')
+
             line_number = 1
             for line in input_file.readlines():
-                print('input line number: ' + str(line_number) + ' line :' + line)
+                print('input line number: ' + str(line_number) + ' line: ' + line)
                 search_string = line.split(",")[0]
 
                 count = ""
