@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
 
-# use explicit relative import
-# http://www.dabeaz.com/modulepackage/ModulePackage.pdf
-from . import top_hit_arg_reader
-
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 
