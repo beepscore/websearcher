@@ -88,7 +88,7 @@ In .gitignore ignored oovwords.csv
     python3 -m concatenate_regex
     
 ## Download web pages
-    python3 ./websearcher/download_web.py
+    python3 -m download_web
 
 ### Search files and write search results to file
 Search is similar to Unix/Linux grep command
