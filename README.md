@@ -76,10 +76,10 @@ Supply path to websearcher, e.g.
 Don't commit actual input file.
 In .gitignore ignored oovwords.csv
 
-    python3 websearcher/get_suggested_spellings.py -in_dir "./websearcher_data/inputs" -in_file "oovwords.csv" -out_dir "./websearcher_data/results" -out_file "suggested_spelling_results.csv"
+    python3 -m get_suggested_spellings -in_dir "websearcher_data/inputs" -in_file "oovwords.csv" -out_dir "websearcher_data/results" -out_file "suggested_spelling_results.csv"
 
 ### to use default argument values
-    python3 websearcher/get_suggested_spellings.py
+    python3 -m get_suggested_spellings
 
 ## Get top hit
     python3 -m get_top_hit
