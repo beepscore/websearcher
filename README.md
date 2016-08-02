@@ -2,12 +2,22 @@
 
 # Purpose
 
-## Download web page containing HTML, then search
+## Functionality
+
+### Get suggested spellings
+### Get top hit
+### Concatenate regexes
+### Download web pages
+### Unit tests
+
+## Download pages 2 ways
+
+### Download web page containing HTML, then search
 Download a list of web pages and store them locally.
 Then search them for a regular expression.
 Storing pages enables searching multiple times without re-downloading.
 
-## Download web page containing HTML and Javascript
+### Download web page containing HTML and Javascript
 Many web requests return a combination of HTML and Javascript.
 For example, a google search.
 
@@ -63,14 +73,6 @@ Supply path to websearcher, e.g.
 
 ### on Windows
     venv\Scripts\activate
-
-## Things websearcher can do
-
-### Get suggested spellings
-### Get top hit
-### Concatenate regexes
-### Download web pages
-### Unit tests
 
 ## Get suggested spellings
 Don't commit actual input file.
