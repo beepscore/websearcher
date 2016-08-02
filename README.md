@@ -5,7 +5,7 @@
 ## Functionality
 
 ### Get suggested spellings
-### Get top hit
+### Get top hits
 ### Concatenate regexes
 ### Download web pages
 ### Unit tests
@@ -83,8 +83,8 @@ In .gitignore ignored oovwords.csv
 ### to use default argument values
     python3 -m get_suggested_spellings
 
-## Get top hit
-    python3 -m get_top_hit
+## Get top hits
+    python3 -m get_top_hits
 
 ## Concatenate regexes
     python3 -m concatenate_regex
