@@ -31,26 +31,9 @@ http://stackoverflow.com/questions/11804497/python-3-web-scraping-and-javascript
 
 ### selenium webdriver
 
-### Possible alternative approaches to selenium webdriver
-
-#### dryscape
-https://github.com/niklasb/dryscrape
-
-https://pypi.python.org/pypi/dryscrape/1.0
-
-https://dryscrape.readthedocs.io/en/latest/
-
-
 #### Google spell checker api
-free use is limited, then pay
-
+free use is limited, then pay  
 https://code.google.com/archive/p/google-api-spelling-java/
-
-#### didyoumean
-Python project to download from Google.
-I think this may have been designed assuming response is html only, not sure.
-
-https://github.com/bkvirendra/didyoumean
 
 ## Beautiful Soup
 https://www.crummy.com/software/BeautifulSoup/bs4/doc/
@@ -58,6 +41,11 @@ https://www.crummy.com/software/BeautifulSoup/bs4/doc/
 https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class
 
 http://stackoverflow.com/questions/11331071/get-class-name-and-contents-using-beautiful-soup
+
+## Python modules and packages
+http://www.dabeaz.com/modulepackage/ModulePackage.pdf
+
+https://www.youtube.com/watch?v=0oTh1CXRaQ0
 
 # Results
 
@@ -76,9 +64,30 @@ Supply path to websearcher, e.g.
 ### on Windows
     venv\Scripts\activate
 
+## Things websearcher can do
 
+### Get suggested spellings
+### Get top hit
+### Concatenate regexes
+### Download web pages
+### Unit tests
+
+## Get suggested spellings
+Don't commit actual input file.
+In .gitignore ignored oovwords.csv
+
+    python3 websearcher/get_suggested_spellings.py -in_dir "./websearcher_data/inputs" -in_file "oovwords.csv" -out_dir "./websearcher_data/results" -out_file "suggested_spelling_results.csv"
+
+### to use default argument values
+    python3 websearcher/get_suggested_spellings.py
+
+## Get top hit
+    python3 websearcher/get_top_hit.py
+
+## Concatenate regexes
+    python3 -m concatenate_regex
+    
 ## Download web pages
-
     python3 ./websearcher/download_web.py
 
 ### Search files and write search results to file
@@ -93,18 +102,6 @@ Otherwise subsequent searches might accidentally search a results file.
 
 #### to use default argument values
     python ./websearcher/search_web.py
-
-## Get suggested spellings
-Don't commit actual input file.
-In .gitignore ignored oovwords.csv
-
-    python3 ./websearcher/get_suggested_spellings.py -in_dir "./websearcher_data/inputs" -in_file "oovwords.csv" -out_dir "./websearcher_data/results" -out_file "suggested_spelling_results.csv"
-
-### to use default argument values
-    python3 ./websearcher/get_suggested_spellings.py
-
-## Concatenate regexes
-    python3 ./websearcher/concatenate_regex.py
 
 ## Unit tests
 To run tests, open terminal shell.  
@@ -129,7 +126,7 @@ http://stackoverflow.com/questions/35270177/passing-arguments-for-argparse-with-
 
 ---
 
-## Download web page containing HTML and Javascript
+## Appendix Download web page containing HTML and Javascript
 Many web requests return a combination of HTML and Javascript.
 For example, a google search.
 
