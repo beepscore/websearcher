@@ -505,14 +505,14 @@ Hi, Python.</span></code></pre></div>
                 </li>
                 
                 <li>
-                    <div class="slide-code"><pre><code><span class=\"comment\"># For loop on a list</span>
+                    <div class="slide-code"><pre><code><span class="comment"># For loop on a list</span>
 >>> numbers = [2, 4, 6, 8]
 >>> product = 1
 >>> for number in numbers:
 ...    product = product * number
 ... 
 >>> print('The product is:', product)
-<span class=\"output\">The product is: 384</span></code></pre></div>
+<span class="output">The product is: 384</span></code></pre></div>
                     <div class="slide-copy"><h1>All the Flow You&rsquo;d Expect</h1>
 <p>Python knows the usual control flow statements that other languages speak &mdash; <code>if</code>, <code>for</code>, <code>while</code> and <code>range</code> &mdash; with some of its own twists, of course. <a href="//docs.python.org/3/tutorial/controlflow.html">More control flow tools in Python&nbsp;3</a></p></div>
                 </li>
@@ -556,7 +556,7 @@ Hi, Python.</span></code></pre></div>
                     <div class="small-widget download-widget">
                         <h2 class="widget-title"><span aria-hidden="true" class="icon-download"></span>Download</h2>
 <p>Python source code and installers are available for download for all versions! Not sure which version to use? <a href="https://wiki.python.org/moin/Python2orPython3">Check here</a>.</p>
-<p>Latest: <a href="/downloads/release/python-351/">Python 3.5.1</a> - <a href="/downloads/release/python-2711/">Python 2.7.11</a></p>
+<p>Latest: <a href="/downloads/release/python-352/">Python 3.5.2</a> - <a href="/downloads/release/python-2712/">Python 2.7.12</a></p>
                     </div>
 
                     <div class="small-widget documentation-widget">
@@ -586,24 +586,24 @@ Hi, Python.</span></code></pre></div>
                                 
                                 
                                 <li>
-<time datetime="2016-05-17T22:57:00.000001+00:00"><span class="say-no-more">2016-</span>05-17</time>
- <a href="http://feedproxy.google.com/~r/PythonInsider/~3/cxjZlK_6b9Y/python-360-alpha-1-preview-release-is.html">Python 3.6.0a1&nbsp;has been&nbsp;released.&nbsp;&nbsp;3.6.0a1 is the first of four planned alpha ...</a></li>
+<time datetime="2016-07-12T05:32:00.000001+00:00"><span class="say-no-more">2016-</span>07-12</time>
+ <a href="http://feedproxy.google.com/~r/PythonInsider/~3/6i6vUY_x_SE/python-360-alpha-3-preview-release-is.html">Python 3.6.0a3&nbsp;has been&nbsp;released.&nbsp;&nbsp;3.6.0a3 is the third of four planned alpha ...</a></li>
                                 
                                 <li>
-<time datetime="2015-12-07T05:51:00+00:00"><span class="say-no-more">2015-</span>12-07</time>
- <a href="http://feedproxy.google.com/~r/PythonInsider/~3/F9ApGB7BGB4/python-351-and-python-344rc1-are-now.html">Python 3.5.1 and Python 3.4.4rc1 are now available for download. ...</a></li>
+<time datetime="2016-06-28T04:26:00.000001+00:00"><span class="say-no-more">2016-</span>06-28</time>
+ <a href="http://feedproxy.google.com/~r/PythonInsider/~3/1zUlkKxW27U/python-2712-released.html">The Python 2.7.x series has a new bugfix release, Python ...</a></li>
                                 
                                 <li>
-<time datetime="2015-12-05T22:14:00.000005+00:00"><span class="say-no-more">2015-</span>12-05</time>
- <a href="http://feedproxy.google.com/~r/PythonInsider/~3/X8l2dWcjfLs/python-2711-released.html">The latest bugfix release of the Python 2.7 series is ...</a></li>
+<time datetime="2016-06-27T08:33:00+00:00"><span class="say-no-more">2016-</span>06-27</time>
+ <a href="http://feedproxy.google.com/~r/PythonInsider/~3/gCTfatUv_t4/python-352-and-python-345-are-now.html">Python 3.5.2 and Python 3.4.5 are now available for download. ...</a></li>
                                 
                                 <li>
-<time datetime="2015-11-22T02:43:00.000006+00:00"><span class="say-no-more">2015-</span>11-22</time>
- <a href="http://feedproxy.google.com/~r/PythonInsider/~3/_sGRwFhJK4s/python-2711-release-candidate-1.html">The first release candidate of Python 2.7.11, the next release ...</a></li>
+<time datetime="2016-06-14T06:06:00.000001+00:00"><span class="say-no-more">2016-</span>06-14</time>
+ <a href="http://feedproxy.google.com/~r/PythonInsider/~3/yaupkpp9kLc/python-2712-release-candidate-available.html">The first release candidate of Python 2.7.12, the next bugfix ...</a></li>
                                 
                                 <li>
-<time datetime="2015-09-13T14:28:00.000006+00:00"><span class="say-no-more">2015-</span>09-13</time>
- <a href="http://feedproxy.google.com/~r/PythonInsider/~3/a6zwstMbRrg/python-350-has-been-released.html">Python 3.5.0 is now&nbsp;available for download. Python 3.5.0 is the ...</a></li>
+<time datetime="2016-06-14T04:06:00.000001+00:00"><span class="say-no-more">2016-</span>06-14</time>
+ <a href="http://feedproxy.google.com/~r/PythonInsider/~3/nE_a_L4mHfk/python-360-alpha-2-preview-release-is.html">Python 3.6.0a2&nbsp;has been&nbsp;released.&nbsp;&nbsp;3.6.0a2 is the second of four planned alpha ...</a></li>
                                 
                             </ul>
                         </div><!-- end .shrubbery -->
@@ -622,32 +622,32 @@ Hi, Python.</span></code></pre></div>
                                 
                                 
                                 <li>
-<time datetime="2016-06-22T00:00:00+00:00"><span class="say-no-more">2016-</span>06-22</time>
- <a href="/events/python-events/376/">GeoPython 2016</a></li>
+<time datetime="2016-08-10T22:30:00+00:00"><span class="say-no-more">2016-</span>08-10</time>
+ <a href="/events/python-user-group/444/">August 2nd Wednesday Talk - Kenneth Reitz &quot;Python for Humans&quot;</a></li>
                                 
                                 
                                 
                                 <li>
-<time datetime="2016-06-23T00:00:00+00:00"><span class="say-no-more">2016-</span>06-23</time>
- <a href="/events/python-events/395/">PyCon Singapore 2016</a></li>
+<time datetime="2016-08-12T00:00:00+00:00"><span class="say-no-more">2016-</span>08-12</time>
+ <a href="/events/python-events/357/">PyCon Australia 2016</a></li>
                                 
                                 
                                 
                                 <li>
-<time datetime="2016-07-06T16:00:00+00:00"><span class="say-no-more">2016-</span>07-06</time>
- <a href="/events/python-user-group/403/">Python Meeting Düsseldorf</a></li>
+<time datetime="2016-08-13T00:00:00+00:00"><span class="say-no-more">2016-</span>08-13</time>
+ <a href="/events/python-events/427/">PyCon APAC 2016</a></li>
                                 
                                 
                                 
                                 <li>
-<time datetime="2016-07-16T00:00:00+00:00"><span class="say-no-more">2016-</span>07-16</time>
- <a href="/events/python-events/426/">PyGotham 2016</a></li>
+<time datetime="2016-08-19T00:00:00+00:00"><span class="say-no-more">2016-</span>08-19</time>
+ <a href="/events/python-events/440/">PyBay 2016</a></li>
                                 
                                 
                                 
                                 <li>
-<time datetime="2016-07-17T00:00:00+00:00"><span class="say-no-more">2016-</span>07-17</time>
- <a href="/events/python-events/370/">EuroPython 2016</a></li>
+<time datetime="2016-08-19T01:26:32+00:00"><span class="say-no-more">2016-</span>08-19</time>
+ <a href="/events/python-events/438/">PyBay 2016</a></li>
                                 
                                 
                             </ul>
