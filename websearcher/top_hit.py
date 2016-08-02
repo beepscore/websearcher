@@ -14,12 +14,9 @@ class TopHit:
     """
     Use browser to search for strings and return top hit
     """
-    def __init__(self):
-        """
-        Initialize the class.
-        """
 
-    def top_hit(self, search_string):
+    @staticmethod
+    def top_hit(search_string):
         """
         Use browser to search for a term and return top hit
         return empty string if browser doesn't suggest a spelling

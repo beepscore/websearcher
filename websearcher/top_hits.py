@@ -11,8 +11,9 @@ import csv
 
 class TopHits:
     """
-    Use browser to search for strings and return top hit
+    Read input file, use browser to search for top hit, write result to output file
     """
+
     def __init__(self, argfile):
         """
         Initialize the class.
@@ -29,11 +30,8 @@ class TopHits:
 
     def top_hits_from_file(self):
         """
-        Use browser to search for strings and return suggested spellings
-        return empty string if browser doesn't suggest a spelling
+        Read input file, use browser to search for top hit, write result to output file
         """
-        top_hitter = top_hit.TopHit()
-
         in_file_full_path = os.path.join(self.in_dir, self.in_file)
         out_file_full_path = os.path.join(self.out_dir, self.out_file)
 
@@ -62,7 +60,7 @@ class TopHits:
                     count = line.split(",")[1]
 
                 print("searching...")
-                search_result = top_hitter.top_hit(search_string)
+                search_result = top_hit.TopHit.top_hit(search_string)
                 print("result: " + search_result)
                 print()
                 csv_writer.writerow([search_string, count, search_result])
