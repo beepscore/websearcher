@@ -82,7 +82,7 @@ In .gitignore ignored oovwords.csv
     python3 websearcher/get_suggested_spellings.py
 
 ## Get top hit
-    python3 websearcher/get_top_hit.py
+    python3 -m get_top_hit
 
 ## Concatenate regexes
     python3 -m concatenate_regex
