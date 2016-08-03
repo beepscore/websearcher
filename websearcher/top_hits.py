@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
 
-from . import spelling_suggester_arg_reader
-from . import suggested_spelling
+# use explicit relative import
+# http://www.dabeaz.com/modulepackage/ModulePackage.pdf
+from . import top_hit_arg_reader
+from . import top_hit
+
 import os
+import csv
 
 
-class SpellingSuggester:
+class TopHits:
     """
-    Use browser to search for strings and return suggested spellings
+    Read input file, use browser to search for top hit, write result to output file
     """
 
     def __init__(self, argfile):
@@ -17,27 +21,16 @@ class SpellingSuggester:
         :param argfile: file with arguments. Don't version control argfile. Put it outside project directory.
         :return: None
         """
-        self.arg_reader = spelling_suggester_arg_reader.SpellingSuggesterArgReader()
+        self.arg_reader = top_hit_arg_reader.TopHitArgReader()
         self.args = self.arg_reader.args([argfile])
         self.in_dir = self.args.in_dir
         self.in_file = self.args.in_file
         self.out_dir = self.args.out_dir
         self.out_file = self.args.out_file
 
-    def suggested_spellings(self, search_strings):
+    def top_hits_from_file(self):
         """
-        Use browser to search for strings and return suggested spellings
-        return empty string if browser doesn't suggest a spelling
-        """
-        results = []
-        for search_string in search_strings:
-            results.append(suggested_spelling.suggested_spelling(search_string))
-        return results
-
-    def suggested_spellings_from_file(self):
-        """
-        Use browser to search for strings and return suggested spellings
-        return empty string if browser doesn't suggest a spelling
+        Read input file, use browser to search for top hit, write result to output file
         """
         in_file_full_path = os.path.join(self.in_dir, self.in_file)
         out_file_full_path = os.path.join(self.out_dir, self.out_file)
@@ -48,19 +41,27 @@ class SpellingSuggester:
         # https://www.python.org/dev/peps/pep-0343/
         # Unfortunately warning is still present. May be coming from somewhere else.
 
-        with open(in_file_full_path, 'r') as input_file, open(out_file_full_path, 'w') as output_file:
+        with open(in_file_full_path, 'r') as input_file, open(out_file_full_path, 'w', newline='') as output_file:
+
+            # use csv.writer to escape commas within result string
+            # https://docs.python.org/3.5/library/csv.html
+            # format excel style. Leaves inner quotes ".
+            # csv_writer = csv.writer(output_file, dialect='excel')
+            # format unix style. Leaves inner quotes ".
+            csv_writer = csv.writer(output_file, dialect='unix')
+
             line_number = 1
             for line in input_file.readlines():
-                print('input line ' + str(line_number) + ' ' + line)
+                print('input line number: ' + str(line_number) + ' line: ' + line)
                 search_string = line.split(",")[0]
 
                 count = ""
                 if line is not None and len(line.split(",")) > 1:
                     count = line.split(",")[1]
 
-                print("searching " + search_string)
-                search_result = suggested_spelling.suggested_spelling(search_string)
-                search_result_line = search_string + "," + count + "," + search_result
-                print("output line " + search_result_line)
-                output_file.write(search_result_line + '\n')
+                print("searching...")
+                search_result = top_hit.top_hit(search_string)
+                print("result: " + search_result)
+                print()
+                csv_writer.writerow([search_string, count, search_result])
                 line_number += 1

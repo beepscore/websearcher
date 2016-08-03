@@ -2,12 +2,22 @@
 
 # Purpose
 
-## Download web page containing HTML, then search
+## Functionality
+
+### Get suggested spellings
+### Get top hits
+### Concatenate regexes
+### Download web pages
+### Unit tests
+
+## Download pages 2 ways
+
+### Download web page containing HTML, then search
 Download a list of web pages and store them locally.
 Then search them for a regular expression.
 Storing pages enables searching multiple times without re-downloading.
 
-## Download web page containing HTML and Javascript
+### Download web page containing HTML and Javascript
 Many web requests return a combination of HTML and Javascript.
 For example, a google search.
 
@@ -31,26 +41,9 @@ http://stackoverflow.com/questions/11804497/python-3-web-scraping-and-javascript
 
 ### selenium webdriver
 
-### Possible alternative approaches to selenium webdriver
-
-#### dryscape
-https://github.com/niklasb/dryscrape
-
-https://pypi.python.org/pypi/dryscrape/1.0
-
-https://dryscrape.readthedocs.io/en/latest/
-
-
 #### Google spell checker api
-free use is limited, then pay
-
+free use is limited, then pay  
 https://code.google.com/archive/p/google-api-spelling-java/
-
-#### didyoumean
-Python project to download from Google.
-I think this may have been designed assuming response is html only, not sure.
-
-https://github.com/bkvirendra/didyoumean
 
 ## Beautiful Soup
 https://www.crummy.com/software/BeautifulSoup/bs4/doc/
@@ -58,6 +51,11 @@ https://www.crummy.com/software/BeautifulSoup/bs4/doc/
 https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class
 
 http://stackoverflow.com/questions/11331071/get-class-name-and-contents-using-beautiful-soup
+
+## Python modules and packages
+http://www.dabeaz.com/modulepackage/ModulePackage.pdf
+
+https://www.youtube.com/watch?v=0oTh1CXRaQ0
 
 # Results
 
@@ -76,10 +74,23 @@ Supply path to websearcher, e.g.
 ### on Windows
     venv\Scripts\activate
 
+## Get suggested spellings
+Don't commit actual input file.
+In .gitignore ignored oovwords.csv
 
+    python3 -m get_suggested_spellings -in_dir "websearcher_data/inputs" -in_file "oovwords.csv" -out_dir "websearcher_data/results" -out_file "suggested_spelling_results.csv"
+
+### to use default argument values
+    python3 -m get_suggested_spellings
+
+## Get top hits
+    python3 -m get_top_hits
+
+## Concatenate regexes
+    python3 -m concatenate_regex
+    
 ## Download web pages
-
-    python3 ./websearcher/download_web.py
+    python3 -m download_web
 
 ### Search files and write search results to file
 Search is similar to Unix/Linux grep command
@@ -89,22 +100,10 @@ Note: Suggest use different values for download_directory and results file direc
 
 Otherwise subsequent searches might accidentally search a results file.
 
-    python ./websearcher/search_web.py -expression "ython" -search_directory "./websearcher_data/downloads" -out_dir "./websearcher_data/results" -out_file "websearcher_results.txt"
+    python3 -m search_web -expression "ython" -search_directory "websearcher_data/downloads" -out_dir "websearcher_data/results" -out_file "websearcher_results.txt"
 
 #### to use default argument values
     python ./websearcher/search_web.py
-
-## Get suggested spellings
-Don't commit actual input file.
-In .gitignore ignored oovwords.csv
-
-    python3 ./websearcher/get_suggested_spellings.py -in_dir "./websearcher_data/inputs" -in_file "oovwords.csv" -out_dir "./websearcher_data/results" -out_file "suggested_spelling_results.csv"
-
-### to use default argument values
-    python3 ./websearcher/get_suggested_spellings.py
-
-## Concatenate regexes
-    python3 ./websearcher/concatenate_regex.py
 
 ## Unit tests
 To run tests, open terminal shell.  
@@ -129,7 +128,7 @@ http://stackoverflow.com/questions/35270177/passing-arguments-for-argparse-with-
 
 ---
 
-## Download web page containing HTML and Javascript
+## Appendix Download web page containing HTML and Javascript
 Many web requests return a combination of HTML and Javascript.
 For example, a google search.
 
