@@ -60,7 +60,7 @@ class TopHits:
                     count = line.split(",")[1]
 
                 print("searching...")
-                search_result = top_hit.TopHit.top_hit(search_string)
+                search_result = top_hit.top_hit(search_string)
                 print("result: " + search_result)
                 print()
                 csv_writer.writerow([search_string, count, search_result])
