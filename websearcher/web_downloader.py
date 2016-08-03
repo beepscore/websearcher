@@ -44,7 +44,7 @@ class WebDownloader:
         """
         response = self.page_reader.response(url)
 
-        file_writer.FileWriter.create_file(self.args.out_directory, out_file, response.text)
+        file_writer.create_file(self.args.out_directory, out_file, response.text)
 
     def request_url_write_to_file(self, url):
         """
@@ -53,7 +53,7 @@ class WebDownloader:
         :param url: url to request
         :return: None
         """
-        out_file = file_writer.FileWriter.filename_from_url(url)
+        out_file = file_writer.filename_from_url(url)
         self.request_url_write_to_out_file(url, out_file)
 
     def request_urls_write_to_files(self):

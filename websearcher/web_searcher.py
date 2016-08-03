@@ -17,7 +17,7 @@ class WebSearcher:
         files_containing_expression = WebSearcher.search_directory(expression, search_dir)
         # convert list to string with line separator
         files_string = (os.linesep).join(files_containing_expression)
-        file_writer.FileWriter.create_file(out_dir, out_file, files_string)
+        file_writer.create_file(out_dir, out_file, files_string)
 
     @staticmethod
     def search_directory(expression, search_dir):
@@ -38,7 +38,7 @@ class WebSearcher:
             # avoid read error
             return None
         else:
-            file_path = file_writer.FileWriter.absolute_file_path(search_dir, file_name)
+            file_path = file_writer.absolute_file_path(search_dir, file_name)
             textfile = open(file_path, 'r')
             text = textfile.read()
             textfile.close()
