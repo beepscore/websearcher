@@ -12,15 +12,6 @@ class TestSpellingSuggester(unittest.TestCase):
     def setUp(self):
         pass
 
-    # Apparently Python unittest runs tests in alphabetical order
-    def test_suggested_spelling_pyethon(self):
-        suggester = spelling_suggester.SpellingSuggester("@./websearcher_data/inputs/spelling_suggester_args.txt")
-        self.assertEqual("python", suggester.suggested_spelling("pyethon"), '')
-
-    def test_suggested_spelling_python(self):
-        suggester = spelling_suggester.SpellingSuggester("@./websearcher_data/inputs/spelling_suggester_args.txt")
-        self.assertEqual("", suggester.suggested_spelling("python"), '')
-
     def test_suggested_spellings(self):
         suggester = spelling_suggester.SpellingSuggester("@./websearcher_data/inputs/spelling_suggester_args.txt")
         actual = suggester.suggested_spellings(["pyethon", "python", "javascwipt", "swoft"])
