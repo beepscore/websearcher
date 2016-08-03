@@ -19,5 +19,5 @@ python3 -m tests.test_web_downloader
 python3 -m tests.test_web_searcher_arg_reader
 python3 -m tests.test_web_searcher
 python3 -m tests.test_spelling_suggester_arg_reader
-python3 -m tests.test_spelling_suggestions
+python3 -m tests.test_spelling_suggester
 

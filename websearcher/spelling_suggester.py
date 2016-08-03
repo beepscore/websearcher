@@ -74,7 +74,7 @@ class SpellingSuggester:
             return taw_html
 
         except:
-            # print("Didn't find element")
+            #print("Didn't find element")
             return ""
 
         finally:

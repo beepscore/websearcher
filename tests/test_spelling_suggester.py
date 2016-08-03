@@ -4,7 +4,7 @@ import unittest
 
 # tried putting tests in a "test" directory at same level as websearcher
 # relative import didn't work
-from websearcher import spelling_suggestions
+from websearcher import spelling_suggester
 
 
 class TestSpellingSuggester(unittest.TestCase):
@@ -14,15 +14,15 @@ class TestSpellingSuggester(unittest.TestCase):
 
     # Apparently Python unittest runs tests in alphabetical order
     def test_suggested_spelling_pyethon(self):
-        suggester = spelling_suggestions.SpellingSuggester("@./websearcher_data/inputs/spelling_suggester_args.txt")
+        suggester = spelling_suggester.SpellingSuggester("@./websearcher_data/inputs/spelling_suggester_args.txt")
         self.assertEqual("python", suggester.suggested_spelling("pyethon"), '')
 
     def test_suggested_spelling_python(self):
-        suggester = spelling_suggestions.SpellingSuggester("@./websearcher_data/inputs/spelling_suggester_args.txt")
+        suggester = spelling_suggester.SpellingSuggester("@./websearcher_data/inputs/spelling_suggester_args.txt")
         self.assertEqual("", suggester.suggested_spelling("python"), '')
 
     def test_suggested_spellings(self):
-        suggester = spelling_suggestions.SpellingSuggester("@./websearcher_data/inputs/spelling_suggester_args.txt")
+        suggester = spelling_suggester.SpellingSuggester("@./websearcher_data/inputs/spelling_suggester_args.txt")
         actual = suggester.suggested_spellings(["pyethon", "python", "javascwipt", "swoft"])
         expected = ["python", "", "javascript", "swift"]
         self.assertEqual(expected, actual, '')
