@@ -24,7 +24,6 @@ class WebDownloader:
         self.arg_reader = web_downloader_arg_reader.WebDownloaderArgReader()
         self.args = self.arg_reader.args([argfile])
         self.urls_file = self.args.urls_file
-        self.page_reader = page_reader.PageReader()
 
     def urls_from_urls_file(self, urls_file):
         # http://stackoverflow.com/questions/3277503/python-read-file-line-by-line-into-array#3277516
@@ -42,7 +41,7 @@ class WebDownloader:
         :param out_file: filename to write response to
         :return: None
         """
-        response = self.page_reader.response(url)
+        response = page_reader.response(url)
 
         file_writer.create_file(self.args.out_directory, out_file, response.text)
 
