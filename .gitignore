@@ -119,6 +119,9 @@ crashlytics-build.properties
 # ignore input file
 oovwords.csv
 
+# program data results
+websearcher_data/results/*
+
 # ignore output file
 suggested_spellings_results.csv
 regexwordstest.csv
