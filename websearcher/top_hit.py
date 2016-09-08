@@ -48,7 +48,7 @@ def st_html(search_string):
         browser.quit()
 
 
-def parsed_text(html: str) -> str:
+def parsed_text(html):
     """
     return html text, stripped of tags and ellipses '...'
     """
