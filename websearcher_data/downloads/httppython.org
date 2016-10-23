@@ -586,24 +586,24 @@ Hi, Python.</span></code></pre></div>
                                 
                                 
                                 <li>
+<time datetime="2016-10-11T01:18:00.000001+00:00"><span class="say-no-more">2016-</span>10-11</time>
+ <a href="http://feedproxy.google.com/~r/PythonInsider/~3/fAqupGsm4LQ/python-360b2-is-now-available.html">Python 3.6.0b2&nbsp;is the second of four planned beta releases of ...</a></li>
+                                
+                                <li>
+<time datetime="2016-09-23T17:26:00.000004+00:00"><span class="say-no-more">2016-</span>09-23</time>
+ <a href="http://feedproxy.google.com/~r/PythonInsider/~3/ZLTGxjKhYp0/python-core-development-sprint-2016-36.html">From September 5th to the 9th a group of Python ...</a></li>
+                                
+                                <li>
+<time datetime="2016-09-13T02:13:00.000001+00:00"><span class="say-no-more">2016-</span>09-13</time>
+ <a href="http://feedproxy.google.com/~r/PythonInsider/~3/6vXS6z9YHg0/python-360-beta-1-is-now-available.html">Python 3.6.0b1&nbsp;is the first of four planned beta releases of ...</a></li>
+                                
+                                <li>
+<time datetime="2016-08-16T03:04:00.000001+00:00"><span class="say-no-more">2016-</span>08-16</time>
+ <a href="http://feedproxy.google.com/~r/PythonInsider/~3/ukG8L0FEq2Q/python-360-alpha-4-preview-release-is.html">Python 3.6.0a4&nbsp;has been&nbsp;released.&nbsp;&nbsp;3.6.0a4 is the last of four planned alpha ...</a></li>
+                                
+                                <li>
 <time datetime="2016-07-12T05:32:00.000001+00:00"><span class="say-no-more">2016-</span>07-12</time>
  <a href="http://feedproxy.google.com/~r/PythonInsider/~3/6i6vUY_x_SE/python-360-alpha-3-preview-release-is.html">Python 3.6.0a3&nbsp;has been&nbsp;released.&nbsp;&nbsp;3.6.0a3 is the third of four planned alpha ...</a></li>
-                                
-                                <li>
-<time datetime="2016-06-28T04:26:00.000001+00:00"><span class="say-no-more">2016-</span>06-28</time>
- <a href="http://feedproxy.google.com/~r/PythonInsider/~3/1zUlkKxW27U/python-2712-released.html">The Python 2.7.x series has a new bugfix release, Python ...</a></li>
-                                
-                                <li>
-<time datetime="2016-06-27T08:33:00+00:00"><span class="say-no-more">2016-</span>06-27</time>
- <a href="http://feedproxy.google.com/~r/PythonInsider/~3/gCTfatUv_t4/python-352-and-python-345-are-now.html">Python 3.5.2 and Python 3.4.5 are now available for download. ...</a></li>
-                                
-                                <li>
-<time datetime="2016-06-14T06:06:00.000001+00:00"><span class="say-no-more">2016-</span>06-14</time>
- <a href="http://feedproxy.google.com/~r/PythonInsider/~3/yaupkpp9kLc/python-2712-release-candidate-available.html">The first release candidate of Python 2.7.12, the next bugfix ...</a></li>
-                                
-                                <li>
-<time datetime="2016-06-14T04:06:00.000001+00:00"><span class="say-no-more">2016-</span>06-14</time>
- <a href="http://feedproxy.google.com/~r/PythonInsider/~3/nE_a_L4mHfk/python-360-alpha-2-preview-release-is.html">Python 3.6.0a2&nbsp;has been&nbsp;released.&nbsp;&nbsp;3.6.0a2 is the second of four planned alpha ...</a></li>
                                 
                             </ul>
                         </div><!-- end .shrubbery -->
@@ -622,32 +622,32 @@ Hi, Python.</span></code></pre></div>
                                 
                                 
                                 <li>
-<time datetime="2016-08-10T22:30:00+00:00"><span class="say-no-more">2016-</span>08-10</time>
- <a href="/events/python-user-group/444/">August 2nd Wednesday Talk - Kenneth Reitz &quot;Python for Humans&quot;</a></li>
+<time datetime="2016-10-26T15:00:00+00:00"><span class="say-no-more">2016-</span>10-26</time>
+ <a href="/events/python-user-group/464/">PyKla monthly meetup</a></li>
                                 
                                 
                                 
                                 <li>
-<time datetime="2016-08-12T00:00:00+00:00"><span class="say-no-more">2016-</span>08-12</time>
- <a href="/events/python-events/357/">PyCon Australia 2016</a></li>
+<time datetime="2016-10-26T16:00:00+00:00"><span class="say-no-more">2016-</span>10-26</time>
+ <a href="/events/python-user-group/470/">Python Meeting Düsseldorf</a></li>
                                 
                                 
                                 
                                 <li>
-<time datetime="2016-08-13T00:00:00+00:00"><span class="say-no-more">2016-</span>08-13</time>
- <a href="/events/python-events/427/">PyCon APAC 2016</a></li>
+<time datetime="2016-10-28T00:00:00+00:00"><span class="say-no-more">2016-</span>10-28</time>
+ <a href="/events/python-events/433/">PyCon DE 2016</a></li>
                                 
                                 
                                 
                                 <li>
-<time datetime="2016-08-19T00:00:00+00:00"><span class="say-no-more">2016-</span>08-19</time>
- <a href="/events/python-events/440/">PyBay 2016</a></li>
+<time datetime="2016-10-28T00:00:00+00:00"><span class="say-no-more">2016-</span>10-28</time>
+ <a href="/events/python-events/416/">PyCon CZ 2016</a></li>
                                 
                                 
                                 
                                 <li>
-<time datetime="2016-08-19T01:26:32+00:00"><span class="say-no-more">2016-</span>08-19</time>
- <a href="/events/python-events/438/">PyBay 2016</a></li>
+<time datetime="2016-10-29T00:00:00+00:00"><span class="say-no-more">2016-</span>10-29</time>
+ <a href="/events/python-events/443/">PyCon HK 2016</a></li>
                                 
                                 
                             </ul>
@@ -669,7 +669,7 @@ Hi, Python.</span></code></pre></div>
                             <p class="give-me-more"><a href="/success-stories/" title="More Success Stories">More</a></p>
 
                             
-                            <div class="success-story-item" data-weight="0" id="success-story-2" style="display: none;">
+                            <div class="success-story-item" data-weight="25" id="success-story-2" style="display: none;">
 
                             <blockquote>
                                 <a href="/success-stories/industrial-light-magic-runs-python/">ILM runs a batch processing environment capable of modeling, rendering and compositing tens of thousands of motion picture frames per day. Thousands of machines running Linux, IRIX, Compaq Tru64, OS X, Solaris, and Windows join together to provide a production pipeline used by ~800 users daily. Speed of development is key, and Python was a faster way to code (and re-code) the programs that control this production pipeline.</a>
@@ -955,7 +955,7 @@ Hi, Python.</span></code></pre></div>
     
         <li class="tier-2 element-3" role="treeitem"><a href="https://mail.python.org/mailman/listinfo/python-dev" title="">python-dev list</a></li>
     
-        <li class="tier-2 element-4" role="treeitem"><a href="http://pythonmentors.com/" title="">Core Mentorship</a></li>
+        <li class="tier-2 element-4" role="treeitem"><a href="/dev/core-mentorship/" title="">Core Mentorship</a></li>
     
 </ul>
 
