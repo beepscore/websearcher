@@ -26,8 +26,9 @@ class SpellingSuggester:
 
     def suggested_spellings(self, search_strings):
         """
-        Use browser to search for strings and return suggested spellings
-        return empty string if browser doesn't suggest a spelling
+        Use browser to search for strings
+        returns suggested spellings
+        returns empty string if browser doesn't suggest a spelling
         """
         results = []
         for search_string in search_strings:
@@ -36,8 +37,9 @@ class SpellingSuggester:
 
     def suggested_spellings_from_file(self):
         """
-        Use browser to search for strings and return suggested spellings
-        return empty string if browser doesn't suggest a spelling
+        reads search_strings from in_file
+        uses browser to search
+        writes suggested_spellings to out_file
         """
         in_file_full_path = os.path.join(self.in_dir, self.in_file)
         out_file_full_path = os.path.join(self.out_dir, self.out_file)
