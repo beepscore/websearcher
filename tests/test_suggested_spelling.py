@@ -13,8 +13,9 @@ class TestSpellingSuggester(unittest.TestCase):
         pass
 
     # Apparently Python unittest runs tests in alphabetical order
-    def test_suggested_spelling_pyethon(self):
-        self.assertEqual("python", suggested_spelling.suggested_spelling("pyethon"), '')
+    # previously searched for "pyethon", but now Google returns result for "pyethon"
+    def test_suggested_spelling_pythan(self):
+        self.assertEqual("python", suggested_spelling.suggested_spelling("pythan"), '')
 
     def test_suggested_spelling_python(self):
         self.assertEqual("", suggested_spelling.suggested_spelling("python"), '')
