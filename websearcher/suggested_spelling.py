@@ -17,10 +17,12 @@ def suggested_spelling(search_string):
     taw_soup = BeautifulSoup(html, 'html.parser')
 
     showing_results_for = spelling_showing_results_for(taw_soup)
+    print("showing_results_for {}".format(showing_results_for))
     if showing_results_for is not None:
         return showing_results_for
 
     did_you_mean = spelling_did_you_mean(taw_soup)
+    print("did_you_mean {}".format(did_you_mean))
     if did_you_mean is not None:
         return did_you_mean
 
@@ -55,7 +57,7 @@ def taw_html(search_string):
         return taw_html
 
     except:
-        #print("Didn't find element")
+        print("Didn't find element, returning empty string")
         return ""
 
     finally:
