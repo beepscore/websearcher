@@ -53,11 +53,18 @@ class SpellingSuggester:
         with open(in_file_full_path, 'r') as input_file, open(out_file_full_path, 'w') as output_file:
             line_number = 1
             for line in input_file.readlines():
+
+                if line is None or line == "" or line == '\n':
+                    # go to next iteration
+                    line_number += 1
+                    continue
+
+                print()
                 print('input line ' + str(line_number) + ' ' + line)
                 search_string = line.split(",")[0]
 
                 count = ""
-                if line is not None and len(line.split(",")) > 1:
+                if len(line.split(",")) > 1:
                     count = line.split(",")[1]
 
                 print("searching " + search_string)
