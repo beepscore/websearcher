@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from websearcher import web_searcher_arg_reader
 from websearcher import web_searcher
