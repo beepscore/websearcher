@@ -41,6 +41,15 @@ http://stackoverflow.com/questions/11804497/python-3-web-scraping-and-javascript
 
 ### selenium webdriver
 
+#### geckodriver
+Selenium version 3, need to use geckodriver to launch firefox.
+https://www.seleniumeasy.com/selenium-tutorials/launching-firefox-browser-with-geckodriver-selenium-3
+https://github.com/mozilla/geckodriver
+
+On macOS, install via homebrew
+
+    brew install geckodriver
+
 #### Google spell checker api
 free use is limited, then pay  
 https://code.google.com/archive/p/google-api-spelling-java/
