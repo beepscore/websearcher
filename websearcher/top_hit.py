@@ -40,7 +40,7 @@ def st_html(search_string):
         inner_html = st.get_attribute('innerHTML')
         return inner_html
 
-    except:
+    except AttributeError:
         print("Didn't find element")
         return ""
 

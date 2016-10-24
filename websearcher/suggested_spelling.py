@@ -17,10 +17,12 @@ def suggested_spelling(search_string):
     taw_soup = BeautifulSoup(html, 'html.parser')
 
     showing_results_for = spelling_showing_results_for(taw_soup)
+    print("showing_results_for {}".format(showing_results_for))
     if showing_results_for is not None:
         return showing_results_for
 
     did_you_mean = spelling_did_you_mean(taw_soup)
+    print("did_you_mean {}".format(did_you_mean))
     if did_you_mean is not None:
         return did_you_mean
 
@@ -33,6 +35,7 @@ def taw_html(search_string):
     wait for javascript to run and return html for id taw
     return empty string if browser doesn't suggest a spelling
     """
+    # browser = webdriver.Chrome()
     browser = webdriver.Firefox()
 
     # duckduckgo
@@ -51,11 +54,13 @@ def taw_html(search_string):
         # http://stackoverflow.com/questions/5868439/wait-for-page-load-in-selenium
         WebDriverWait(browser, 6).until(lambda d: d.find_element_by_id("taw").is_displayed())
         taw = browser.find_element_by_id("taw")
-        taw_html = taw.get_attribute('outerHTML')
-        return taw_html
+        outer_html = taw.get_attribute('outerHTML')
+        return outer_html
 
-    except:
-        #print("Didn't find element")
+    except AttributeError:
+        # might also get TimeoutException?
+        # http://stackoverflow.com/questions/9823936/python-how-do-i-know-what-type-of-exception-occured#9824050
+        print("Didn't find element, returning empty string")
         return ""
 
     finally:
@@ -130,4 +135,3 @@ def spelling_did_you_mean(taw_soup):
 
         # e.g. javascript
         return spell_elem.i.contents[0]
-

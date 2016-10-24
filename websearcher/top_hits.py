@@ -28,9 +28,11 @@ class TopHits:
         self.out_dir = self.args.out_dir
         self.out_file = self.args.out_file
 
-    def top_hits_from_file(self):
+    def top_hits_from_file_to_file(self):
         """
-        Read input file, use browser to search for top hit, write result to output file
+        Read input file
+        uses browser to search for top hit
+        writes to output file
         """
         in_file_full_path = os.path.join(self.in_dir, self.in_file)
         out_file_full_path = os.path.join(self.out_dir, self.out_file)

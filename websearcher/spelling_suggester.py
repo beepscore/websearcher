@@ -26,18 +26,20 @@ class SpellingSuggester:
 
     def suggested_spellings(self, search_strings):
         """
-        Use browser to search for strings and return suggested spellings
-        return empty string if browser doesn't suggest a spelling
+        Use browser to search for strings
+        returns suggested spellings
+        returns empty string if browser doesn't suggest a spelling
         """
         results = []
         for search_string in search_strings:
             results.append(suggested_spelling.suggested_spelling(search_string))
         return results
 
-    def suggested_spellings_from_file(self):
+    def suggested_spellings_from_file_to_file(self):
         """
-        Use browser to search for strings and return suggested spellings
-        return empty string if browser doesn't suggest a spelling
+        reads search_strings from in_file
+        uses browser to search
+        writes suggested_spellings to out_file
         """
         in_file_full_path = os.path.join(self.in_dir, self.in_file)
         out_file_full_path = os.path.join(self.out_dir, self.out_file)
@@ -51,15 +53,23 @@ class SpellingSuggester:
         with open(in_file_full_path, 'r') as input_file, open(out_file_full_path, 'w') as output_file:
             line_number = 1
             for line in input_file.readlines():
+
+                if line is None or line == "" or line == '\n':
+                    # go to next iteration
+                    line_number += 1
+                    continue
+
+                print()
                 print('input line ' + str(line_number) + ' ' + line)
                 search_string = line.split(",")[0]
 
                 count = ""
-                if line is not None and len(line.split(",")) > 1:
+                if len(line.split(",")) > 1:
                     count = line.split(",")[1]
 
                 print("searching " + search_string)
                 search_result = suggested_spelling.suggested_spelling(search_string)
+                print("search_result " + search_result)
                 search_result_line = search_string + "," + count + "," + search_result
                 print("output line " + search_result_line)
                 output_file.write(search_result_line + '\n')
