@@ -35,7 +35,7 @@ class SpellingSuggester:
             results.append(suggested_spelling.suggested_spelling(search_string))
         return results
 
-    def suggested_spellings_from_file(self):
+    def suggested_spellings_from_file_to_file(self):
         """
         reads search_strings from in_file
         uses browser to search

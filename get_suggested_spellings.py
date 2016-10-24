@@ -7,4 +7,4 @@ Search words in input file. Use command line arguments.
 """
 
 suggester = spelling_suggester.SpellingSuggester("@./websearcher_data/inputs/spelling_suggester_args.txt")
-suggester.suggested_spellings_from_file()
+suggester.suggested_spellings_from_file_to_file()
