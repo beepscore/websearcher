@@ -28,7 +28,7 @@ class TopHits:
         self.out_dir = self.args.out_dir
         self.out_file = self.args.out_file
 
-    def top_hits_from_file(self):
+    def top_hits_from_file_to_file(self):
         """
         Read input file
         uses browser to search for top hit
