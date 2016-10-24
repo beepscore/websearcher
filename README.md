@@ -21,7 +21,7 @@ Storing pages enables searching multiple times without re-downloading.
 Many web requests return a combination of HTML and Javascript.
 For example, a google search.
 
-        https://www.google.com/#q=pyethon
+        https://www.google.com/#q=pythan
 
 Use selenium webdriver to load the page.
 Wait until it runs the javascript and gets more html.
