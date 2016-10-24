@@ -132,4 +132,3 @@ def spelling_did_you_mean(taw_soup):
 
         # e.g. javascript
         return spell_elem.i.contents[0]
-
