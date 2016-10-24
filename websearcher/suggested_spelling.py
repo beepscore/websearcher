@@ -53,8 +53,8 @@ def taw_html(search_string):
         # http://stackoverflow.com/questions/5868439/wait-for-page-load-in-selenium
         WebDriverWait(browser, 6).until(lambda d: d.find_element_by_id("taw").is_displayed())
         taw = browser.find_element_by_id("taw")
-        taw_html = taw.get_attribute('outerHTML')
-        return taw_html
+        outer_html = taw.get_attribute('outerHTML')
+        return outer_html
 
     except Exception as exception:
         # TODO: Find type of exception and narrow it, just catch None?
