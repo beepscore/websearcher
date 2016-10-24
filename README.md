@@ -40,16 +40,35 @@ http://blog.databigbang.com/web-scraping-ajax-and-javascript-sites/
 http://stackoverflow.com/questions/11804497/python-3-web-scraping-and-javascript-oh-my?rq=1
 
 ### selenium webdriver
+Selenium version 3 needs a driver to launch a browser.
 
-#### geckodriver
-Selenium version 3, need to use geckodriver to launch firefox.
+#### Firefox geckodriver
 https://www.seleniumeasy.com/selenium-tutorials/launching-firefox-browser-with-geckodriver-selenium-3
 https://github.com/mozilla/geckodriver
 
-On macOS, install via homebrew
+##### macOS
+install via homebrew
 
     brew install geckodriver
 
+Then in python file
+browser = webdriver.Firefox()
+
+2016-10-23 Firefox with current geckodriver works, but logs warning
+    'NoneType' object has no attribute 'path'
+    
+#### Chrome chromedriver
+
+##### macOS
+install via homebrew
+
+    brew install chromedriver
+    
+Then in python file
+browser = webdriver.Chrome()
+
+2016-10-23 Chrome with chromedriver, log doesn't show a warning
+    
 #### Google spell checker api
 free use is limited, then pay  
 https://code.google.com/archive/p/google-api-spelling-java/
