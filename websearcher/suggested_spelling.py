@@ -56,11 +56,10 @@ def taw_html(search_string):
         outer_html = taw.get_attribute('outerHTML')
         return outer_html
 
-    except Exception as exception:
-        # TODO: Find type of exception and narrow it, just catch None?
+    except AttributeError:
+        # might also get TimeoutException?
         # http://stackoverflow.com/questions/9823936/python-how-do-i-know-what-type-of-exception-occured#9824050
         print("Didn't find element, returning empty string")
-        print('exception {0}'.format(exception))
         return ""
 
     finally:
