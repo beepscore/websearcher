@@ -56,8 +56,11 @@ def taw_html(search_string):
         taw_html = taw.get_attribute('outerHTML')
         return taw_html
 
-    except:
+    except Exception as exception:
+        # TODO: Find type of exception and narrow it, just catch None?
+        # http://stackoverflow.com/questions/9823936/python-how-do-i-know-what-type-of-exception-occured#9824050
         print("Didn't find element, returning empty string")
+        print('exception {0}'.format(exception))
         return ""
 
     finally:
