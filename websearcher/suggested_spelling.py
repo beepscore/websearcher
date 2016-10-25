@@ -5,27 +5,37 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 from bs4 import BeautifulSoup
 
+from websearcher import top_hit
+
 
 def suggested_spelling(search_string):
     """
     Use browser to search for a term and return suggested spelling
-    Handles pages that show "Showing results for" or "Did you mean:"
-    return empty string if browser doesn't suggest a spelling
+    returns "Showing results for" value if present
+    else returns "Did you mean:" value if present
+    else returns top hit if present
+    else returns empty string
     """
     html = taw_html(search_string)
 
     taw_soup = BeautifulSoup(html, 'html.parser')
 
     showing_results_for = spelling_showing_results_for(taw_soup)
-    print("showing_results_for {}".format(showing_results_for))
     if showing_results_for is not None:
+        print("returning showing_results_for {0}".format(showing_results_for))
         return showing_results_for
 
     did_you_mean = spelling_did_you_mean(taw_soup)
-    print("did_you_mean {}".format(did_you_mean))
     if did_you_mean is not None:
+        print("returning did_you_mean {0}".format(did_you_mean))
         return did_you_mean
 
+    hit = top_hit.top_hit(search_string)
+    if hit is not None:
+        print("returning top_hit")
+        return hit
+
+    print("returning empty string")
     return ""
 
 

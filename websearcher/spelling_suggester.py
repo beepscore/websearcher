@@ -60,7 +60,8 @@ class SpellingSuggester:
                     continue
 
                 print()
-                print('input line ' + str(line_number) + ' ' + line)
+                message = 'input line {0} {1}'.format(line_number, line).rstrip()
+                print(message)
                 search_string = line.split(",")[0]
 
                 count = ""
@@ -69,7 +70,6 @@ class SpellingSuggester:
 
                 print("searching " + search_string)
                 search_result = suggested_spelling.suggested_spelling(search_string)
-                print("search_result " + search_result)
                 search_result_line = search_string + "," + count + "," + search_result
                 print("output line " + search_result_line)
                 output_file.write(search_result_line + '\n')
