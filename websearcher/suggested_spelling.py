@@ -5,6 +5,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 from bs4 import BeautifulSoup
 
+from websearcher import top_hit
+
 
 def suggested_spelling(search_string):
     """
@@ -25,6 +27,11 @@ def suggested_spelling(search_string):
     print("did_you_mean {}".format(did_you_mean))
     if did_you_mean is not None:
         return did_you_mean
+
+    hit = top_hit.top_hit(search_string)
+    print("top_hit {0}".format(hit))
+    if hit is not None:
+        return hit
 
     return ""
 
