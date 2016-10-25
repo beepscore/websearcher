@@ -21,20 +21,21 @@ def suggested_spelling(search_string):
     taw_soup = BeautifulSoup(html, 'html.parser')
 
     showing_results_for = spelling_showing_results_for(taw_soup)
-    print("showing_results_for {}".format(showing_results_for))
     if showing_results_for is not None:
+        print("returning showing_results_for {0}".format(showing_results_for))
         return showing_results_for
 
     did_you_mean = spelling_did_you_mean(taw_soup)
-    print("did_you_mean {}".format(did_you_mean))
     if did_you_mean is not None:
+        print("returning did_you_mean {0}".format(did_you_mean))
         return did_you_mean
 
     hit = top_hit.top_hit(search_string)
-    print("top_hit {0}".format(hit))
     if hit is not None:
+        print("returning top_hit")
         return hit
 
+    print("returning empty string")
     return ""
 
 
