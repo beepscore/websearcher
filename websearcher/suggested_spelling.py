@@ -11,8 +11,10 @@ from websearcher import top_hit
 def suggested_spelling(search_string):
     """
     Use browser to search for a term and return suggested spelling
-    Handles pages that show "Showing results for" or "Did you mean:"
-    return empty string if browser doesn't suggest a spelling
+    returns "Showing results for" value if present
+    else returns "Did you mean:" value if present
+    else returns top hit if present
+    else returns empty string
     """
     html = taw_html(search_string)
 
