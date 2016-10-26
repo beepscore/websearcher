@@ -2,6 +2,7 @@
 
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.common.exceptions import TimeoutException
 
 from bs4 import BeautifulSoup
 
@@ -67,10 +68,13 @@ def taw_html(search_string):
         outer_html = taw.get_attribute('outerHTML')
         return outer_html
 
+    except TimeoutException:
+        print("TimeoutException, returning empty string")
+        return ""
+
     except AttributeError:
-        # might also get TimeoutException?
         # http://stackoverflow.com/questions/9823936/python-how-do-i-know-what-type-of-exception-occured#9824050
-        print("Didn't find element, returning empty string")
+        print("AttributeError, returning empty string")
         return ""
 
     finally:
