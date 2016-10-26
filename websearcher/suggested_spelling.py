@@ -3,7 +3,7 @@
 from bs4 import BeautifulSoup
 
 from websearcher import browser_driver
-from websearcher import top_hit
+# from websearcher import top_hit
 
 
 def suggested_spelling(search_string):
