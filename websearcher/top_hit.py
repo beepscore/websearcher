@@ -2,6 +2,7 @@
 
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.common.exceptions import TimeoutException
 
 from bs4 import BeautifulSoup
 
@@ -39,6 +40,10 @@ def st_html(search_string):
         st = browser.find_element_by_class_name("st")
         inner_html = st.get_attribute('innerHTML')
         return inner_html
+
+    except selenium.common.exceptions.TimeoutException:
+        print("Didn't find element")
+        return ""
 
     except AttributeError:
         print("Didn't find element")
