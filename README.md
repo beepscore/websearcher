@@ -19,12 +19,14 @@ Storing pages enables searching multiple times without re-downloading.
 
 ### Download web page containing HTML and Javascript
 Many web requests return a combination of HTML and Javascript.
+Viewing "page source" shows html and javascript, but not the result of running the javascript.
+
 For example, a google search.
 
         https://www.google.com/#q=pythan
 
-Use selenium webdriver to load the page.
-Wait until it runs the javascript and gets more html.
+Use selenium webdriver to load the page in a browser.
+Have selenium wait until the browser executes the javascript and gets more html.
 Then parse and search the page e.g. with Beautiful Soup.
 
 # References
