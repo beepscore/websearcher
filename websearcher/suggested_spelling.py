@@ -28,10 +28,10 @@ def suggested_spelling(search_string):
         print("returning did_you_mean {0}".format(did_you_mean))
         return did_you_mean
 
-    hit = top_hit.top_hit(search_string)
-    if hit is not None:
-        print("returning top_hit")
-        return hit
+    # hit = top_hit.top_hit(search_string)
+    # if hit is not None:
+    #     print("returning top_hit")
+    #     return hit
 
     print("returning empty string")
     return ""
