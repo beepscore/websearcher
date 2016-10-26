@@ -9,10 +9,17 @@ from websearcher import browser_driver
 def suggested_spelling(search_string):
     """
     Use browser to search for a term and return suggested spelling
-    returns "Showing results for" value if present
-    else returns "Did you mean:" value if present
-    else returns top hit if present
-    else returns empty string
+
+    Parameters
+    ----------
+    search_string : String
+        string to search for
+
+    Returns
+    -------
+    "Showing results for" value if present
+    else "Did you mean:" value if present
+    else empty string
     """
     html = browser_driver.taw_html(search_string)
 
@@ -38,13 +45,15 @@ def suggested_spelling(search_string):
 
 
 def spelling_showing_results_for(taw_soup):
-    """
-    Parse google search look for section "Showing results for" or "including results for"
+    """ If argument contains "Showing results for" or "including results for". returns the proposed search term
 
-    Example: search benaz
-    google returns "including results for" with "a" tag and no class
+    Examples
+    --------
+    search benaz
+    google response contains "including results for" with "a" tag and no class
 
-    Example: search javascwipt
+    search javascwipt
+    google response
     <p class="sp_cnt card-section">
     <span class="spell">Showing results for</span>
     <a class="spell" href="/search?/search?biw=1280&bih=423&q=javascwipt&spell=1&sa=X&ved=0ahUKEwjMyeG30oPNAhVMz2MKHRw5D10QvwUIGSgA">
@@ -52,9 +61,16 @@ def spelling_showing_results_for(taw_soup):
     <i>javascript</i>
     </b>
     </a>
+    method returns "javascript"
 
-    parameter taw_soup is beautiful soup object
-    return string if found, else return None
+    Parameters
+    ----------
+    taw_soup : beautiful soup object
+        A partially parsed Google search response
+
+    Returns
+    -------
+    string if found, else return None
     """
 
     # https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class
@@ -74,10 +90,11 @@ def spelling_showing_results_for(taw_soup):
 
 
 def spelling_did_you_mean(taw_soup):
-    """
-    Parse google search look for section "Did you mean:"
+    """ If argument contains "Did you mean:" returns the proposed search term
 
-    Example: search javascwipt
+    Example
+    -------
+    search javascwipt
     google returns "did you mean" with "a" tag and class spell
 
     <p class="ssp card-section">
@@ -87,8 +104,14 @@ def spelling_did_you_mean(taw_soup):
     <i>javascript</i></b>
     </a>
 
-    parameter taw_soup is beautiful soup object
-    return string if found, else return None
+    Parameters
+    ----------
+    taw_soup : beautiful soup object
+        A partially parsed Google search response
+
+    Returns
+    -------
+    string if found, else return None
     """
 
     # https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class
