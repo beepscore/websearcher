@@ -35,8 +35,8 @@ class WebDownloaderArgReader:
                                          formatter_class=RawTextHelpFormatter,
                                          )
 
-        parser.add_argument('-urls_file', action="store", dest="urls_file", default="../data/inputs/urls.txt",
-                            help='file with list of urls to download, one url per line. Defalult "../data/inputs/urls.txt"')
+        parser.add_argument('-urls_file', action="store", dest="urls_file", default="../data/input/urls.txt",
+                            help='file with list of urls to download, one url per line. Defalult "../data/input/urls.txt"')
         parser.add_argument('-out_directory', action="store", dest="out_directory", default="../data/downloads",
                             help='name of output directory. Default "../data/downloads"')
 

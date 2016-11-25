@@ -17,7 +17,7 @@ class TestSpellingSuggesterArgReader(unittest.TestCase):
     def test_args_default(self):
         reader = spelling_suggester_arg_reader.SpellingSuggesterArgReader()
         args = reader.args(None)
-        self.assertEqual("./data/inputs", args.in_dir, '')
+        self.assertEqual("./data/input", args.in_dir, '')
         self.assertEqual("oovwords.csv", args.in_file, '')
         self.assertEqual("./data/results", args.out_dir, '')
         self.assertEqual("suggested_spellings_results.csv", args.out_file, '')
@@ -41,9 +41,9 @@ class TestSpellingSuggesterArgReader(unittest.TestCase):
     def test_args_from_argument_file(self):
         reader = spelling_suggester_arg_reader.SpellingSuggesterArgReader()
         # use fromfile_prefix_chars @ to read args from file
-        args = reader.args(["@./data/inputs/spelling_suggester_args.txt"])
+        args = reader.args(["@./data/input/spelling_suggester_args.txt"])
 
-        self.assertEqual("./data/inputs", args.in_dir)
+        self.assertEqual("./data/input", args.in_dir)
         self.assertEqual("oovwords.csv", args.in_file)
         self.assertEqual("./data/results", args.out_dir)
         self.assertEqual("suggested_spellings_results.csv", args.out_file)

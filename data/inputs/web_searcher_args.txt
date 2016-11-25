@@ -1,8 +1,0 @@
--expression
-app*
--search_directory
-./data/downloads
--out_dir
-./data/results
--out_file
-websearcher_results.txt

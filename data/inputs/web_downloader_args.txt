@@ -1,4 +1,0 @@
--urls_file
-./data/inputs/urls.txt
--out_directory
-./data/downloads

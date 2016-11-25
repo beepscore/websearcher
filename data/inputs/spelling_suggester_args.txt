@@ -1,8 +1,0 @@
--in_dir
-./data/inputs
--in_file
-oovwords.csv
--out_dir
-./data/results
--out_file
-suggested_spellings_results.csv
