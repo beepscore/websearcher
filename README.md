@@ -193,12 +193,7 @@ https://github.com/kennethreitz/requests
 
 ### Install virtual environment in directory named "venv"
 
-#### macos
-    
     $ cd <project root directory>
-    $ pyvenv venv
-
-#### windows
     python -m venv venv
 
 ### Before activating virtual environment
