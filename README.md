@@ -250,16 +250,16 @@ With virtualenv active
 
 Then manually edited requirements.txt
 
+## Appendix Use requirements.txt
+In requirements.txt list dependencies, update version numbers. Then run
+
+    pip install -r requirements.txt --upgrade
+
 ## Appendix clone app from github to another machine
 After cloning app from github, activating venv did still showed system python.
 Fixed as follows:
 
     delete ./venv
-    Re-run pyvenv venv
-    pip re-install packages.
-
-## Appendix Use requirements.txt
-In requirements.txt list dependencies, update version numbers. Then run
-
-    pip install -r requirements.txt --upgrade
+    Run python -m venv venv
+    pip install -r requirements.txt
 
