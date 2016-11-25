@@ -57,7 +57,7 @@ class RegexSearch:
                 regex_dictionary[correct_word] = misspelled_word
 
         print(regex_dictionary)
-        filename = 'data/results/regex_results.csv'
+        filename = 'data/output/regex_output.csv'
         with open(filename, 'w') as csvfile:
             for key in regex_dictionary.keys():
                 csvfile.write(key + ',' + regex_dictionary[key] + os.linesep)

@@ -108,7 +108,7 @@ Supply path to websearcher, e.g.
 Don't commit actual input file.
 In .gitignore ignored oovwords.csv
 
-    python3 -m get_suggested_spellings -in_dir "data/input" -in_file "oovwords.csv" -out_dir "data/results" -out_file "suggested_spelling_results.csv"
+    python3 -m get_suggested_spellings -in_dir "data/input" -in_file "oovwords.csv" -out_dir "data/output" -out_file "suggested_spelling_output.csv"
 
 ### to use default argument values
     python3 -m get_suggested_spellings
@@ -122,15 +122,15 @@ In .gitignore ignored oovwords.csv
 ## Download web pages
     python3 -m download_web
 
-### Search files and write search results to file
+### Search files and write search output to file
 Search is similar to Unix/Linux grep command
 
 #### specify argument values
-Note: Suggest use different values for download_directory and results file directory.
+Note: Suggest use different values for download_directory and output file directory.
 
-Otherwise subsequent searches might accidentally search a results file.
+Otherwise subsequent searches might accidentally search an output file.
 
-    python3 -m search_web -expression "ython" -search_directory "data/downloads" -out_dir "data/results" -out_file "websearcher_results.txt"
+    python3 -m search_web -expression "ython" -search_directory "data/downloads" -out_dir "data/output" -out_file "websearcher_output.txt"
 
 #### to use default argument values
     python ./websearcher/search_web.py

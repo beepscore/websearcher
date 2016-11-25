@@ -61,8 +61,8 @@ class TestWebSearcher(unittest.TestCase):
     def test_search_directory_write_results_data(self):
         web_searcher.WebSearcher.search_directory_write_results("dat*",
                                                                 "./data/downloads",
-                                                                "./data/results",
-                                                                "websearcher_results.txt")
+                                                                "./data/output",
+                                                                "websearcher_output.txt")
 
 if __name__ == "__main__":
     unittest.main()

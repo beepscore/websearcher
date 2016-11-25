@@ -123,9 +123,9 @@ data/*
 oovwords.csv
 
 # ignore output file
-suggested_spellings_results.csv
+suggested_spellings_output.csv
 regexwordstest.csv
-regex_results.csv
+regex_output.csv
 top_hit_words.csv
 top_hit_words_with_description.csv
-top_hit_results.csv
+top_hit_output.csv

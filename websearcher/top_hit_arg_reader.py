@@ -39,9 +39,9 @@ class TopHitArgReader:
                             help='name of input directory. Default "./data/input"')
         parser.add_argument('-in_file', action="store", dest="in_file", default="top_hit_words.csv",
                             help='input file of search words. Default "top_hit_words.csv"')
-        parser.add_argument('-out_dir', action="store", dest="out_dir", default="./data/results",
-                            help='name of output directory. Default "./data/results"')
-        parser.add_argument('-out_file', action="store", dest="out_file", default="top_hit_results.csv",
+        parser.add_argument('-out_dir', action="store", dest="out_dir", default="./data/output",
+                            help='name of output directory. Default "./data/output"')
+        parser.add_argument('-out_file', action="store", dest="out_file", default="top_hit_reusults.csv",
                             help='name of output file. Default "top_hit_results.csv"')
 
         if commandline is not None:

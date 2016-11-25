@@ -39,10 +39,10 @@ class SpellingSuggesterArgReader:
                             help='name of input directory. Default "./data/input"')
         parser.add_argument('-in_file', action="store", dest="in_file", default="oovwords.csv",
                             help='input file of search words. Default "oovwords.csv"')
-        parser.add_argument('-out_dir', action="store", dest="out_dir", default="./data/results",
-                            help='name of output directory. Default "./data/results"')
-        parser.add_argument('-out_file', action="store", dest="out_file", default="suggested_spellings_results.csv",
-                            help='name of output file. Default "suggested_spellings_results.csv"')
+        parser.add_argument('-out_dir', action="store", dest="out_dir", default="./data/output",
+                            help='name of output directory. Default "./data/output"')
+        parser.add_argument('-out_file', action="store", dest="out_file", default="suggested_spellings_output.csv",
+                            help='name of output file. Default "suggested_spellings_output.csv"')
 
         if commandline is not None:
             args = parser.parse_args(commandline)

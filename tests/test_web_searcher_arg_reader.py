@@ -19,8 +19,8 @@ class TestWebSearcherArgReader(unittest.TestCase):
         args = reader.args(None)
         self.assertEqual("foo", args.expression, '')
         self.assertEqual("./data/downloads", args.search_directory, '')
-        self.assertEqual("./data/results", args.out_dir, '')
-        self.assertEqual("websearcher_results.txt", args.out_file, '')
+        self.assertEqual("./data/output", args.out_dir, '')
+        self.assertEqual("websearcher_output.txt", args.out_file, '')
 
     def test_args_from_argument(self):
         reader = web_searcher_arg_reader.WebSearcherArgReader()
@@ -28,7 +28,7 @@ class TestWebSearcherArgReader(unittest.TestCase):
         expression = "foo"
         search_directory = "some_search_directory"
         out_dir = "../some_directory"
-        out_file = "some_results.txt"
+        out_file = "some_output.txt"
 
         test_commandline = ["-expression", expression,
                             "-search_directory", search_directory,
@@ -49,8 +49,8 @@ class TestWebSearcherArgReader(unittest.TestCase):
 
         self.assertEqual("app*", args.expression)
         self.assertEqual("./data/downloads", args.search_directory)
-        self.assertEqual("./data/results", args.out_dir)
-        self.assertEqual("websearcher_results.txt", args.out_file)
+        self.assertEqual("./data/output", args.out_dir)
+        self.assertEqual("websearcher_output.txt", args.out_file)
 
 if __name__ == "__main__":
     unittest.main()
