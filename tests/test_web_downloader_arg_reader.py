@@ -17,8 +17,8 @@ class TestWebDownloaderArgReader(unittest.TestCase):
     def test_args_default(self):
         reader = web_downloader_arg_reader.WebDownloaderArgReader()
         args = reader.args(None)
-        self.assertEqual("../websearcher_data/inputs/urls.txt", args.urls_file, '')
-        self.assertEqual("../websearcher_data/downloads", args.out_directory, '')
+        self.assertEqual("../data/inputs/urls.txt", args.urls_file, '')
+        self.assertEqual("../data/downloads", args.out_directory, '')
 
     def test_args_from_argument(self):
         reader = web_downloader_arg_reader.WebDownloaderArgReader()
@@ -38,10 +38,10 @@ class TestWebDownloaderArgReader(unittest.TestCase):
         reader = web_downloader_arg_reader.WebDownloaderArgReader()
 
         # use fromfile_prefix_chars @ to read args from file
-        args = reader.args(["@./websearcher_data/inputs/web_downloader_args.txt"])
+        args = reader.args(["@./data/inputs/web_downloader_args.txt"])
 
-        self.assertEqual("./websearcher_data/inputs/urls.txt", args.urls_file)
-        self.assertEqual("./websearcher_data/downloads", args.out_directory)
+        self.assertEqual("./data/inputs/urls.txt", args.urls_file)
+        self.assertEqual("./data/downloads", args.out_directory)
 
 if __name__ == "__main__":
     unittest.main()

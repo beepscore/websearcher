@@ -18,8 +18,8 @@ class TestWebSearcherArgReader(unittest.TestCase):
         reader = web_searcher_arg_reader.WebSearcherArgReader()
         args = reader.args(None)
         self.assertEqual("foo", args.expression, '')
-        self.assertEqual("./websearcher_data/downloads", args.search_directory, '')
-        self.assertEqual("./websearcher_data/results", args.out_dir, '')
+        self.assertEqual("./data/downloads", args.search_directory, '')
+        self.assertEqual("./data/results", args.out_dir, '')
         self.assertEqual("websearcher_results.txt", args.out_file, '')
 
     def test_args_from_argument(self):
@@ -45,11 +45,11 @@ class TestWebSearcherArgReader(unittest.TestCase):
     def test_args_from_argument_file(self):
         reader = web_searcher_arg_reader.WebSearcherArgReader()
         # use fromfile_prefix_chars @ to read args from file
-        args = reader.args(["@./websearcher_data/inputs/web_searcher_args.txt"])
+        args = reader.args(["@./data/inputs/web_searcher_args.txt"])
 
         self.assertEqual("app*", args.expression)
-        self.assertEqual("./websearcher_data/downloads", args.search_directory)
-        self.assertEqual("./websearcher_data/results", args.out_dir)
+        self.assertEqual("./data/downloads", args.search_directory)
+        self.assertEqual("./data/results", args.out_dir)
         self.assertEqual("websearcher_results.txt", args.out_file)
 
 if __name__ == "__main__":

@@ -1,8 +1,8 @@
 -expression
 app*
 -search_directory
-./websearcher_data/downloads
+./data/downloads
 -out_dir
-./websearcher_data/results
+./data/results
 -out_file
 websearcher_results.txt

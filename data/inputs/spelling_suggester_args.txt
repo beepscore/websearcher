@@ -1,8 +1,8 @@
 -in_dir
-./websearcher_data/inputs
+./data/inputs
 -in_file
 oovwords.csv
 -out_dir
-./websearcher_data/results
+./data/results
 -out_file
 suggested_spellings_results.csv

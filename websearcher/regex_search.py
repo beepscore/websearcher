@@ -19,7 +19,7 @@ class RegexSearch:
         """
         Reads a csv file and creates regular expressions (regex).
         """
-        misspelled_words = open('websearcher_data/inputs/regexwordstest.csv')
+        misspelled_words = open('data/inputs/regexwordstest.csv')
 
         misspelled_words_reader = csv.reader(misspelled_words)
         misspelled_words_list = list(misspelled_words_reader)
@@ -57,7 +57,7 @@ class RegexSearch:
                 regex_dictionary[correct_word] = misspelled_word
 
         print(regex_dictionary)
-        filename = 'websearcher_data/results/regex_results.csv'
+        filename = 'data/results/regex_results.csv'
         with open(filename, 'w') as csvfile:
             for key in regex_dictionary.keys():
                 csvfile.write(key + ',' + regex_dictionary[key] + os.linesep)

@@ -586,6 +586,14 @@ Hi, Python.</span></code></pre></div>
                                 
                                 
                                 <li>
+<time datetime="2016-11-22T04:59:00.000001+00:00"><span class="say-no-more">2016-</span>11-22</time>
+ <a href="http://feedproxy.google.com/~r/PythonInsider/~3/-_plMu8QFUU/python-360-beta-4-is-now-available.html">Python 3.6.0b4&nbsp;is the last planned beta release of Python 3.6, ...</a></li>
+                                
+                                <li>
+<time datetime="2016-11-01T03:59:00.000001+00:00"><span class="say-no-more">2016-</span>11-01</time>
+ <a href="http://feedproxy.google.com/~r/PythonInsider/~3/Nb25kWVIRiU/python-360-beta-3-is-now-available.html">Python 3.6.0b3&nbsp;is the third of four planned beta releases of ...</a></li>
+                                
+                                <li>
 <time datetime="2016-10-11T01:18:00.000001+00:00"><span class="say-no-more">2016-</span>10-11</time>
  <a href="http://feedproxy.google.com/~r/PythonInsider/~3/fAqupGsm4LQ/python-360b2-is-now-available.html">Python 3.6.0b2&nbsp;is the second of four planned beta releases of ...</a></li>
                                 
@@ -596,14 +604,6 @@ Hi, Python.</span></code></pre></div>
                                 <li>
 <time datetime="2016-09-13T02:13:00.000001+00:00"><span class="say-no-more">2016-</span>09-13</time>
  <a href="http://feedproxy.google.com/~r/PythonInsider/~3/6vXS6z9YHg0/python-360-beta-1-is-now-available.html">Python 3.6.0b1&nbsp;is the first of four planned beta releases of ...</a></li>
-                                
-                                <li>
-<time datetime="2016-08-16T03:04:00.000001+00:00"><span class="say-no-more">2016-</span>08-16</time>
- <a href="http://feedproxy.google.com/~r/PythonInsider/~3/ukG8L0FEq2Q/python-360-alpha-4-preview-release-is.html">Python 3.6.0a4&nbsp;has been&nbsp;released.&nbsp;&nbsp;3.6.0a4 is the last of four planned alpha ...</a></li>
-                                
-                                <li>
-<time datetime="2016-07-12T05:32:00.000001+00:00"><span class="say-no-more">2016-</span>07-12</time>
- <a href="http://feedproxy.google.com/~r/PythonInsider/~3/6i6vUY_x_SE/python-360-alpha-3-preview-release-is.html">Python 3.6.0a3&nbsp;has been&nbsp;released.&nbsp;&nbsp;3.6.0a3 is the third of four planned alpha ...</a></li>
                                 
                             </ul>
                         </div><!-- end .shrubbery -->
@@ -622,32 +622,32 @@ Hi, Python.</span></code></pre></div>
                                 
                                 
                                 <li>
-<time datetime="2016-10-26T15:00:00+00:00"><span class="say-no-more">2016-</span>10-26</time>
- <a href="/events/python-user-group/464/">PyKla monthly meetup</a></li>
+<time datetime="2016-11-28T00:00:00+00:00"><span class="say-no-more">2016-</span>11-28</time>
+ <a href="/events/python-events/431/">Canceled: PyData Cologne 2016</a></li>
                                 
                                 
                                 
                                 <li>
-<time datetime="2016-10-26T16:00:00+00:00"><span class="say-no-more">2016-</span>10-26</time>
- <a href="/events/python-user-group/470/">Python Meeting Düsseldorf</a></li>
+<time datetime="2017-02-16T00:00:00+00:00"><span class="say-no-more">2017-</span>02-16</time>
+ <a href="/events/python-events/474/">PyCon Pune 2017</a></li>
                                 
                                 
                                 
                                 <li>
-<time datetime="2016-10-28T00:00:00+00:00"><span class="say-no-more">2016-</span>10-28</time>
- <a href="/events/python-events/433/">PyCon DE 2016</a></li>
+<time datetime="2017-03-10T00:00:00+00:00"><span class="say-no-more">2017-</span>03-10</time>
+ <a href="/events/python-events/473/">PyCon SK 2017</a></li>
                                 
                                 
                                 
                                 <li>
-<time datetime="2016-10-28T00:00:00+00:00"><span class="say-no-more">2016-</span>10-28</time>
- <a href="/events/python-events/416/">PyCon CZ 2016</a></li>
+<time datetime="2017-04-03T00:00:00+00:00"><span class="say-no-more">2017-</span>04-03</time>
+ <a href="/events/python-events/467/">DjangoCon Europe 2017</a></li>
                                 
                                 
                                 
                                 <li>
-<time datetime="2016-10-29T00:00:00+00:00"><span class="say-no-more">2016-</span>10-29</time>
- <a href="/events/python-events/443/">PyCon HK 2016</a></li>
+<time datetime="2017-05-08T00:00:00+00:00"><span class="say-no-more">2017-</span>05-08</time>
+ <a href="/events/python-events/463/">GeoPython 2017</a></li>
                                 
                                 
                             </ul>

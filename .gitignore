@@ -117,7 +117,7 @@ crashlytics.properties
 crashlytics-build.properties
 
 # ignore program data
-websearcher_data/*
+data/*
 
 # ignore input file
 oovwords.csv
