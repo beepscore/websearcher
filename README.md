@@ -194,7 +194,7 @@ https://github.com/kennethreitz/requests
 ### Install virtual environment in directory named "venv"
 
     $ cd <project root directory>
-    python -m venv venv
+    python3 -m venv venv
 
 ### Before activating virtual environment
 
@@ -212,7 +212,7 @@ On my machine, to use python3 must specify python3
 
 ### Activate virtual environment
 
-    ➜  websearcher git:(master) source ./venv/bin/activate
+    ➜  websearcher git:(master) source venv/bin/activate
 
 ### Now active python is in venv and is version 3.5.1
 
@@ -241,6 +241,10 @@ Installed to project venv
 ## Appendix pip install dependencies
 With virtualenv active
 
+    pip install -r requirements.txt
+
+    or
+    
     pip install requests
     pip install beautifulsoup4
     pip install selenium
