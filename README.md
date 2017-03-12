@@ -19,12 +19,14 @@ Storing pages enables searching multiple times without re-downloading.
 
 ### Download web page containing HTML and Javascript
 Many web requests return a combination of HTML and Javascript.
+Viewing "page source" shows html and javascript, but not the result of running the javascript.
+
 For example, a google search.
 
         https://www.google.com/#q=pythan
 
-Use selenium webdriver to load the page.
-Wait until it runs the javascript and gets more html.
+Use selenium webdriver to load the page in a browser.
+Have selenium wait until the browser executes the javascript and gets more html.
 Then parse and search the page e.g. with Beautiful Soup.
 
 # References
@@ -106,7 +108,7 @@ Supply path to websearcher, e.g.
 Don't commit actual input file.
 In .gitignore ignored oovwords.csv
 
-    python3 -m get_suggested_spellings -in_dir "websearcher_data/inputs" -in_file "oovwords.csv" -out_dir "websearcher_data/results" -out_file "suggested_spelling_results.csv"
+    python3 -m get_suggested_spellings -in_dir "data/input" -in_file "oovwords.csv" -out_dir "data/output" -out_file "suggested_spelling_output.csv"
 
 ### to use default argument values
     python3 -m get_suggested_spellings
@@ -120,15 +122,15 @@ In .gitignore ignored oovwords.csv
 ## Download web pages
     python3 -m download_web
 
-### Search files and write search results to file
+### Search files and write search output to file
 Search is similar to Unix/Linux grep command
 
 #### specify argument values
-Note: Suggest use different values for download_directory and results file directory.
+Note: Suggest use different values for download_directory and output file directory.
 
-Otherwise subsequent searches might accidentally search a results file.
+Otherwise subsequent searches might accidentally search an output file.
 
-    python3 -m search_web -expression "ython" -search_directory "websearcher_data/downloads" -out_dir "websearcher_data/results" -out_file "websearcher_results.txt"
+    python3 -m search_web -expression "ython" -search_directory "data/downloads" -out_dir "data/output" -out_file "websearcher_output.txt"
 
 #### to use default argument values
     python ./websearcher/search_web.py
@@ -191,13 +193,8 @@ https://github.com/kennethreitz/requests
 
 ### Install virtual environment in directory named "venv"
 
-#### macos
-    
     $ cd <project root directory>
-    $ pyvenv venv
-
-#### windows
-    python -m venv venv
+    python3 -m venv venv
 
 ### Before activating virtual environment
 
@@ -215,7 +212,7 @@ On my machine, to use python3 must specify python3
 
 ### Activate virtual environment
 
-    ➜  websearcher git:(master) source ./venv/bin/activate
+    ➜  websearcher git:(master) source venv/bin/activate
 
 ### Now active python is in venv and is version 3.5.1
 
@@ -244,6 +241,10 @@ Installed to project venv
 ## Appendix pip install dependencies
 With virtualenv active
 
+    pip install -r requirements.txt
+
+    or
+    
     pip install requests
     pip install beautifulsoup4
     pip install selenium
@@ -253,16 +254,16 @@ With virtualenv active
 
 Then manually edited requirements.txt
 
+## Appendix Use requirements.txt
+In requirements.txt list dependencies, update version numbers. Then run
+
+    pip install -r requirements.txt --upgrade
+
 ## Appendix clone app from github to another machine
 After cloning app from github, activating venv did still showed system python.
 Fixed as follows:
 
     delete ./venv
-    Re-run pyvenv venv
-    pip re-install packages.
-
-## Appendix Use requirements.txt
-In requirements.txt list dependencies, update version numbers. Then run
-
-    pip install -r requirements.txt --upgrade
+    Run python -m venv venv
+    pip install -r requirements.txt
 

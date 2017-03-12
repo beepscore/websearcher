@@ -17,10 +17,10 @@ class TestSpellingSuggesterArgReader(unittest.TestCase):
     def test_args_default(self):
         reader = spelling_suggester_arg_reader.SpellingSuggesterArgReader()
         args = reader.args(None)
-        self.assertEqual("./websearcher_data/inputs", args.in_dir, '')
+        self.assertEqual("./data/input", args.in_dir, '')
         self.assertEqual("oovwords.csv", args.in_file, '')
-        self.assertEqual("./websearcher_data/results", args.out_dir, '')
-        self.assertEqual("suggested_spellings_results.csv", args.out_file, '')
+        self.assertEqual("./data/output", args.out_dir, '')
+        self.assertEqual("suggested_spellings_output.csv", args.out_file, '')
 
     def test_args_from_argument(self):
         reader = spelling_suggester_arg_reader.SpellingSuggesterArgReader()
@@ -28,7 +28,7 @@ class TestSpellingSuggesterArgReader(unittest.TestCase):
         in_dir = "../some_in_directory"
         in_file = "some_input.csv"
         out_dir = "../some_directory"
-        out_file = "some_results.csv"
+        out_file = "some_output.csv"
 
         test_commandline = ["-in_dir", in_dir, "-in_file", in_file, "-out_dir", out_dir, "-out_file", out_file]
         args = reader.args(test_commandline)
@@ -41,12 +41,12 @@ class TestSpellingSuggesterArgReader(unittest.TestCase):
     def test_args_from_argument_file(self):
         reader = spelling_suggester_arg_reader.SpellingSuggesterArgReader()
         # use fromfile_prefix_chars @ to read args from file
-        args = reader.args(["@./websearcher_data/inputs/spelling_suggester_args.txt"])
+        args = reader.args(["@./data/input/spelling_suggester_args.txt"])
 
-        self.assertEqual("./websearcher_data/inputs", args.in_dir)
+        self.assertEqual("./data/input", args.in_dir)
         self.assertEqual("oovwords.csv", args.in_file)
-        self.assertEqual("./websearcher_data/results", args.out_dir)
-        self.assertEqual("suggested_spellings_results.csv", args.out_file)
+        self.assertEqual("./data/output", args.out_dir)
+        self.assertEqual("suggested_spellings_output.csv", args.out_file)
 
 if __name__ == "__main__":
     unittest.main()

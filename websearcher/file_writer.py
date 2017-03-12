@@ -32,12 +32,18 @@ def create_directory(dirname):
 
 
 def filename_from_url(url):
-    """
-    Similar to Django slugify
+    """ Similar to Django slugify
+
     http://stackoverflow.com/questions/295135/turn-a-string-into-a-valid-filename-in-python
 
-    :param url: url to convert
-    :return: a valid filename
+    Parameters
+    ----------
+    url: url to convert
+
+    Returns
+    -------
+    String
+        a valid filename
     """
     filename = "".join(i for i in url if i not in "\/:*?<>|")
     return filename
