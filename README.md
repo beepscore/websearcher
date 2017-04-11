@@ -146,6 +146,11 @@ Works on OS X. On Windows may work with Cygwin, I don't know.
     $ ./bin/run_tests
 
 ### python command
+This command lists and tests all modules
+
+    python3 -m unittest discover -s tests/
+    
+Alternatively, can supply test module names as args.  
 This command lists and tests all modules except web_downloader_arg_reader and web_searcher_arg_reader.
 
     python -m unittest tests.test_page_reader tests.test_file_writer tests.test_web_downloader tests.test_web_searcher
