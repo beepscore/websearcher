@@ -1,6 +1,7 @@
 # websearcher
 
 # Purpose
+Python project to download web pages and search them.
 
 ## Functionality
 
