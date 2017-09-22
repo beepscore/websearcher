@@ -31,12 +31,15 @@ class RegexSearch:
             # print(misspelled_word, correct_word)
 
             # {'aggravated': 'agrravated|agervated', }
-            # key is correct_word
-            if correct_word in regex_dictionary:
+
+            # use get() method, which returns None if not found, won't throw KeyError.
+            # if dictionary doesn't contain key, regex_dictionary[correct_word] will throw KeyError.
+            # To avoid error, either use get() or use conditional pre-check "if key in dictionary"
+            regex = regex_dictionary.get(correct_word)
+
+            if regex is not None:
                 # append to value regex
                 # {'aggravated': '(aggrabatd|aggravatred)'}
-
-                regex = regex_dictionary[correct_word]
 
                 first_letter_of_regex = regex[0]
                 last_letter_of_regex = regex[-1]
