@@ -187,89 +187,27 @@ at vim command line type as below, including ^V and ^M
 
 ---
 
-## Appendix virtual environment venv
+## Appendix Anaconda
 
-The project uses a virtual environment.
+The project uses an Anaconda environment.
 
-https://docs.python.org/3/library/venv.html
+### Activate anaconda environment
 
-This can hold a python version and pip installed packages such as "requests".
+    beepscore02:websearcher stevebaker$ source activate beepscore
 
-https://github.com/kennethreitz/requests
+Notice command prompt shows anaconda environment is active
 
-### Install virtual environment in directory named "venv"
+    (beepscore) beepscore02:websearcher stevebaker$
 
-    $ cd <project root directory>
-    python3 -m venv venv
+    (beepscore) beepscore02:websearcher stevebaker$ which python
+    /Users/stevebaker/anaconda/envs/beepscore/bin/python
 
-### Before activating virtual environment
-
-On my machine, active python is 2.7.11
-
-    ➜  websearcher git:(master) ✗ which python
-    /usr/local/bin/python
-    ➜  websearcher git:(master) python --version
-    Python 2.7.11
-
-On my machine, to use python3 must specify python3
-
-    ➜  websearcher git:(master) which python3
-    /usr/local/bin/python3
-
-### Activate virtual environment
-
-    ➜  websearcher git:(master) source venv/bin/activate
-
-### Now active python is in venv and is version 3.5.1
-
-Notice command prompt shows venv is active
-
-    (venv) ➜  websearcher git:(master) which python
-    /Users/stevebaker/Documents/projects/pythonProjects/websearcher/venv/bin/python
-    (venv) ➜  websearcher git:(master) python --version
-    Python 3.5.1
+    (beepscore) beepscore02:websearcher stevebaker$ python --version
+    Python 3.6.2 :: Continuum Analytics, Inc.
 
 
 ### Deactivate virtual environment
-In shell run deactivate
-    (venv) ➜  websearcher git:(master) ✗ deactivate
+In shell run source deactivate
 
-## Appendix upgrade pip
-With virtualenv active
-
-    pip install --upgrade pip
-
-    Successfully uninstalled pip-8.1.0
-    Successfully installed pip-8.1.2
-
-Installed to project venv
-
-## Appendix pip install dependencies
-With virtualenv active
-
-    pip install -r requirements.txt
-
-    or
-    
-    pip install requests
-    pip install beautifulsoup4
-    pip install selenium
-
-### update to latest selenium
-    pip3 install --upgrade selenium
-
-Then manually edited requirements.txt
-
-## Appendix Use requirements.txt
-In requirements.txt list dependencies, update version numbers. Then run
-
-    pip install -r requirements.txt --upgrade
-
-## Appendix clone app from github to another machine
-After cloning app from github, activating venv did still showed system python.
-Fixed as follows:
-
-    delete ./venv
-    Run python -m venv venv
-    pip install -r requirements.txt
+    (beepscore) beepscore02:websearcher stevebaker$ source deactivate
 
