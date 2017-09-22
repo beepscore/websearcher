@@ -185,7 +185,24 @@ at vim command line type as below, including ^V and ^M
 
     :%s/<Ctrl-V><Ctrl-M>/\r/g
 
----
+
+### PyCharm test configuration
+.idea files aren't in source control, so describe configuration setup here.
+Add from Defaults/Python tests/unittests
+
+#### Target / Path
+
+    tests/
+
+#### pattern
+
+    test_.*.py
+
+#### Python interpreter
+Python 3.6.1 (~/anaconda/envs/beepscore/bin/python)
+
+select add content roots to python path
+select add source roots to python path
 
 ## Appendix Anaconda
 
