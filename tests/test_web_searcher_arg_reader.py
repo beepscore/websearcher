@@ -52,5 +52,6 @@ class TestWebSearcherArgReader(unittest.TestCase):
         self.assertEqual("./data/output", args.out_dir)
         self.assertEqual("websearcher_output.txt", args.out_file)
 
+
 if __name__ == "__main__":
     unittest.main()

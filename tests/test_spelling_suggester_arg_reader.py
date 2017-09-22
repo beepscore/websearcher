@@ -48,5 +48,6 @@ class TestSpellingSuggesterArgReader(unittest.TestCase):
         self.assertEqual("./data/output", args.out_dir)
         self.assertEqual("suggested_spellings_output.csv", args.out_file)
 
+
 if __name__ == "__main__":
     unittest.main()

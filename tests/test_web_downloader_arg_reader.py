@@ -43,5 +43,6 @@ class TestWebDownloaderArgReader(unittest.TestCase):
         self.assertEqual("./data/input/urls.txt", args.urls_file)
         self.assertEqual("./data/downloads", args.out_directory)
 
+
 if __name__ == "__main__":
     unittest.main()

@@ -53,5 +53,6 @@ class TestFileWriter(unittest.TestCase):
         actual = file_writer.absolute_file_path(test_dirname, test_filename)
         self.assertTrue(os.path.isfile(actual), '')
 
+
 if __name__ == "__main__":
     unittest.main()

@@ -27,5 +27,6 @@ class TestPageReader(unittest.TestCase):
         expected = "<!doctype html><html itemscope"
         self.assertEqual(expected, response.text[:30], '')
 
+
 if __name__ == "__main__":
     unittest.main()

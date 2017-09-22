@@ -22,5 +22,6 @@ class TestSpellingSuggester(unittest.TestCase):
     def test_suggested_spelling_python(self):
         self.assertEqual("", suggested_spelling.suggested_spelling("python"), '')
 
+
 if __name__ == "__main__":
     unittest.main()

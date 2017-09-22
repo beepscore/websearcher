@@ -37,5 +37,6 @@ class TestWebDownloader(unittest.TestCase):
         downloader = web_downloader.WebDownloader("@./data/input/web_downloader_args.txt")
         downloader.request_urls_write_to_files()
 
+
 if __name__ == "__main__":
     unittest.main()

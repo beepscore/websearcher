@@ -64,5 +64,6 @@ class TestWebSearcher(unittest.TestCase):
                                                                 "./data/output",
                                                                 "websearcher_output.txt")
 
+
 if __name__ == "__main__":
     unittest.main()
