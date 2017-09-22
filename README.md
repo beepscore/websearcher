@@ -195,14 +195,16 @@ Add from Defaults/Python tests/unittests
     tests/
 
 #### pattern
-
-    test_.*.py
+can leave this blank
 
 #### Python interpreter
 Python 3.6.1 (~/anaconda/envs/beepscore/bin/python)
 
 select add content roots to python path
 select add source roots to python path
+
+#### Working directory
+can leave this blank
 
 ## Appendix Anaconda
 
