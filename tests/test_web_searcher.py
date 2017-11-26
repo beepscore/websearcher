@@ -47,8 +47,8 @@ class TestWebSearcher(unittest.TestCase):
     def test_search_directory_Python(self):
         actual = web_searcher.WebSearcher.search_directory("Python",
                                                            "./data/downloads")
-        self.assertEqual(['httppython.org',
-                          'httpsen.wikipedia.orgwikiPython_%28programming_language%29'], actual)
+        expected = ['httpsen.wikipedia.orgwikiPython_%28programming_language%29', 'httppython.org']
+        self.assertEqual(actual, expected)
 
     def test_search_directory_data(self):
         actual = web_searcher.WebSearcher.search_directory("dat*",
