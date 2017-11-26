@@ -311,7 +311,7 @@
     
         <li class="tier-2 element-3" role="treeitem"><a href="https://wiki.python.org/moin/BeginnersGuide" title="">Beginner&#39;s Guide</a></li>
     
-        <li class="tier-2 element-4" role="treeitem"><a href="https://docs.python.org/devguide/" title="">Developer&#39;s Guide</a></li>
+        <li class="tier-2 element-4" role="treeitem"><a href="https://devguide.python.org/" title="">Developer&#39;s Guide</a></li>
     
         <li class="tier-2 element-5" role="treeitem"><a href="https://docs.python.org/faq/" title="">FAQ</a></li>
     
@@ -571,7 +571,7 @@ Hi, Python.</span></code></pre></div>
                     <div class="small-widget download-widget">
                         <h2 class="widget-title"><span aria-hidden="true" class="icon-download"></span>Download</h2>
 <p>Python source code and installers are available for download for all versions! Not sure which version to use? <a href="https://wiki.python.org/moin/Python2orPython3">Check here</a>.</p>
-<p>Latest: <a href="/downloads/release/python-362/">Python 3.6.2</a> - <a href="/downloads/release/python-2714/">Python 2.7.14</a></p>
+<p>Latest: <a href="/downloads/release/python-363/">Python 3.6.3</a> - <a href="/downloads/release/python-2714/">Python 2.7.14</a></p>
                     </div>
 
                     <div class="small-widget documentation-widget">
@@ -601,6 +601,14 @@ Hi, Python.</span></code></pre></div>
                                 
                                 
                                 <li>
+<time datetime="2017-10-17T19:34:00.000001+00:00"><span class="say-no-more">2017-</span>10-17</time>
+ <a href="http://feedproxy.google.com/~r/PythonInsider/~3/ubEu3XCqoFM/python-370a2-now-available-for-testing.html">Python&nbsp;3.7.0a2&nbsp;is the second of four planned alpha releases of Python ...</a></li>
+                                
+                                <li>
+<time datetime="2017-10-03T20:03:00.000001+00:00"><span class="say-no-more">2017-</span>10-03</time>
+ <a href="http://feedproxy.google.com/~r/PythonInsider/~3/MTxxkf2pSRE/python-363-is-now-available.html">Python 3.6.3 is now available. &nbsp;Python 3.6.3 is the third ...</a></li>
+                                
+                                <li>
 <time datetime="2017-09-19T21:45:00.000001+00:00"><span class="say-no-more">2017-</span>09-19</time>
  <a href="http://feedproxy.google.com/~r/PythonInsider/~3/8Ow7wxYkBmY/python-363rc1-and-370a1-now-available.html">The Python build factories have been busy the last several ...</a></li>
                                 
@@ -611,14 +619,6 @@ Hi, Python.</span></code></pre></div>
                                 <li>
 <time datetime="2017-09-07T00:13:00.000003+00:00"><span class="say-no-more">2017-</span>09-07</time>
  <a href="http://feedproxy.google.com/~r/PythonInsider/~3/pUndlLcEcKE/python-337rc1-is-now-available-prior-to.html">Python 3.3.7rc1 is now available, the release candidate of Python ...</a></li>
-                                
-                                <li>
-<time datetime="2017-08-27T03:41:00.000006+00:00"><span class="say-no-more">2017-</span>08-27</time>
- <a href="http://feedproxy.google.com/~r/PythonInsider/~3/pe2Ug4MA0Lg/python-2714-release-candidate-1.html">The first release candidate for Python 2.7.14 is now available ...</a></li>
-                                
-                                <li>
-<time datetime="2017-08-09T07:34:00.000002+00:00"><span class="say-no-more">2017-</span>08-09</time>
- <a href="http://feedproxy.google.com/~r/PythonInsider/~3/vY72b719CGk/python-354-and-python-347-are-now.html">Python 3.5.4 and Python 3.4.7 are now available for download. ...</a></li>
                                 
                             </ul>
                         </div><!-- end .shrubbery -->
@@ -637,32 +637,32 @@ Hi, Python.</span></code></pre></div>
                                 
                                 
                                 <li>
-<time datetime="2017-09-23T00:00:00+00:00"><span class="say-no-more">2017-</span>09-23</time>
- <a href="/events/python-user-group/573/">Django Girls Trento</a></li>
+<time datetime="2017-11-26T04:00:00+00:00"><span class="say-no-more">2017-</span>11-26</time>
+ <a href="/events/python-user-group/630/">Django Girls in Tashkent</a></li>
                                 
                                 
                                 
                                 <li>
-<time datetime="2017-09-28T00:00:00+00:00"><span class="say-no-more">2017-</span>09-28</time>
- <a href="/events/python-events/578/">PyConKE 2017</a></li>
+<time datetime="2017-11-29T00:00:00+00:00"><span class="say-no-more">2017-</span>11-29</time>
+ <a href="/events/python-events/610/">SciPy India 2017</a></li>
                                 
                                 
                                 
                                 <li>
-<time datetime="2017-09-30T00:00:00+00:00"><span class="say-no-more">2017-</span>09-30</time>
- <a href="/events/python-user-group/587/">Django Girls Kampala 2017</a></li>
+<time datetime="2017-12-02T00:00:00+00:00"><span class="say-no-more">2017-</span>12-02</time>
+ <a href="/events/python-events/556/">North Bay Python 2017</a></li>
                                 
                                 
                                 
                                 <li>
-<time datetime="2017-09-30T00:00:00+00:00"><span class="say-no-more">2017-</span>09-30</time>
- <a href="/events/python-user-group/538/">Argentina DevDay - Mendoza</a></li>
+<time datetime="2017-12-02T00:00:00+00:00"><span class="say-no-more">2017-</span>12-02</time>
+ <a href="/events/python-events/552/">Kiwi PyCon 2017</a></li>
                                 
                                 
                                 
                                 <li>
-<time datetime="2017-10-01T00:00:00+00:00"><span class="say-no-more">2017-</span>10-01</time>
- <a href="/events/python-user-group/566/">Django Girls Bishkek</a></li>
+<time datetime="2017-12-02T00:00:00+00:00"><span class="say-no-more">2017-</span>12-02</time>
+ <a href="/events/python-user-group/623/">Django Girls Ibagué</a></li>
                                 
                                 
                             </ul>
@@ -846,7 +846,7 @@ Hi, Python.</span></code></pre></div>
     
         <li class="tier-2 element-3" role="treeitem"><a href="https://wiki.python.org/moin/BeginnersGuide" title="">Beginner&#39;s Guide</a></li>
     
-        <li class="tier-2 element-4" role="treeitem"><a href="https://docs.python.org/devguide/" title="">Developer&#39;s Guide</a></li>
+        <li class="tier-2 element-4" role="treeitem"><a href="https://devguide.python.org/" title="">Developer&#39;s Guide</a></li>
     
         <li class="tier-2 element-5" role="treeitem"><a href="https://docs.python.org/faq/" title="">FAQ</a></li>
     
@@ -972,7 +972,7 @@ Hi, Python.</span></code></pre></div>
 
 <ul class="subnav menu">
     
-        <li class="tier-2 element-1" role="treeitem"><a href="http://docs.python.org/devguide/" title="">Developer&#39;s Guide</a></li>
+        <li class="tier-2 element-1" role="treeitem"><a href="https://devguide.python.org/" title="">Developer&#39;s Guide</a></li>
     
         <li class="tier-2 element-2" role="treeitem"><a href="https://bugs.python.org/" title="">Issue Tracker</a></li>
     
@@ -1012,6 +1012,7 @@ Hi, Python.</span></code></pre></div>
                             &nbsp;<span class="pre"><a href="/psf-landing/">Python Software Foundation</a></span>
                             &nbsp;<span class="pre"><a href="/about/legal/">Legal Statements</a></span>
                             &nbsp;<span class="pre"><a href="/privacy/">Privacy Policy</a></span>
+                            &nbsp;<span class="pre"><a href="/psf/sponsorship/sponsors/">Powered by Rackspace</a></span>
                         </small></p>
                     </div>
 
