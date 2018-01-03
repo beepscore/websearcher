@@ -71,7 +71,19 @@ Then in python file
 browser = webdriver.Chrome()
 
 2016-10-23 Chrome with chromedriver, log doesn't show a warning
-    
+
+##### Windows 10
+In Anaconda navigator searched for chromedriver, found one at clinicalgraphics.
+
+In terminal program "anaconda prompt"
+Activate desired conda environment e.g.
+
+    C:\Users\KLittle\AppData\Local\Continuum\anaconda3\Scripts\activate LingProg
+
+Then to install
+
+    conda install -c clinicalgraphics selenium-chromedriver
+
 #### Google spell checker api
 free use is limited, then pay  
 https://code.google.com/archive/p/google-api-spelling-java/
@@ -212,7 +224,11 @@ The project uses an Anaconda environment.
 
 ### Activate anaconda environment
 
+#### macos
     beepscore02:websearcher stevebaker$ source activate beepscore
+
+#### windows
+    C:\Users\KLittle\AppData\Local\Continuum\anaconda3\Scripts\activate LingProg
 
 Notice command prompt shows anaconda environment is active
 
