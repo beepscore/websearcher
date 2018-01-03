@@ -56,6 +56,9 @@ class TopHits:
             for line in input_file.readlines():
                 print('input line number: ' + str(line_number) + ' line: ' + line)
                 search_string = line.split(",")[0]
+                # This ignores wikipedia results
+                word_to_ignore = '-wikipedia'
+                search_string = search_string + ' ' + word_to_ignore
 
                 count = ""
                 if line is not None and len(line.split(",")) > 1:
