@@ -43,7 +43,7 @@ class TopHits:
         # https://www.python.org/dev/peps/pep-0343/
         # Unfortunately warning is still present. May be coming from somewhere else.
 
-        with open(in_file_full_path, 'r') as input_file, open(out_file_full_path, 'w', newline='') as output_file:
+        with open(in_file_full_path, 'r') as input_file, open(out_file_full_path, 'w', encoding="utf-8", newline='') as output_file:
 
             # use csv.writer to escape commas within result string
             # https://docs.python.org/3.5/library/csv.html
