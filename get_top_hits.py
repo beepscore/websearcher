@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 
 from websearcher import top_hits
-# import win_unicode_console
-# win_unicode_console.enable()
 
 """
 Search words in input file. Use command line arguments.
