@@ -225,7 +225,7 @@ The project uses an Anaconda environment.
 ### Activate anaconda environment
 
 #### macos
-    beepscore02:websearcher stevebaker$ source activate beepscore
+    beepscore02:websearcher stevebaker$ conda activate beepscore
 
 #### windows
     C:\Users\KLittle\AppData\Local\Continuum\anaconda3\Scripts\activate LingProg
@@ -241,8 +241,8 @@ Notice command prompt shows anaconda environment is active
     Python 3.6.2 :: Continuum Analytics, Inc.
 
 
-### Deactivate virtual environment
-In shell run source deactivate
+### Deactivate conda environment
+In shell run conda deactivate
 
-    (beepscore) beepscore02:websearcher stevebaker$ source deactivate
+    (beepscore) beepscore02:websearcher stevebaker$ conda deactivate
 
