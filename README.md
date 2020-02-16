@@ -1,103 +1,9 @@
-websearcher
-===========
-
-Purpose
-=======
-
+# Purpose
 Python project to download web pages and search them.
 
-Functionality
--------------
+## Example usage
 
 ### Get suggested spellings
-
-### Get top hits
-
-### Concatenate regexes
-
-### Download web pages
-
-### Unit tests
-
-Download pages 2 ways
----------------------
-
-### Download web page containing HTML, then search
-
-Download a list of web pages and store them locally. Then search them
-for a regular expression. Storing pages enables searching multiple times
-without re-downloading.
-
-### Download web page containing HTML and Javascript
-
-Many web requests return a combination of HTML and Javascript. Viewing
-"page source" shows html and javascript, but not the result of running
-the javascript.
-
-For example, a google search.
-
-    https://www.google.com/#q=pythan
-
-Use selenium webdriver to load the page in a browser. Have selenium wait
-until the browser executes the javascript and gets more html. Then parse
-and search the page e.g. with Beautiful Soup.
-
-References
-==========
-
-Download web page containing HTML and Javascript
-------------------------------------------------
-
-<http://stackoverflow.com/questions/8049520/web-scraping-javascript-page-with-python>
-
-<http://blog.databigbang.com/web-scraping-ajax-and-javascript-sites/>
-
-<http://stackoverflow.com/questions/11804497/python-3-web-scraping-and-javascript-oh-my?rq=1>
-
-Google spell checker api
-------------------------
-
-| free use is limited, then pay
-| <https://code.google.com/archive/p/google-api-spelling-java/>
-
-Beautiful Soup
---------------
-
-<https://www.crummy.com/software/BeautifulSoup/bs4/doc/>
-
-<https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class>
-
-<http://stackoverflow.com/questions/11331071/get-class-name-and-contents-using-beautiful-soup>
-
-searcher Python 3
------------------
-
-<https://github.com/beepscore/searcher>
-
-Results
-=======
-
-activate the project's virtual environment
-------------------------------------------
-
-Can use Anaconda or virtualenv.
-
-### In terminal shell, cd to project root directory
-
-    cd websearcher
-
-### on macOS
-
-Supply path to websearcher, e.g.
-
-    source ./websearcher/venv/bin/activate
-
-### on Windows
-
-    venv\Scripts\activate
-
-Get suggested spellings
------------------------
 
 Don't commit actual input file. In .gitignore ignored oovwords.csv
 
@@ -107,20 +13,24 @@ Don't commit actual input file. In .gitignore ignored oovwords.csv
 
     python3 -m get_suggested_spellings
 
-Get top hits
-------------
+### Get top hits
 
     python3 -m get_top_hits
 
-Concatenate regexes
--------------------
+### Concatenate regexes
 
     python3 -m concatenate_regex
 
-Download web pages
-------------------
+### Download web pages
 
     python3 -m download_web
+
+#### Download pages 2 ways
+
+#### Download web page containing HTML, then search
+
+#### Download web page, store locally, then search
+Storing pages enables searching multiple times without re-downloading.
 
 ### Search files and write search output to file
 
@@ -139,8 +49,66 @@ Otherwise subsequent searches might accidentally search an output file.
 
     python ./websearcher/search_web.py
 
-Unit tests
-----------
+
+# References
+
+## Download web page containing HTML and Javascript
+
+<http://stackoverflow.com/questions/8049520/web-scraping-javascript-page-with-python>
+
+<http://blog.databigbang.com/web-scraping-ajax-and-javascript-sites/>
+
+<http://stackoverflow.com/questions/11804497/python-3-web-scraping-and-javascript-oh-my?rq=1>
+
+## Google spell checker api
+
+| free use is limited, then pay
+| <https://code.google.com/archive/p/google-api-spelling-java/>
+
+## Beautiful Soup
+
+<https://www.crummy.com/software/BeautifulSoup/bs4/doc/>
+
+<https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class>
+
+<http://stackoverflow.com/questions/11331071/get-class-name-and-contents-using-beautiful-soup>
+
+## searcher
+Python 3 project to search local file directories
+
+<https://github.com/beepscore/searcher>
+
+## Appendix Why use selenium?
+Many web requests return a combination of HTML and Javascript.
+In these cases, we can use a web browser to run the javascript and get more html.
+
+Use selenium webdriver to load the page in a browser.
+Have selenium wait until the browser executes the javascript and gets more html.
+Then parse and search the page e.g. with Beautiful Soup.
+
+<http://stackoverflow.com/questions/11331071/get-class-name-and-contents-using-beautiful-soup>
+<https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class>
+
+## Appendix activate the project's virtual environment
+
+Can use Anaconda or virtualenv.
+
+### In terminal shell, cd to project root directory
+
+    cd websearcher
+
+### on macOS
+
+Supply path to websearcher, e.g.
+
+    source ./websearcher/venv/bin/activate
+
+### on Windows
+
+    venv\Scripts\activate
+
+
+## Unit tests
 
 | To run tests, open terminal shell.
 | cd to project directory. Run tests via python command or bash script.
@@ -174,21 +142,7 @@ This command lists and tests all modules
 | TODO: Consider alternative solutions.
 | <http://stackoverflow.com/questions/35270177/passing-arguments-for-argparse-with-unittest-discover>
 
-------------------------------------------------------------------------
 
-Appendix Download web page containing HTML and Javascript
----------------------------------------------------------
-
-Many web requests return a combination of HTML and Javascript. For
-example, a google search.
-
-    https://www.google.com/#q=javascwipt
-
-In these cases, we can use a web browser to run the javascript and get
-more html.
-
-<http://stackoverflow.com/questions/11331071/get-class-name-and-contents-using-beautiful-soup>
-<https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class>
 
 use class\_ not Python keyword class
 
