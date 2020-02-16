@@ -147,6 +147,7 @@ This command lists and tests all modules
 use class\_ not Python keyword class
 
 oovlist.csv
+
 -----------
 
 File from Windows had line endings that show as \^M in vim. Changed to
@@ -160,23 +161,26 @@ at vim command line type as below, including \^V and \^M
 
 #### Python interpreter
 
-If using Anaconda, select within desired anaconda environment, e.g.
+#### Anaconda
+Select within desired anaconda environment, e.g.
 
-> Python 3.6.1 (\~/anaconda/envs/beepscore/bin/python)
+    > Python 3.6.1 (\~/anaconda/envs/beepscore/bin/python)
 
+NOTE: On Windows, may need to click "eye" icon to show hidden files e.g.
+
+    C:\Users\KLittle\AppData\Local\Continuum\anaconda3\envs
+    
+#### Poetry
 If using Poetry, select within desired virtual environment, e.g.
 
-> \~/Library/Caches/pypoetry/virtualenvs/websearcher-NBsQj66t-py3.7/bin
+    > ~/Library/Caches/pypoetry/virtualenvs/websearcher-NBsQj66t-py3.7/bin
 
-select add content roots to python path select add source roots to
-python path
+select add content roots to python path select add source roots to python path
 
 #### Working directory
-
 can leave this blank
 
-Appendix Anaconda
------------------
+## Appendix Anaconda
 
 ### Activate anaconda environment
 
