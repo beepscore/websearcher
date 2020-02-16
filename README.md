@@ -186,7 +186,7 @@ Appendix Anaconda
 
 #### Windows
 
-    C:\Users\KLittle\AppData\Local\Continuum\anaconda3\Scripts\activate LingProg
+    C:\Users\KLittle\AppData\Local\Continuum\anaconda3\Scripts\activate my_env_name
 
 Notice command prompt shows anaconda environment is active
 
@@ -257,15 +257,13 @@ Then in python file browser = webdriver.Chrome()
 2016-10-23 Chrome with chromedriver, log doesn't show a warning
 
 ##### Windows 10
-
-In Anaconda navigator searched for chromedriver, found one at
-clinicalgraphics.
+https://stackoverflow.com/questions/38876281/anaconda-selenium-and-chrome
 
 In terminal program "anaconda prompt" Activate desired conda environment
 e.g.
 
-    C:\Users\KLittle\AppData\Local\Continuum\anaconda3\Scripts\activate LingProg
+    C:\Users\KLittle\AppData\Local\Continuum\anaconda3\Scripts\activate my_env_name
 
 Then to install
 
-    conda install -c clinicalgraphics selenium-chromedriver
+    conda install -n my_env_name -c conda-forge python-chromedriver-binary
