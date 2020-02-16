@@ -54,11 +54,6 @@ and search the page e.g. with Beautiful Soup.
 References
 ==========
 
-searcher Python 3
------------------
-
-https://github.com/beepscore/searcher
-
 .. _download-web-page-containing-html-and-javascript-1:
 
 Download web page containing HTML and Javascript
@@ -70,70 +65,8 @@ http://blog.databigbang.com/web-scraping-ajax-and-javascript-sites/
 
 http://stackoverflow.com/questions/11804497/python-3-web-scraping-and-javascript-oh-my?rq=1
 
-selenium webdriver
-~~~~~~~~~~~~~~~~~~
-
-Selenium version 3 needs a driver to launch a browser.
-
-Firefox geckodriver
-^^^^^^^^^^^^^^^^^^^
-
-https://www.seleniumeasy.com/selenium-tutorials/launching-firefox-browser-with-geckodriver-selenium-3
-https://github.com/mozilla/geckodriver
-
-macOS
-'''''
-
-install via homebrew
-
-::
-
-   brew install geckodriver
-
-Then in python file browser = webdriver.Firefox()
-
-2016-10-23 Firefox with current geckodriver works, but logs warning
-‘NoneType’ object has no attribute ‘path’
-
-Chrome chromedriver
-^^^^^^^^^^^^^^^^^^^
-
-.. _macos-1:
-
-macOS
-'''''
-
-install via homebrew
-
-::
-
-   brew install chromedriver
-
-Then in python file browser = webdriver.Chrome()
-
-2016-10-23 Chrome with chromedriver, log doesn’t show a warning
-
-Windows 10
-''''''''''
-
-In Anaconda navigator searched for chromedriver, found one at
-clinicalgraphics.
-
-In terminal program “anaconda prompt” Activate desired conda environment
-e.g.
-
-::
-
-   C:\Users\KLittle\AppData\Local\Continuum\anaconda3\Scripts\activate LingProg
-
-Then to install
-
-::
-
-   conda install -c clinicalgraphics selenium-chromedriver
-
 Google spell checker api
-^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------
 
 | free use is limited, then pay
 | https://code.google.com/archive/p/google-api-spelling-java/
@@ -147,20 +80,18 @@ https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class
 
 http://stackoverflow.com/questions/11331071/get-class-name-and-contents-using-beautiful-soup
 
-Python modules and packages
----------------------------
+searcher Python 3
+-----------------
 
-http://www.dabeaz.com/modulepackage/ModulePackage.pdf
+https://github.com/beepscore/searcher
 
-https://www.youtube.com/watch?v=0oTh1CXRaQ0
 
 Results
 =======
 
 activate the project’s virtual environment
 ------------------------------------------
-
-For more info about venv see Appendix.
+Can use Anaconda or virtualenv.
 
 In terminal shell, cd to project root directory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -334,55 +265,42 @@ at vim command line type as below, including ^V and ^M
 
    :%s/<Ctrl-V><Ctrl-M>/\r/g
 
-PyCharm test configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.idea files aren’t in source control, so describe configuration setup
-here. Add from Defaults/Python tests/unittests
-
-Target / Path
-^^^^^^^^^^^^^
-
-::
-
-   tests/
-
-pattern
-^^^^^^^
-
-can leave this blank
+PyCharm
+~~~~~~~
 
 Python interpreter
 ^^^^^^^^^^^^^^^^^^
+If using Anaconda, select within desired anaconda environment, e.g.
 
-Python 3.6.1 (~/anaconda/envs/beepscore/bin/python)
+    Python 3.6.1 (~/anaconda/envs/beepscore/bin/python)
 
-select add content roots to python path select add source roots to
-python path
+If using Poetry, select within desired virtual environment, e.g.
+
+    ~/Library/Caches/pypoetry/virtualenvs/websearcher-NBsQj66t-py3.7/bin
+
+select add content roots to python path select add source roots to python path
 
 Working directory
 ^^^^^^^^^^^^^^^^^
-
 can leave this blank
 
 Appendix Anaconda
 -----------------
 
-The project uses an Anaconda environment.
 
 Activate anaconda environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. _macos-2:
 
-macos
+macOS
 ^^^^^
 
 ::
 
    beepscore02:websearcher stevebaker$ conda activate beepscore
 
-windows
+Windows
 ^^^^^^^
 
 ::
@@ -409,3 +327,85 @@ In shell run conda deactivate
 ::
 
    (beepscore) beepscore02:websearcher stevebaker$ conda deactivate
+
+Appendix Poetry
+---------------
+https://python-poetry.org/docs/basic-usage/
+
+activate virtualenv
+~~~~~~~~~~~~~~~~~~~
+cd to virtual environment e.g.
+
+    cd /Users/stevebaker/Library/Caches/pypoetry/virtualenvs/websearcher-NBsQj66t-py3.7/bin
+    source activate
+
+Notice command prompt shows virtual environment is active
+
+   (websearcher-NBsQj66t-py3.7)
+
+
+Appendix install selenium webdriver, geckodriver, chromedriver
+--------------------------------------------------------------
+
+selenium webdriver
+~~~~~~~~~~~~~~~~~~
+
+Selenium version 3 needs a driver to launch a browser.
+
+Firefox geckodriver
+^^^^^^^^^^^^^^^^^^^
+
+https://www.seleniumeasy.com/selenium-tutorials/launching-firefox-browser-with-geckodriver-selenium-3
+https://github.com/mozilla/geckodriver
+
+macOS
+'''''
+
+install via homebrew
+
+::
+
+   brew install geckodriver
+
+Then in python file browser = webdriver.Firefox()
+
+2016-10-23 Firefox with current geckodriver works, but logs warning
+‘NoneType’ object has no attribute ‘path’
+
+Chrome chromedriver
+^^^^^^^^^^^^^^^^^^^
+
+.. _macos-1:
+
+macOS
+'''''
+
+install via homebrew
+
+::
+
+   brew install chromedriver
+
+Then in python file browser = webdriver.Chrome()
+
+2016-10-23 Chrome with chromedriver, log doesn’t show a warning
+
+Windows 10
+''''''''''
+
+In Anaconda navigator searched for chromedriver, found one at
+clinicalgraphics.
+
+In terminal program “anaconda prompt” Activate desired conda environment
+e.g.
+
+::
+
+   C:\Users\KLittle\AppData\Local\Continuum\anaconda3\Scripts\activate LingProg
+
+Then to install
+
+::
+
+   conda install -c clinicalgraphics selenium-chromedriver
+
