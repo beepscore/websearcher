@@ -46,23 +46,6 @@ def suggested_spelling(search_string):
 
 def spelling_showing_results_for(taw_soup):
     """ If argument contains "Showing results for" or "including results for". returns the proposed search term
-
-    Examples
-    --------
-    search benaz
-    google response contains "including results for" with "a" tag and no class
-
-    search javascwipt
-    google response
-    <p class="sp_cnt card-section">
-    <span class="spell">Showing results for</span>
-    <a class="spell" href="/search?/search?biw=1280&bih=423&q=javascwipt&spell=1&sa=X&ved=0ahUKEwjMyeG30oPNAhVMz2MKHRw5D10QvwUIGSgA">
-    <b>
-    <i>javascript</i>
-    </b>
-    </a>
-    method returns "javascript"
-
     Parameters
     ----------
     taw_soup : beautiful soup object
@@ -73,20 +56,13 @@ def spelling_showing_results_for(taw_soup):
     string if found, else return None
     """
 
-    # https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class
-    sp_cnt_card_section_list = taw_soup.select("p.sp_cnt.card-section")
+    fprsl = taw_soup.find(id='fprsl')
+    fprsl_b_i_string = fprsl.b.i.string
 
-    if len(sp_cnt_card_section_list) == 0:
+    if len(fprsl_b_i_string) == 0:
         return None
     else:
-        sp_cnt_card_section = sp_cnt_card_section_list[0]
-        # print(sp_cnt_card_section.prettify())
-
-        # e.g. <b><i>javascwipt</i></b>
-        spell_elem = sp_cnt_card_section.select("a")[0]
-
-        # e.g. javascript
-        return spell_elem.i.contents[0]
+        return fprsl_b_i_string
 
 
 def spelling_did_you_mean(taw_soup):
