@@ -59,8 +59,10 @@ def spelling_showing_results_for(taw_soup):
     -------
     string if found, else return None
     """
-
     fprsl = taw_soup.find(id='fprsl')
+    if fprsl is None:
+        return None
+
     fprsl_b_i_string = fprsl.b.i.string
 
     if len(fprsl_b_i_string) == 0:
