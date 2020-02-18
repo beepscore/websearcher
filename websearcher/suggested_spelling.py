@@ -79,13 +79,6 @@ def spelling_did_you_mean(taw_soup):
     search javascwipt
     google returns "did you mean" with "a" tag and class spell
 
-    <p class="ssp card-section">
-    <span class="spell _uwb">Did you mean:</span>
-    <a class="spell" href="/search?biw=1191&amp;bih=210&amp;q=javascwipt&amp;spell=1&amp;sa=X&amp;ved=0ahUKEwjXnPHU7Y7NAhUI0GMKHXERDJQQBQgZKAA">
-    <b>
-    <i>javascript</i></b>
-    </a>
-
     Parameters
     ----------
     taw_soup : beautiful soup object
@@ -95,18 +88,19 @@ def spelling_did_you_mean(taw_soup):
     -------
     string if found, else return None
     """
+    taw_soup_a = taw_soup.a
+    if taw_soup_a is None:
+        return None
 
-    # https://www.crummy.com/software/BeautifulSoup/bs4/doc/#searching-by-css-class
-    ssp_card_section_list = taw_soup.select("p.ssp.card-section")
+    taw_soup_a_b = taw_soup_a.b
+    if taw_soup_a_b is None:
+        return None
 
-    if len(ssp_card_section_list) == 0:
+    taw_soup_a_b_i = taw_soup_a_b.i
+
+    taw_soup_a_b_i_string = taw_soup_a_b_i.string
+
+    if len(taw_soup_a_b_i_string) == 0:
         return None
     else:
-        ssp_card_section = ssp_card_section_list[0]
-        # print(ssp_card_section.prettify())
-
-        # e.g. <b><i>javascwipt</i></b>
-        spell_elem = ssp_card_section.select("a.spell")[0]
-
-        # e.g. javascript
-        return spell_elem.i.contents[0]
+        return taw_soup_a_b_i_string
