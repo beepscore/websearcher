@@ -76,8 +76,8 @@ def spelling_did_you_mean(taw_soup):
 
     Example
     -------
-    search javascwipt
-    google returns "did you mean" with "a" tag and class spell
+    search swoft
+    google returns "did you mean" and "swift"
 
     Parameters
     ----------
