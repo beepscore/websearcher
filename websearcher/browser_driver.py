@@ -19,8 +19,8 @@ def taw_html(search_string):
     # query_prefix = "/?q="
 
     # google
-    base_url = "https://www.google.com"
-    query_prefix = "/#q="
+    base_url = "https://google.com"
+    query_prefix = "/search?q="
 
     url = base_url + query_prefix + search_string
     browser.get(url)
