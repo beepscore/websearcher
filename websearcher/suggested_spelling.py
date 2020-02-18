@@ -35,6 +35,10 @@ def suggested_spelling(search_string):
         print("returning did_you_mean {0}".format(did_you_mean))
         return did_you_mean
 
+    # if word was spelled correctly, page will contain a line similar to
+    # About 537, 000, 000 results(0.61 seconds)
+    # ignore this
+
     # hit = top_hit.top_hit(search_string)
     # if hit is not None:
     #     print("returning top_hit")
