@@ -7,7 +7,7 @@ authors = ["beepscore <support@beepscore.com>"]
 [tool.poetry.dependencies]
 python = "^3.7"
 bs4 = "^0.0.1"
-requests = "^2.22.0"
+requests = "^2.31.0"
 selenium = "^3.141.0"
 urllib3 = "^1.25.8"
 
