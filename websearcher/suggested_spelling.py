@@ -104,3 +104,9 @@ def spelling_did_you_mean(taw_soup):
         return None
     else:
         return taw_soup_a_b_i_string
+
+
+if __name__ == "__main__":
+
+    result = suggested_spelling("omplain")
+    print(result)
