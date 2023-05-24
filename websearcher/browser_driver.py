@@ -11,8 +11,8 @@ def taw_html(search_string):
     wait for javascript to run and return html for id taw
     return empty string if browser doesn't suggest a spelling
     """
-    # browser = webdriver.Firefox()
-    browser = webdriver.Chrome()
+    browser = webdriver.Firefox()
+    # browser = webdriver.Chrome()
 
     # duckduckgo
     # base_url = "https://www.duckduckgo.com"
