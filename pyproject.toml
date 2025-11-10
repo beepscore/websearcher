@@ -7,7 +7,9 @@ authors = [
     { name = "beepscore", email = "support@beepscore.com" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "selenium>=4.38.0",
+]
 
 [project.scripts]
 websearcher = "websearcher:main"
