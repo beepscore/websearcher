@@ -170,12 +170,6 @@ NOTE: On Windows, may need to click "eye" icon to show hidden files e.g.
 
     C:\Users\KLittle\AppData\Local\Continuum\anaconda3\envs
     
-#### Poetry
-If using Poetry, select within desired virtual environment, e.g.
-
-    > ~/Library/Caches/pypoetry/virtualenvs/websearcher-NBsQj66t-py3.7/bin
-
-select add content roots to python path select add source roots to python path
 
 #### Working directory
 can leave this blank
@@ -207,23 +201,6 @@ Notice command prompt shows anaconda environment is active
 In shell run conda deactivate
 
     (beepscore) beepscore02:websearcher stevebaker$ conda deactivate
-
-Appendix Poetry
----------------
-
-<https://python-poetry.org/docs/basic-usage/>
-
-### activate virtualenv
-
-cd to virtual environment e.g.
-
-> cd
-> /Users/stevebaker/Library/Caches/pypoetry/virtualenvs/websearcher-NBsQj66t-py3.7/bin
-> source activate
-
-Notice command prompt shows virtual environment is active
-
-> (websearcher-NBsQj66t-py3.7)
 
 Appendix install selenium webdriver, geckodriver, chromedriver
 --------------------------------------------------------------
