@@ -62,6 +62,9 @@ Otherwise subsequent searches might accidentally search an output file.
 
 ## Google spell checker api
 
+2025-11 google.com download via selenium is failing because
+google wants confirmation "I am not a robot"
+
 | free use is limited, then pay
 | <https://code.google.com/archive/p/google-api-spelling-java/>
 
