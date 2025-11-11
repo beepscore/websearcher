@@ -14,7 +14,7 @@ class SpellingSuggester:
         """
         Initialize the class.
 
-        :param argfile: file with arguments. Don't version control argfile. Put it outside project directory.
+        :param argfile: file with arguments. Don't version control argfile.
         :return: None
         """
         self.arg_reader = spelling_suggester_arg_reader.SpellingSuggesterArgReader()

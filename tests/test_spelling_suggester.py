@@ -13,7 +13,7 @@ class TestSpellingSuggester(unittest.TestCase):
         pass
 
     def test_suggested_spellings(self):
-        suggester = spelling_suggester.SpellingSuggester("@./data/input/spelling_suggester_args.txt")
+        suggester = spelling_suggester.SpellingSuggester("@./data/test_data/spelling_suggester_args.txt")
         actual = suggester.suggested_spellings(["pythan", "python", "javascwipt", "swoft"])
         expected = ["python", "", "javascript", "swift"]
         self.assertEqual(expected, actual, '')
