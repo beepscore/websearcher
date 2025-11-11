@@ -152,6 +152,7 @@ dmypy.json
 data/*
 # don't ignore test data directory
 !data/test_data/
+!data/test_data/downloads/
 
 # ignore input file
 input_words.csv

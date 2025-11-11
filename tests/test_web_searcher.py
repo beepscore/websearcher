@@ -18,41 +18,41 @@ class TestWebSearcher(unittest.TestCase):
 
     def test_search_file_returns_none(self):
         actual = web_searcher.WebSearcher.search_file("not there",
-                                                      "./data/downloads",
+                                                      "./data/test_data/downloads",
                                                       "httpwww.beepscore.comhubcape")
         self.assertEqual(None, actual)
 
     def test_search_file_returns_file_name(self):
         actual = web_searcher.WebSearcher.search_file("Apps",
-                                                      "./data/downloads",
+                                                      "./data/test_data/downloads",
                                                       "httpwww.beepscore.comhubcape")
         self.assertEqual("httpwww.beepscore.comhubcape", actual)
 
     def test_search_file_is_case_sensitive(self):
         actual = web_searcher.WebSearcher.search_file("Apps",
-                                                      "./data/downloads",
+                                                      "./data/test_data/downloads",
                                                       "httpwww.beepscore.comhubcape")
         self.assertEqual("httpwww.beepscore.comhubcape", actual)
 
         actual = web_searcher.WebSearcher.search_file("apps",
-                                                      "./data/downloads",
+                                                      "./data/test_data/downloads",
                                                       "httpwww.beepscore.comhubcape")
         self.assertEqual(None, actual)
 
     def test_search_directory_Apps(self):
         actual = web_searcher.WebSearcher.search_directory("Apps",
-                                                           "./data/downloads")
+                                                           "./data/test_data/downloads")
         self.assertEqual(["httpwww.beepscore.comhubcape"], actual)
 
     def test_search_directory_Python(self):
         actual = web_searcher.WebSearcher.search_directory("Python",
-                                                           "./data/downloads")
+                                                           "./data/test_data/downloads")
         expected = ['httpsen.wikipedia.orgwikiPython_%28programming_language%29', 'httppython.org']
         self.assertEqual(actual, expected)
 
     def test_search_directory_data(self):
         actual = web_searcher.WebSearcher.search_directory("dat*",
-                                                           "./data/downloads")
+                                                           "./data/test_data/downloads")
         expected = ['httpwww.beepscore.comhubcape',
                     'httpsen.wikipedia.orgwikiPython_%28programming_language%29',
                     'httppython.org',
@@ -62,7 +62,7 @@ class TestWebSearcher(unittest.TestCase):
 
     def test_search_directory_write_results_data(self):
         web_searcher.WebSearcher.search_directory_write_results("dat*",
-                                                                "./data/downloads",
+                                                                "./data/test_data/downloads",
                                                                 "./data/output",
                                                                 "websearcher_output.txt")
 
