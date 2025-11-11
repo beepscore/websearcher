@@ -1,0 +1,4 @@
+-in_dir=./data/input
+-in_file=foo.csv
+-out_dir=./data/output
+-out_file=suggested_spellings_output.csv

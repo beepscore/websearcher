@@ -37,8 +37,8 @@ class SpellingSuggesterArgReader:
 
         parser.add_argument('-in_dir', action="store", dest="in_dir", default="./data/input",
                             help='name of input directory. Default "./data/input"')
-        parser.add_argument('-in_file', action="store", dest="in_file", default="oovwords.csv",
-                            help='input file of search words. Default "oovwords.csv"')
+        parser.add_argument('-in_file', action="store", dest="in_file", default="input_words.csv",
+                            help='input file of search words. Default "input_words.csv"')
         parser.add_argument('-out_dir', action="store", dest="out_dir", default="./data/output",
                             help='name of output directory. Default "./data/output"')
         parser.add_argument('-out_file', action="store", dest="out_file", default="suggested_spellings_output.csv",
@@ -47,6 +47,9 @@ class SpellingSuggesterArgReader:
         if commandline is not None:
             args = parser.parse_args(commandline)
         else:
-            args = parser.parse_args()
+            # if parse_args has no argument, VS Code unittests throws SystemExit 2
+            # https://stackoverflow.com/questions/42249982/systemexit-2-error-when-calling-parse-args-within-ipython
+            # args = parser.parse_args()
+            args = parser.parse_args([])
 
         return args

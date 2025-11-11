@@ -150,9 +150,11 @@ dmypy.json
 # project specific
 # ignore program data
 data/*
+# don't ignore test data directory
+!data/test_data/
 
 # ignore input file
-oovwords.csv
+input_words.csv
 
 # ignore output file
 suggested_spellings_output.csv

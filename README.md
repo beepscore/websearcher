@@ -5,9 +5,9 @@ Python project to download web pages and search them.
 
 ### Get suggested spellings
 
-Don't commit actual input file. In .gitignore ignored oovwords.csv
+Don't commit actual input file. In .gitignore ignored input_words.csv
 
-    python3 -m get_suggested_spellings -in_dir "data/input" -in_file "oovwords.csv" -out_dir "data/output" -out_file "suggested_spelling_output.csv"
+    python3 -m get_suggested_spellings -in_dir "data/input" -in_file "input_words.csv" -out_dir "data/output" -out_file "suggested_spelling_output.csv"
 
 ### to use default argument values
 
